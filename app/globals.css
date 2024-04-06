@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+    box-sizing: border-box;
+}
+
+.route-nav-item {
+    @apply flex flex-row gap-2 h-full items-center justify-center px-3 cursor-pointer
+}
+
+.route-nav-item:hover {
+    @apply bg-blue-900;
+}
+
+.active-route-nav-item {
+    @apply flex flex-row gap-2 h-full items-center justify-center px-3 cursor-pointer bg-blue-950;
+}
+
+.max-width {
+    @apply max-w-[1440px] mx-auto;
+}
+
+@media screen and (max-width:640px) {
+    .padding-x {
+        @apply px-16 px-6;
+    }
+}
+
+.padding-y {
+    @apply py-4;
+}
+
+.flex-center {
+    @apply flex items-center justify-center;
+}
+
+.flex-between {
+    @apply flex justify-between items-center;
+}
+
+.custom-btn {
+    @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
+}
+
+
+/* END: General styles */
+
+
+/* START: Hero styles */
+
+.bord {
+    @apply flex flex-row items-center justify-between bg-sky-600 h-[45px] px-2 cursor-pointer;
+}
+
+.bord:hover {
+    @apply bg-sky-700
+}
+
+.bord:last-child {
+    @apply border-none rounded-b-[10px]
+}
+
+.active-bord {
+    @apply bg-blue-950
+}
+
+.scheduling-tab-item {
+    @apply flex flex-row gap-2 h-full items-center justify-center px-3 cursor-pointer border border-sky-600 border-b-0 text-black bg-blue-100;
+}
+
+.scheduling-tab-item:hover {
+    @apply bg-sky-600 text-white;
+}
+
+.active-scheduling-tab-item {
+    @apply bg-sky-600 text-white flex flex-row gap-2 h-full items-center justify-center px-3 cursor-pointer border border-sky-600 border-b-0;
+}
+
+
+/* tailwind.css or your custom Tailwind CSS file */
+
+.custom-calendar .react-calendar__month-view__weekdays {
+    font-family: Arial, sans-serif;
+    border-bottom: 1px solid steelblue;
+    margin-bottom: .2rem;
+}
+
+.custom-calendar .react-calendar__month-view__weekdays__weekday abbr {
+    color: steelblue;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.table-cage {
+    height: calc(100vh - 50px - 55px - 50px - 27px);
+}
+
+.sheet-table-cont {
+    height: calc(100vh - 480px);
+}
+
+.cont {
+    height: calc(100vh - 295px);
+}
