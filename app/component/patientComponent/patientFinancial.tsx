@@ -45,10 +45,10 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     <span className="flex items-center justify-start w-full border border-blue-200 bg-sky-600 text-[15px] font-bold text-slate-100 px-2 h-[40px] rounded-t-[5px] ">
                                         Advance Payment
                                     </span>
-                                    <span className="w-full flex flex-row items-center justify-between bg-slate-300 h-[40px]">
-                                        <p className="h-full flex items-center justify-column text-lg text-slate-700 w-1/3 border-r border-slate-400 px-2">Group</p>
-                                        <p className="h-full flex items-center justify-column text-lg text-slate-700 w-1/3 border-r border-slate-400  px-2 ">Case #</p>
-                                        <p className="h-full flex items-center justify-column text-lg text-slate-700 w-1/3  px-2">Balance</p>
+                                    <span className="w-full flex flex-row items-center justify-between bg-slate-300 h-[35px]">
+                                        <p className="h-full flex items-center justify-column text-[14px] text-slate-700 w-1/3 border-r border-slate-400 px-2">Group</p>
+                                        <p className="h-full flex items-center justify-column text-[14px] text-slate-700 w-1/3 border-r border-slate-400  px-2 ">Case #</p>
+                                        <p className="h-full flex items-center justify-column text-[14px] text-slate-700 w-1/3  px-2">Balance</p>
                                     </span>
                                     <div className="flex flex-col justify-start w-full bg-white h-[300px] overflow-y-auto">
                                         {[1,2].map((data, ind)=>{
@@ -61,17 +61,17 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                             )
                                         })}
                                     </div>
-                                    <span className="flex flex-row h-[45px] gap-2 bg-sky-600 w-full border border-sky-600 rounded-b-[7px] "></span>
+                                    <span className="flex flex-row h-[40px] gap-2 bg-sky-600 w-full border border-sky-600 rounded-b-[7px] "></span>
                                 </div>
 
-                                <div className="flex flex-col w-[65%] h-full flex-1">
+                                <div className="flex flex-col w-[65%] h-full flex-1 shadow-xl">
                                     <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-[15px] font-bold text-slate-100 px-2 h-[40px] rounded-t-[5px] ">
                                         Aging
                                     </span>
-                                    <div className="w-full flex-1 bg-white flex flex-row rounded-b-[5px]">
+                                    <div className="w-full flex-1 bg-white flex flex-row rounded-b-[10px] h-[335px]">
                                         <div className="h-full w-[87%] flex flex-col gap-3 justify-end items-center py-2">
                                             <p className="text-[15] text-slate-500">Aging</p>
-                                            <span className="flex flex-row items-center justify-center gap-3 bg-green-200">
+                                            <span className="flex flex-row items-center justify-center gap-3 ">
                                                 <span className="flex flex-row gap-2 items-center justify-center text-sm text-slate-800">
                                                     <span className="w-[14px] h-[14px] bg-sky-500"></span>
                                                     Plan
@@ -86,10 +86,10 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                         <div className="h-full w-[15%] flex items-center justify-center">
                                             <div className="w-auto h-auto mx-auto my-auto flex flex-col items-center gap-2">
                                                 <p className="text-2xl font-bold text-slate-900">Total</p>
-                                                <span className="w-[90px] bg-sky-500 h-10 text-slate-100 text-lg flex items-center justify-center">
+                                                <span className="w-[90px] bg-sky-500 h-10 text-slate-100 text-lg font-semibold flex items-center justify-center rounded-[5px]">
                                                     $0.00
                                                 </span>
-                                                <span className="w-[90px] bg-lime-500 h-10 text-slate-100 text-lg flex items-center justify-center">
+                                                <span className="w-[90px] bg-lime-500 h-10 text-slate-100 text-lg font-semibold flex items-center justify-center rounded-[5px]">
                                                     $0.00
                                                 </span>
                                             </div>
@@ -100,17 +100,17 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                             <div className="flex flex-row w-full h-auto items-start justify-between gap-3 pb-3">
                                 <div className="flex flex-col justify-start items-center w-[34%] shadow-xl">
-                                    <span className="flex items-center justify-start w-full border border-blue-200 bg-sky-600 text-lg font-bold text-slate-100 px-2 h-[50px] rounded-t-[5px] ">
+                                    <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-[15px] font-semibold text-slate-100 px-2 h-[40px] rounded-t-[5px] ">
                                         Last Payment Date / Amount Paid
                                     </span>
                                     <div className="flex flex-col px-2 items-center justify-center gap-4 h-[200px] bg-white w-full rounded-b-[5px]">
                                         <span className="flex flex-row items-center justify-center gap-4 w-full">
-                                            <p className="text-lg text-slate-600">Latest Payment Date:</p>
-                                            <p className="text-lg text-slate-600">10/12/2024</p>
+                                            <p className="text-[14px] text-slate-600">Latest Payment Date:</p>
+                                            <p className="text-[14px] text-slate-600">10/12/2024</p>
                                         </span>
                                         <span className="flex flex-row items-center justify-center gap-4 w-full">
-                                            <p className="text-lg text-slate-600">Amount Paid:</p>
-                                            <p className="text-lg text-slate-600">$35.00</p>
+                                            <p className="text-[14px] text-slate-600">Amount Paid:</p>
+                                            <p className="text-[14px] text-slate-600">$35.00</p>
                                         </span>
                                     </div>
                                 </div>
@@ -121,10 +121,10 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     </span>
 
                                     <div className="w-full h-auto flex flex-col justify-start items-center pt-3">
-                                        <span className="flex items-center justify-start w-full border border-blue-300 bg-blue-300 text-lg font-bold text-slate-600 px-2 h-[50px] rounded-t-[5px]">
+                                        <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-[15px] font-semibold text-slate-100 px-2 h-[50px] rounded-t-[5px]">
                                             Statement History
                                         </span>
-                                        <span className="flex flex-row items-center justify-between w-full h-[43px]">
+                                        <span className="flex flex-row items-center justify-between w-full h-[35px]">
                                             <p className="h-full flex px-3 items-center justify-start text-[16px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Print Date</p>
                                             <p className="h-full flex px-3 items-center justify-start text-[16px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Type</p>
                                             <p className="h-full flex px-3 items-center justify-start text-[16px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Printed By</p>

@@ -165,7 +165,7 @@ const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                             <div className="w-full flex flex-row gap-3 items-start justify-between gap-3 mt-3 ">
                                 <div className="w-[65%] h-full flex flex-col gap-3">
-                                    <div className="h-full flex flex-col w-full bg-white rounded-[5px]">
+                                    <div className="h-full flex flex-col w-full bg-white rounded-[5px] shadow-xl">
                                         <span className="flex flex-row items-center justify-start rounded-t-[5px] w-full bg-sky-600 h-[40px] border-2 border-sky-600 px-3">
                                             <p className="text-[15px] text-slate-100 font-semibold">APPOINTMENTS</p>
                                         </span>
@@ -176,7 +176,7 @@ const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                         </div>
                                     </div>
 
-                                    <div className="w-full flex items-center jusitify-center px-2 py-2 bg-white">
+                                    <div className="w-full flex items-center jusitify-center px-2 py-2 bg-white shadow-xl">
                                         <span className="flex flex-row items-center justify-start w-full rounded-[3px] h-[40px] ">
                                             <p className="text-[14px] text-slate-800 font-bold w-1/5 flex items-center justify-center bg-amber-100 h-[37px]"> Scheduled - 1 </p>
                                             <p className="text-[14px] text-slate-800 font-bold w-1/5 flex items-center justify-center bg-green-400 h-[37px] "> Seen - 0 </p>
@@ -189,7 +189,7 @@ const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 </div>
 
                                 <div className="w-[35%] h-full flex flex-col gap-3 pb-3">
-                                    <div className="h-full flex flex-col gap-3 justify-start w-full bg-white rounded-[5px]">
+                                    <div className="h-full flex flex-col gap-3 justify-start w-full bg-white rounded-[5px] shadow-xl">
                                         <span className="flex flex-row items-center justify-start rounded-t-[5px] w-full bg-sky-600 h-[40px] border-2 border-sky-600 px-3">
                                             <p className="text-[15px] text-slate-100 font-semibold">PROBLEM LIST</p>
                                         </span>
@@ -200,7 +200,7 @@ const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                         </div>
                                     </div>
 
-                                    <div className="h-full flex flex-col gap-3 justify-start w-full bg-white rounded-[5px]">
+                                    <div className="h-full flex flex-col gap-3 justify-start w-full bg-white rounded-[5px] shadow-xl">
                                         <span className="flex flex-row items-center justify-start rounded-t-[5px] w-full bg-sky-600 h-[40px] border-2 border-sky-600 px-3">
                                             <p className="text-[15px] text-slate-100 font-semibold">LAST CPT</p>
                                         </span>
@@ -211,7 +211,7 @@ const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                         </div>
                                     </div>
 
-                                    <div className="h-full flex flex-col gap-3 justify-start w-full bg-white rounded-[5px]">
+                                    <div className="h-full flex flex-col gap-3 justify-start w-full bg-white rounded-[5px] shadow-xl">
                                         <span className="flex flex-row items-center justify-start rounded-t-[5px] w-full bg-sky-600 h-[40px] border-2 border-sky-600 px-3">
                                             <p className="text-[15px] text-slate-100 font-semibold">PATIENT GENERATED HEALTH DATA</p>
                                         </span>

@@ -29,7 +29,7 @@ const AgingBarChat: React.FC = () => {
 
     return (
         <div
-            style={{ width: "80%", height: "23rem", margin: "0 auto" }}
+            style={{ width: "80%", height: "16rem", margin: "0 auto" }}
             ref={chartRef}
         >
             <Bar
