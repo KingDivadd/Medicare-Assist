@@ -11,8 +11,13 @@
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    /* background-color: red; */
+    @apply bg-sky-700
 }
 
 .route-nav-item {
@@ -60,7 +65,7 @@
 /* START: Hero styles */
 
 .bord {
-    @apply flex flex-row items-center justify-between bg-sky-600 h-[45px] px-2 cursor-pointer;
+    @apply flex flex-row items-center justify-between bg-sky-600 h-[40px] px-2 cursor-pointer;
 }
 
 .bord:hover {

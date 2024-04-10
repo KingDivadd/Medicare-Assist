@@ -11,18 +11,20 @@ import RouteNav from '../routeNav'
 
 const AdminOneDashboard = () => {
     return (
-        <main className='w-full h-screen flex flex-col gap-1 bg-gray-200 overflow-y-auto'>
-            <RouteNav />
-            <div className="w-full flex-1 flex flex-row gap-2">
-                <SideBar />
-                <div className="w-full flex flex-col gap-3 py-2 pr-3 pl-1">
-                    <MessageBar />
-                    <AppointmentStatusBar />
-                    <CopayCollectedBar />
-                    <VisitBar />
-                    <PerformanceTrendBar />
-                    <MoneyBar />
-                    <AgingBar /> 
+        <main className='w-full h-screen flex items-start justify-center bg-slate-200'>
+            <div className="w-full h-screen flex flex-col gap-1 bg-slate-200 overflow-y-auto xl:max-w-[1650px] mx-auto">
+                <RouteNav />
+                <div className="w-full flex-1 flex flex-row gap-2">
+                    <SideBar />
+                    <div className="w-[80%] flex flex-col gap-3 py-2 pr-3 pl-1">
+                        <MessageBar />
+                        <AppointmentStatusBar />
+                        <CopayCollectedBar />
+                        <VisitBar />
+                        <PerformanceTrendBar />
+                        <MoneyBar />
+                        <AgingBar /> 
+                    </div>
                 </div>
             </div>
         </main>
