@@ -116,23 +116,23 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 </div>
                                 <div className="flex flex-col justify-start items-center w-[66%] h-auto shadow-xl bg-white">
                                     <span className="flex flex-row w-full items-end justify-start border-b-[8px] border-sky-600 h-auto px-10 gap-4 h-[45px]">
-                                        <button type="button" className='h-[40px] px-3 border-2 border-sky-600 bg-sky-600 text-slate-200 rounded-t-[5px] border-b-0' >Statement History</button>
-                                        <button type="button" className='h-[40px] px-3 border-2 border-sky-600 rounded-t-[5px] border-b-0 bg-white' >Patient Payment</button>
+                                        <button type="button" className='h-[35px] px-3 border-2 border-sky-600 bg-sky-600 text-white text-[14px] rounded-t-[5px] border-b-0' >Statement History</button>
+                                        <button type="button" className='h-[35px] px-3 border-2 border-sky-600 text-[14px] rounded-t-[5px] border-b-0 bg-white' >Patient Payment</button>
                                     </span>
 
                                     <div className="w-full h-auto flex flex-col justify-start items-center pt-3">
-                                        <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-[15px] font-semibold text-slate-100 px-2 h-[50px] rounded-t-[5px]">
+                                        <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-[15px] font-semibold text-slate-100 px-2 h-[40px] rounded-t-[5px]">
                                             Statement History
                                         </span>
                                         <span className="flex flex-row items-center justify-between w-full h-[35px]">
-                                            <p className="h-full flex px-3 items-center justify-start text-[16px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Print Date</p>
-                                            <p className="h-full flex px-3 items-center justify-start text-[16px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Type</p>
-                                            <p className="h-full flex px-3 items-center justify-start text-[16px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Printed By</p>
-                                            <p className="h-full flex px-3 items-center justify-start text-[16px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Amount</p>
-                                            <p className="h-full flex px-3 items-center justify-start text-[16px] text-slate-600 w-1/5 bg-slate-300">E-Statement</p>
+                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Print Date</p>
+                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Type</p>
+                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Printed By</p>
+                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Amount</p>
+                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-300">E-Statement</p>
                                         </span>
                                         <div className="w-full h-[200px] flex items-center justify-center bg-white mb-3">
-                                            <p className="text-lg font-semibold">
+                                            <p className="text-[15px] font-semibold text-slate-600">
                                                 No Data Found
                                             </p>
                                         </div>
