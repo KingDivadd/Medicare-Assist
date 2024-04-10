@@ -54,9 +54,9 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                         {[1,2].map((data, ind)=>{
                                             return(
                                                 <div key={ind} className="flex flex-row border-b border-slate-300 h-[45px] w-full">
-                                                    <p className="text-lg text-slate-500 w-1/3 h-full flex items-center justify-start px-2 font-semibold">Patient</p>
-                                                    <p className="text-lg text-slate-500 w-1/3 h-full flex items-center justify-start px-2 font-semibold"></p>
-                                                    <p className="text-lg text-slate-500 w-1/3 h-full flex items-center justify-start px-2 font-semibold">35.00</p>
+                                                    <p className="text-[14px] text-slate-500 w-1/3 h-full flex items-center justify-start px-2 font-semibold">Patient</p>
+                                                    <p className="text-[14px] text-slate-500 w-1/3 h-full flex items-center justify-start px-2 font-semibold"></p>
+                                                    <p className="text-[14px] text-slate-500 w-1/3 h-full flex items-center justify-start px-2 font-semibold">35.00</p>
                                                 </div>
                                             )
                                         })}
