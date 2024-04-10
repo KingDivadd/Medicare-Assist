@@ -1,13 +1,10 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import CustomButton from "../../component/custombuttom";
-import Input from "../../component/inputField";
 import { IoMdPerson } from "react-icons/io";
-import { useRouter } from "next/router";
+import CustomButton from "../component/custombuttom";
 
 const GenerateOtp = () => {
-    // const router = useRouter();
 
     const handleSubmit = (e:any) => {
         e.preventDefault();

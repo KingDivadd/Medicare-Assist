@@ -100,7 +100,7 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                             <div className="flex flex-row w-full h-auto items-start justify-between gap-3 pb-3">
                                 <div className="flex flex-col justify-start items-center w-[34%] shadow-xl">
-                                    <span className="w-full px-2 flex items-center justify-start bg-sky-500 h-[45px] text-lg text-slate-700 font-semibold rounded-t-[5px] border border-sky-600">
+                                    <span className="flex items-center justify-start w-full border border-blue-200 bg-sky-600 text-lg font-bold text-slate-100 px-2 h-[50px] rounded-t-[5px] ">
                                         Last Payment Date / Amount Paid
                                     </span>
                                     <div className="flex flex-col px-2 items-center justify-center gap-4 h-[200px] bg-white w-full rounded-b-[5px]">

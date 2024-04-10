@@ -74,7 +74,7 @@ const Login = () => {
 
                         {/* Disable the button when loading state is true */}
                         <CustomButton title={loading ? "Loading..." : "Login"} btnType="submit" disabledd={false} containerStyles="w-full text-[17px] rounded-[7px] bg-blue-600 hover:bg-blue-500 font-bold text-white mt-5" />
-                        <Link href="/forgotpassword">
+                        <Link href="/">
                             <span className="w-full flex justify-center items-center text-[14px] text-blue-600 hover:text-blue-500 font-bold">Forgot password?</span>
                         </Link>
                     </form>

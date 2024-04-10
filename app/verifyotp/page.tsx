@@ -1,9 +1,8 @@
 'use client'
 import Image from "next/image"
 import Link from "next/link"
-import CustomButton from "../../component/custombuttom"
-import Input from "../../component/inputField"
 import { IoMdPerson } from "react-icons/io";
+import CustomButton from "../component/custombuttom";
 import { FcGoogle } from "react-icons/fc";
 
 
