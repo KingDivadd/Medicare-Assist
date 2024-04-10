@@ -10,6 +10,11 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
 .route-nav-item {
     @apply flex flex-row gap-2 h-full items-center justify-center px-3 cursor-pointer
 }
@@ -107,4 +112,12 @@
 
 .cont {
     height: calc(100vh - 295px);
+}
+
+.cont-2 {
+    height: calc(100vh - 130px);
+}
+
+.fincancial-cont {
+    height: calc(100vh - 205px);
 }
