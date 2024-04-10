@@ -2,9 +2,9 @@ import React from 'react'
 
 const AppointmentStatusBar = () => {
     return (
-        <div className='flex flex-col h-[250px] w-full bg-white rounded-[10px]'>
-            <span className="w-full bg-sky-600 h-[55px] rounded-t-[10px] flex items-center justify-start pl-[20px]">
-                <p className="text-xl text-white">Appointment Status</p>
+        <div className='flex flex-col h-[250px] w-full bg-white rounded-[10px] shadow-xl'>
+            <span className="w-full bg-sky-600 h-[50px] rounded-t-[10px] flex items-center justify-start pl-[20px]">
+                <p className="text-[15px] text-white font-semibold">Appointment Status</p>
             </span>
             <div className="flex items-center justify-center w-full h-full px-3 py-2 gap-[60px]">
 
@@ -13,9 +13,9 @@ const AppointmentStatusBar = () => {
                         <p className="text-white text-[16px]">Seen</p>
                     </span>
                     <div className="flex flex-col h-full py-[4px] justify-center items-end gap-1">
-                        <span className="text-gray-400 pr-2 font-bold  flex items-center justify-end h-[30px] border-2 border-r-0 border-gray-400 w-3/4 rounded-l-[5px]">Last Week</span>
-                        <span className="text-gray-400  pr-2 font-bold flex items-center justify-end h-[30px] border-2 border-r-0 border-gray-400 w-3/4 rounded-l-[5px]">MTD</span>
-                        <span className="text-gray-400 pr-2 font-bold  flex items-center justify-end h-[30px] border-2 border-r-0 border-gray-400 w-3/4 rounded-l-[5px]">YTD</span>
+                        <span className="text-gray-400 text-sm pr-2 font-semibold  flex items-center justify-end h-[30px] border-2 border-r-0 border-gray-400 w-3/4 rounded-l-[5px]">Last Week</span>
+                        <span className="text-gray-400  text-sm pr-2 font-semibold flex items-center justify-end h-[30px] border-2 border-r-0 border-gray-400 w-3/4 rounded-l-[5px]">MTD</span>
+                        <span className="text-gray-400 text-sm pr-2 font-semibold  flex items-center justify-end h-[30px] border-2 border-r-0 border-gray-400 w-3/4 rounded-l-[5px]">YTD</span>
                     </div>
                 </div>
                 
@@ -24,9 +24,9 @@ const AppointmentStatusBar = () => {
                         <p className="text-white text-[16px]">Seen</p>
                     </span>
                     <div className="flex flex-col h-full py-[4px] justify-center items-center gap-1">
-                        <p className="text-black text-[20px]">40</p>
-                        <p className="text-black text-[20px]">8</p>
-                        <p className="text-black text-[20px]">2334</p>
+                        <p className="text-black text-lg">40</p>
+                        <p className="text-black text-lg">8</p>
+                        <p className="text-black text-lg">2334</p>
                     </div>
                 </div>
                 
@@ -35,9 +35,9 @@ const AppointmentStatusBar = () => {
                         <p className="text-white text-[16px]">No Show</p>
                     </span>
                     <div className="flex flex-col h-full py-[4px] justify-center items-center gap-1">
-                        <p className="text-black text-[20px]">40</p>
-                        <p className="text-black text-[20px]">8</p>
-                        <p className="text-black text-[20px]">2334</p>
+                        <p className="text-black text-lg">40</p>
+                        <p className="text-black text-lg">8</p>
+                        <p className="text-black text-lg">2334</p>
                     </div>
                 </div>
                 
@@ -46,9 +46,9 @@ const AppointmentStatusBar = () => {
                         <p className="text-white text-[16px]">Cancelled</p>
                     </span>
                     <div className="flex flex-col h-full py-[4px] justify-center items-center gap-1">
-                        <p className="text-black text-[20px]">40</p>
-                        <p className="text-black text-[20px]">8</p>
-                        <p className="text-black text-[20px]">2334</p>
+                        <p className="text-black text-lg">40</p>
+                        <p className="text-black text-lg">8</p>
+                        <p className="text-black text-lg">2334</p>
                     </div>
                 </div>
 
@@ -57,9 +57,9 @@ const AppointmentStatusBar = () => {
                         <p className="text-white text-[16px]">Rescheduled</p>
                     </span>
                     <div className="flex flex-col h-full py-[4px] justify-center items-center gap-1">
-                        <p className="text-black text-[20px]">40</p>
-                        <p className="text-black text-[20px]">8</p>
-                        <p className="text-black text-[20px]">2334</p>
+                        <p className="text-black text-lg">40</p>
+                        <p className="text-black text-lg">8</p>
+                        <p className="text-black text-lg">2334</p>
                     </div>
                 </div>
 

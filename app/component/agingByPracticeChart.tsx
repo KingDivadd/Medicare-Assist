@@ -6,7 +6,7 @@ import { Chart as ChartJS, BarElement, Tooltip, Legend, CategoryScale, LinearSca
 
 ChartJS.register(BarElement, Tooltip, Legend, CategoryScale, LinearScale);
 
-const VisitCountBarChart: React.FC = () => {
+const AgingByPracticeChart: React.FC = () => {
     const chartRef = useRef<HTMLDivElement>(null);
     const [chartDimensions, setChartDimensions] = useState<{ width: number; height: number }>({ width: 0, height: 0 });
 
@@ -75,4 +75,4 @@ const VisitCountBarChart: React.FC = () => {
     );
 };
 
-export default VisitCountBarChart;
+export default AgingByPracticeChart;

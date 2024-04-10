@@ -29,7 +29,7 @@ const RouteNav = () => {
                     <p className="text-slate-300 text-[15px]">Home</p>
                 </Link>
                 
-                <Link href={'/ehr'} className={page === '/ehr'? 'active-route-nav-item':'route-nav-item'}>
+                <Link href={'/ehr'} className={page === '/'? 'active-route-nav-item':'route-nav-item'}>
                     <BiNotepad size={23} className="text-slate-300" />
                     <p className="text-slate-300 text-[15px]">EHR</p>
                 </Link>

@@ -5,7 +5,7 @@ import { FiRefreshCcw } from "react-icons/fi";
 
 const SideBar = () => {
     return (
-        <div className='w-[400px] flex items-start justify-center pl-3'>
+        <div className='w-[450px] flex items-start justify-center pl-3'>
             <div className="flex flex-col bg-slate-300 rounded-b-[10px] w-full h-auto gap-[1px]">
                 <span className="bord active-bord">
                     <p className="text-white text-[15px]">Dashboard</p>
