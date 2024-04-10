@@ -15,7 +15,7 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                 <div className="flex w-full bg-slate-100 cont-2 overflow-y-auto px-5">
                     <div className="w-full h-auto flex-col pt-2 flex flex-col gap-3 overflow-hidden">
                         <span className="w-full flex flex-row items-center justify-between gap-3 h-[55px] px-4 ">
-                            <p className="text-xl text-sky-700 font-semibold h-full flex items-end">Financial</p>
+                            <p className="text-lg text-sky-800 font-semibold h-full flex items-end">Financial</p>
                             <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[73%]">
                                 <button type="button" className='text-[14px] text-slate-100 bg-sky-600 hover:bg-sky-700 h-[33px] my-auto px-3 flex flex-row items-center justify-center rounded-[3px]'>
                                     Requeue Statement
@@ -42,7 +42,7 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                         <div className="w-full flex flex-col jusitify-start overflow-y-auto gap-3 fincancial-cont">
                             <div className="flex flex-row w-full h-auto items-start justify-between gap-3">
                                 <div className="flex flex-col items-center justify-start w-[35%] shadow-xl">
-                                    <span className="flex items-center justify-start w-full border border-blue-200 bg-sky-600 text-lg font-bold text-slate-100 px-2 h-[50px] rounded-t-[5px] ">
+                                    <span className="flex items-center justify-start w-full border border-blue-200 bg-sky-600 text-[15px] font-bold text-slate-100 px-2 h-[40px] rounded-t-[5px] ">
                                         Advance Payment
                                     </span>
                                     <span className="w-full flex flex-row items-center justify-between bg-slate-300 h-[40px]">
@@ -50,7 +50,7 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                         <p className="h-full flex items-center justify-column text-lg text-slate-700 w-1/3 border-r border-slate-400  px-2 ">Case #</p>
                                         <p className="h-full flex items-center justify-column text-lg text-slate-700 w-1/3  px-2">Balance</p>
                                     </span>
-                                    <div className="flex flex-col justify-start w-full bg-white h-[410px] overflow-y-auto">
+                                    <div className="flex flex-col justify-start w-full bg-white h-[300px] overflow-y-auto">
                                         {[1,2].map((data, ind)=>{
                                             return(
                                                 <div key={ind} className="flex flex-row border-b border-slate-300 h-[45px] w-full">
@@ -61,17 +61,17 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                             )
                                         })}
                                     </div>
-                                    <span className="flex flex-row h-[45px] gap-2 bg-blue-100 w-full border border-slate-400 rounded-b-[7px] "></span>
+                                    <span className="flex flex-row h-[45px] gap-2 bg-sky-600 w-full border border-sky-600 rounded-b-[7px] "></span>
                                 </div>
 
                                 <div className="flex flex-col w-[65%] h-full flex-1">
-                                    <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-lg font-bold text-slate-100 px-2 h-[50px] rounded-t-[5px] ">
+                                    <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-[15px] font-bold text-slate-100 px-2 h-[40px] rounded-t-[5px] ">
                                         Aging
                                     </span>
-                                    <div className="w-full flex-1 bg-white flex flex-row">
+                                    <div className="w-full flex-1 bg-white flex flex-row rounded-b-[5px]">
                                         <div className="h-full w-[87%] flex flex-col gap-3 justify-end items-center py-2">
-                                            <p className="text-lg text-slate-400">Aging</p>
-                                            <span className="flex flex-row items-center justify-center gap-3">
+                                            <p className="text-[15] text-slate-500">Aging</p>
+                                            <span className="flex flex-row items-center justify-center gap-3 bg-green-200">
                                                 <span className="flex flex-row gap-2 items-center justify-center text-sm text-slate-800">
                                                     <span className="w-[14px] h-[14px] bg-sky-500"></span>
                                                     Plan

@@ -5,10 +5,10 @@ import React from 'react'
 const TabBar = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
     return (
-        <div className="w-full bg-sky-700 h-[57px] flex flex-row items-end justify-between bg-white ">
-            <div className="flex flex-row h-[57px] gap-1 items-center w-auto h-[80%]">
+        <div className="w-full bg-sky-700 flex flex-row items-end justify-between bg-white pt-2">
+            <div className="flex flex-row h-[40px] gap-1 items-center w-auto">
                 <span onClick={()=>{setPatient_tab('chart')}} className={patient_tab === 'chart' || patient_tab === ''? 'active-scheduling-tab-item': 'scheduling-tab-item '}>
-                    <p className="h-[57px] flex items-center text-[15px]">Chart</p>
+                    <p className=" flex items-center text-[15px]">Charts</p>
                 </span>
                 <span onClick={()=>{setPatient_tab('financial')}} className={patient_tab === 'financial'? 'active-scheduling-tab-item': 'scheduling-tab-item '}>
                     <p className=" text-[15px]">Financial</p>
