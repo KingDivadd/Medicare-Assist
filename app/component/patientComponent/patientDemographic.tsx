@@ -17,7 +17,7 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                             <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[73%]"></span>
                         </span>
 
-                        <div className="max-2xl:mx-[10px] mx-[150px] mx-auto flex flex-col jusitify-start overflow-y-auto gap-3 flex flex-col justify-start items-center h-auto bg-amber-300">
+                        <div className="max-2xl:mx-[95%] w-[80%] mx-auto flex flex-col jusitify-start overflow-y-auto gap-3 flex flex-col justify-start items-center h-auto bg-amber-300">
                             <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
@@ -292,7 +292,7 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                             <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[53%] "></span>
                         </span>
 
-                        <div className="max-2xl:mx-[10px] mx-[50px] mx-auto flex flex-col jusitify-start overflow-y-auto gap-3 flex flex-col justify-start items-center h-auto bg-blue-200">
+                        <div className="max-2xl:w-[95%] w-[80%] mx-auto flex flex-col jusitify-start overflow-y-auto gap-3 flex flex-col justify-start items-center h-auto bg-blue-200">
                             
                             <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
@@ -444,7 +444,6 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
                                 </span>
                             </div>
-
 
                         </div>
                     </div>
