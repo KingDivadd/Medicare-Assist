@@ -11,14 +11,14 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
             <TabBar patient_tab={patient_tab} setPatient_tab={setPatient_tab} />
             <div className="w-full bg-sky-600 flex-1 py-3 overflow-hidden">
                 <div className="flex flex-col w-full mx-auto bg-slate-100 cont-2 overflow-y-auto px-5 bg-blue-600 cont-4 gap-3">
-                    <div className="flex flex-col w-full gap-4 justify-start items-center">
+                    <div className="flex flex-col w-full gap-4 justify-start items-center pb-3">
 
                         <span className="w-full flex flex-row items-center justify-between gap-3 h-[55px] px-4">
                             <p className="text-lg text-sky-800 font-semibold h-full flex items-end">Patient Demographic</p>
                             <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[73%]"></span>
                         </span>
 
-                        <div className="max-2xl:w-[95%] w-[80%] mx-auto flex flex-col jusitify-start gap-3 flex flex-col justify-start items-center h-auto">
+                        <div className="max-2xl:w-[95%] w-[85%] mx-auto flex flex-col jusitify-start gap-3 flex flex-col justify-start items-center h-auto">
                             <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
@@ -293,7 +293,7 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                             <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[53%] "></span>
                         </span>
 
-                        <div className="max-2xl:w-[95%] w-[80%] mx-auto flex flex-col jusitify-start gap-3 flex flex-col justify-start items-center h-auto ">
+                        <div className="max-2xl:w-[95%] w-[85%] mx-auto flex flex-col jusitify-start gap-3 flex flex-col justify-start items-center h-auto ">
                             
                             <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
@@ -447,6 +447,87 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                             </div>
 
                         </div>
+
+                        <div className="flex flex-col items-center justify-start w-full mt-5 ">
+                            <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2 bg-sky-600 text-[15px] text-white h-[40px] font-semibold">
+                                Advance Directive
+                                <button type="button" className='px-3 h-[25px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Add New</button>
+                            </span>
+                            <span className="w-full flex flex-row items-center justify-between h-[35px] bg-gray-300">
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[15%] border-r border-gray-700">Type</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[15%] border-r border-gray-700">Date</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[40%] border-r border-gray-700">Comments</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[15%] border-r border-gray-700">Last Reviewed By</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[15%] border-r border-gray-700">Last Reviewed Date</p>
+                            </span>
+                            <div className="w-full flex items-center justify-center h-[200px] bg-white rounded-b-[5px]">
+                                <p className="text-lg font-semibold">No Data Found</p>
+                            </div>
+                        </div>
+                        
+                        <div className="flex flex-col items-center justify-start w-full mt-5 ">
+                            <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2 bg-sky-600 text-[15px] text-white h-[40px] font-semibold">
+                                Patient Family Members
+                                <button type="button" className='px-3 h-[25px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Add New</button>
+                            </span>
+                            <span className="w-full flex flex-row items-center justify-between h-[35px] bg-gray-300">
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Name</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Home Tel</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Cell #</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">DOB</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Date of Death</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">City</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">State</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Zip</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Comment</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Relationship</p>
+                                
+                            </span>
+                            <div className="w-full flex items-center justify-center h-[200px] bg-white rounded-b-[5px]">
+                                <p className="text-lg font-semibold">No Data Found</p>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col items-center justify-start w-full mt-5 ">
+                            <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2 bg-sky-600 text-[15px] text-white h-[40px] font-semibold">
+                                Patient Referring Provider
+                                <button type="button" className='px-3 h-[25px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Add New</button>
+                            </span>
+                            <span className="w-full flex flex-row items-center justify-between h-[35px] bg-gray-300">
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[35%] border-r border-gray-700">Referring Provider</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[35%] border-r border-gray-700">Speciality</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[30%] border-r border-gray-700">Comments</p>
+                            </span>
+                            <div className="w-full flex items-center justify-center h-[200px] bg-white rounded-b-[5px]">
+                                <p className="text-lg font-semibold">No Data Found</p>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col items-center justify-start w-full mt-5 ">
+                            <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2 bg-sky-600 text-[15px] text-white h-[40px] font-semibold">
+                                Patient Other Pharmacies
+                                <button type="button" className='px-3 h-[25px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Add New</button>
+                            </span>
+                            <span className="w-full flex flex-row items-center justify-between h-[35px] bg-gray-300">
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-700">Name</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-700">Address</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">City</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[5%] border-r border-gray-700">State</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[5%] border-r border-gray-700">Zip Code</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">NCPDP ID</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-700">Tel #</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-700">Active</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Cross Street</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-700">Electronic</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-700">New Rx</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-700">Refil</p>
+                                <p className="text-sm px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-700">Service Level</p>
+                            </span>
+                            <div className="w-full flex items-center justify-center h-[200px] bg-white rounded-b-[5px]">
+                                <p className="text-lg font-semibold">No Data Found</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
