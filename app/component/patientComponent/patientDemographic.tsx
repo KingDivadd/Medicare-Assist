@@ -10,14 +10,15 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
             <RouteNav />
             <TabBar patient_tab={patient_tab} setPatient_tab={setPatient_tab} />
             <div className="w-full bg-sky-600 flex-1 py-3 overflow-hidden">
-                <div className="flex w-full bg-slate-100 cont-2 overflow-y-auto px-5">
-                    <div className="w-full flex-col pt-2 flex flex-col gap-3 bg-green-200">
-                        <span className="w-full flex flex-row items-center justify-between gap-3 h-[55px] px-4 ">
+                <div className="flex flex-col w-full mx-auto bg-slate-100 cont-2 overflow-y-auto px-5 bg-blue-600 cont-4 gap-3">
+                    <div className="flex flex-col w-full gap-4 justify-start items-center">
+
+                        <span className="w-full flex flex-row items-center justify-between gap-3 h-[55px] px-4">
                             <p className="text-lg text-sky-800 font-semibold h-full flex items-end">Patient Demographic</p>
                             <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[73%]"></span>
                         </span>
 
-                        <div className="max-2xl:mx-[95%] w-[80%] mx-auto flex flex-col jusitify-start overflow-y-auto gap-3 flex flex-col justify-start items-center h-auto bg-amber-300">
+                        <div className="max-2xl:w-[95%] w-[80%] mx-auto flex flex-col jusitify-start gap-3 flex flex-col justify-start items-center h-auto">
                             <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
@@ -287,12 +288,12 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                         </div>
 
-                        <span className="w-full flex flex-row items-center justify-between gap-3 h-[30px] px-4 ">
+                        <span className="w-full flex flex-row items-center justify-between gap-3 h-[30px] px-4">
                             <p className="text-lg text-sky-800 font-semibold h-full flex items-end">Extra Info</p>
                             <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[53%] "></span>
                         </span>
 
-                        <div className="max-2xl:w-[95%] w-[80%] mx-auto flex flex-col jusitify-start overflow-y-auto gap-3 flex flex-col justify-start items-center h-auto bg-blue-200">
+                        <div className="max-2xl:w-[95%] w-[80%] mx-auto flex flex-col jusitify-start gap-3 flex flex-col justify-start items-center h-auto ">
                             
                             <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">

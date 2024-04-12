@@ -138,3 +138,7 @@
 .cont-3 {
     height: calc(100vh - 189px);
 }
+
+.cont-4 {
+    height: calc(100vh - 120px);
+}
