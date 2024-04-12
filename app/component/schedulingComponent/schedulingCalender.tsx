@@ -8,7 +8,7 @@ import { SchedulingTabProps } from '@/types'
 
 const SchedulingCalender = ({tab, setTab}:SchedulingTabProps) => {
     return (
-        <main className="w-full h-screen flex flex-col bg-gray-200 overflow-hidden">
+        <main className="w-full h-screen flex flex-col bg-slate-100 overflow-hidden">
             <RouteNav />
             <TabBar tab={tab} setTab={setTab} />
             <div className="w-full flex-1 flex flex-row gap-2 bg-sky-600" >

@@ -21,7 +21,7 @@ const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                 <div className="w-full bg-sky-600 flex-1 py-3 overflow-hidden">
 
-                    <div className="flex w-full bg-gray-100 cont-2 overflow-y-auto px-5">
+                    <div className="flex w-full bg-slate-100 cont-2 overflow-y-auto px-5">
                         <div className="w-full h-auto flex-col">
 
                             <span className="w-full flex flex-row items-center justify-between gap-3 h-[50px] px-4">
