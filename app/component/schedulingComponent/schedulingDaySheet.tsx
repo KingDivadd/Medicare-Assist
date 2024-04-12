@@ -17,7 +17,7 @@ const SchedulingDaySheet = ({tab, setTab}:SchedulingTabProps) => {
                         </span>
                     </span>
 
-                    <div className="w-full flex flex-col items-center justify-start overflow-y-auto cont-3">
+                    <div className="w-full flex flex-col items-center justify-start overflow-y-auto cont-3 gap-3">
                         
                         <div className="flex flex-col xl:w-[95%] px-10 py-6 mx-auto bg-blue-100 gap-3 shadow-xl">
                             <div className="flex flex-col w-full items-center justify-center gap-2">
