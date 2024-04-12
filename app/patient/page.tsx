@@ -34,8 +34,8 @@ const Patient = () => {
             {patient_tab === 'financial' && <PatientFinancial patient_tab={patient_tab} setPatient_tab={setPatient_tab} />}
             {patient_tab === 'demographic' && <PatientDemographic patient_tab={patient_tab} setPatient_tab={setPatient_tab} />}
             {patient_tab === 'insurance' && <PatientInsurance patient_tab={patient_tab} setPatient_tab={setPatient_tab} />}
-            {patient_tab === 'document' && <PatientDocument patient_tab={patient_tab} setPatient_tab={setPatient_tab} />}
-            {patient_tab === 'message' && <PatientMessage patient_tab={patient_tab} setPatient_tab={setPatient_tab} />}
+            {patient_tab === 'documents' && <PatientDocument patient_tab={patient_tab} setPatient_tab={setPatient_tab} />}
+            {patient_tab === 'messages' && <PatientMessage patient_tab={patient_tab} setPatient_tab={setPatient_tab} />}
             {patient_tab === 'medication' && <PatientMedication patient_tab={patient_tab} setPatient_tab={setPatient_tab} />}
         </>
     )
