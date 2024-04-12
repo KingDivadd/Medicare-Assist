@@ -11,7 +11,7 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
             <TabBar patient_tab={patient_tab} setPatient_tab={setPatient_tab} />
             <div className="w-full bg-sky-600 flex-1 py-3 overflow-hidden">
                 <div className="flex w-full bg-slate-100 cont-2 overflow-y-auto px-5">
-                    <div className="w-full h-auto flex-col pt-2 flex flex-col gap-3 overflow-hidden">
+                    <div className="w-full h-auto flex-col pt-2 flex flex-col gap-3 overflow-hidden bg-green-200">
                         <span className="w-full flex flex-row items-center justify-between gap-3 h-[55px] px-4 ">
                             <p className="text-lg text-sky-800 font-semibold h-full flex items-end">Patient Demographic</p>
                             <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[73%]"></span>
