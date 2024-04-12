@@ -17,7 +17,7 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                             <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[73%]"></span>
                         </span>
 
-                        <div className="max-2xl:mx-[10px] mx-[150px] mx-auto flex flex-col jusitify-start overflow-y-auto gap-3 cont-4 flex flex-col justify-start items-center">
+                        <div className="max-2xl:mx-[10px] mx-[150px] mx-auto flex flex-col jusitify-start overflow-y-auto gap-3 flex flex-col justify-start items-center h-auto">
                             <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
@@ -241,11 +241,212 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 
                             </div>
 
+                            <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px]">
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Birth Order</p>
+                                    <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full">
+                                        <input type="text" name="" id="" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        <span className="flex flex-row gap-2 items-center justify-between flex-1 h-full">
+                                            <p className="text-[15px] w-[70%] flex items-center justify-end text-sky-600 font-semibold">Multiple Birth</p>
+                                            <input type="checkbox" name="" id="" placeholder='' className='w-[30%] flex h-[20px] items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        </span>
+                                    </span>
+                                </span>
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Gender Identity</p>
+                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                </span>
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Class</p>
+                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                </span>
+                                
+                            </div>
 
-                            
+                            <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px]">
+                                
+                                
+                                <span className="flex flex-row h-full w-2/3 items-center justify-between gap-5 ">
+                                    <p className="text-[15px] max-2xl:w-[40%]  flex items-center justify-end text-sky-600 font-semibold flex-1">Gender Identity</p>
+                                    <input type="" name="" id="" placeholder='' className='w-[86.5%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                </span>
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Sexual Orientation</p>
+                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                </span>
+                                
+                            </div>
+
+                            <button className='bg-lime-500 hover:bg-lime-600 px-3 rounded-[3px] text-sm text-white h-[35px] mt-5' type="button">Update Patient Demographic</button>
+
+
+
                         </div>
 
+                        <span className="w-full flex flex-row items-center justify-between gap-3 h-[30px] px-4 ">
+                            <p className="text-lg text-sky-800 font-semibold h-full flex items-end">Extra Info</p>
+                            <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[53%] "></span>
+                        </span>
 
+                        <div className="max-2xl:mx-[10px] mx-[150px] mx-auto flex flex-col jusitify-start overflow-y-auto gap-3 flex flex-col justify-start items-center h-[400px] ">
+                            
+                            <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Active</p>
+                                    <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full">
+                                        <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                        <span className="flex flex-row items-center justify-between gap-3">
+                                            <p className="text-[15px] text-sky-600 font-semibold">Adv. Directive</p>
+                                            <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                        </span>
+                                    </span>
+                                </span>
+
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Statement</p>
+                                    <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full ">
+                                        <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                        <span className="flex flex-row items-center justify-between gap-3">
+                                            <p className="text-[15px] text-sky-600 font-semibold">e-statement</p>
+                                            <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                        </span>
+                                        <span className="flex flex-row items-center justify-between gap-3">
+                                            <p className="text-[15px] text-sky-600 font-semibold">Pregnant</p>
+                                            <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                        </span>
+                                    </span>
+                                </span>
+
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Drug Hist Consent</p>
+                                    <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full">
+                                        <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                        <span className="flex flex-row items-center justify-between gap-3">
+                                            <p className="text-[15px] text-sky-600 font-semibold">Exempt Reporting</p>
+                                            <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                        </span>
+                                    </span>
+                                </span>
+                                
+                            </div>
+
+                            <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Drivers License </p>
+                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                </span>
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Date of Death</p>
+                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                </span>
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Cause of Death</p>
+                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                </span>
+                            </div>
+                            
+                            <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Height (in)</p>
+                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                </span>
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Weight (lbs)</p>
+                                    <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full ">
+                                        <input type="text" name="" id="" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        <span className="flex flex-row gap-2 items-center justify-between flex-1 h-full">
+                                            <p className="text-[15px] w-[25%] flex items-center justify-end text-sky-600 font-semibold">BMI</p>
+                                            <input type="text" name="" id="" placeholder='' className='w-[75%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        </span>
+                                    </span>
+                                </span>
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Applied Date</p>
+                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                </span>
+                            </div>
+
+                            <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Patient Referral Source</p>
+                                    <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full ">
+                                        <input type="text" name="" id="" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        <span className="flex flex-row gap-2 items-center justify-between flex-1 h-full">
+                                            <p className="text-[15px] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Blood Group</p>
+                                            <input type="text" name="" id="" placeholder='' className='w-[75%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        </span>
+                                    </span>
+                                </span>
+                                
+                                <span className="flex flex-row h-full w-2/3 items-center justify-between gap-5">
+                                    <p className="text-[15px] max-2xl:w-[40%] flex-1 flex items-center justify-end text-sky-600 font-semibold">Statement Msg</p>
+                                    <input type="text" name="" id="" placeholder='' className='w-[86.5%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                </span>
+                            </div>
+
+                            <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Prev. Address 1 </p>
+                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                </span>
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Prev. Address 2</p>
+                                    <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full ">
+                                        <input type="text" name="" id="" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        <span className="flex flex-row gap-2 items-center justify-between flex-1 h-full">
+                                            <p className="text-[15px] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Prev. City</p>
+                                            <input type="text" name="" id="" placeholder='' className='w-[75%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        </span>
+                                    </span>
+                                </span>
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Prev. State</p>
+                                    <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full ">
+                                        <input type="text" name="" id="" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        <span className="flex flex-row gap-2 items-center justify-between flex-1 h-full">
+                                            <p className="text-[15px] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Prev. Zip</p>
+                                            <input type="text" name="" id="" placeholder='' className='w-[75%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        </span>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px] ">
+
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Approximate OT Treatment Amount</p>
+                                    <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full ">
+                                        <input type="text" name="" id="" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        <span className="flex flex-row gap-2 items-center justify-between flex-1 h-full"></span>
+                                    </span>
+                                </span>
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
+                                    <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Approximate PT Treatment Amount</p>
+                                    <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full ">
+                                        <input type="text" name="" id="" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        <span className="flex flex-row gap-2 items-center justify-between flex-1 h-full"></span>
+                                    </span>
+                                </span>
+                                
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
+                                </span>
+                            </div>
+
+
+                        </div>
                     </div>
                 </div>
             </div>
