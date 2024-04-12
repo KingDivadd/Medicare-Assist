@@ -10,7 +10,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
             <RouteNav />
             <TabBar patient_tab={patient_tab} setPatient_tab={setPatient_tab} />
             <div className="w-full bg-sky-600 flex-1 py-3">
-                <div className="w-full h-full flex flex-row gap-3 items-start pt-3 justify-between bg-slate-100 overflow-hidden">
+                <div className="w-full h-full flex flex-row gap-3 items-start pt-3 justify-between bg-slate-100 pb-3 overflow-hidden">
                     <div className=" w-[200px] h-full flex flex-col justify-start">
                         <span className="w-full h-10 bg-blue-100"></span>
                         <span className="w-full h-10 bg-sky-500"></span>
@@ -305,6 +305,61 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     Update Plan
                                 </button>
                             </span>
+
+                            <div className="flex flex-col items-center justify-start w-full mt-5 ">
+                                <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2 bg-sky-600 text-[15px] text-white h-[40px] font-semibold">
+                                    Ref. Management
+                                    <button type="button" className='px-3 h-[25px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Add New</button>
+                                </span>
+                                <span className="w-full flex flex-row items-center justify-between h-[35px] bg-gray-300">
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Ref Provider</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Plan</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Priority</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Provider</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">From Date</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">To Date</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Referral #</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Visit Allowed</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Visit Used</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Active</p>
+                                    
+                                </span>
+                                <div className="w-full flex items-center justify-center h-[200px] bg-white rounded-b-[5px]">
+                                    <p className="text-lg font-semibold">No Data Found</p>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-row w-full gap-3 pt-3 border-b-[5px] border-sky-600 rounded-[5px] mt-5">
+                                <button type="button" className="px-3 h-[30px] text-slate-100 bg-sky-600 hover:bg-sky-700 text-sm rounded-[3px] border border-sky-600 border-b-0">Eligibilities</button>
+                                <button type="button" className="px-3 h-[30px] text-slate-600 bg-slate-100 hover:bg-slate-200 text-sm rounded-[3px] border border-sky-600 border-b-0 ">Other Insurance</button>
+                            </div>
+                            <div className="flex flex-col items-center justify-start w-full mt-2 ">
+                                <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2 bg-sky-600 text-[15px] text-white h-[40px] font-semibold">
+                                    Eligibilities
+                                    <span className="flex flex-row items-center justify-end gap-5">
+                                        <button type="button" className='px-3 h-[25px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Advanced Eligibility</button>
+                                        <button type="button" className='px-3 h-[25px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Get Eligibility</button>
+                                        <button type="button" className='px-3 h-[25px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>View Audid</button>
+                                    </span>
+                                </span>
+                                <span className="w-full flex flex-row items-center justify-between h-[35px] bg-gray-300">
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Response</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Plan</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Plan Priority</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Eligibility Data</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Service Date</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Copay</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Deductible</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Provider</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Location</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Entered By</p>
+                                    
+                                </span>
+                                <div className="w-full flex items-center justify-center h-[200px] bg-white rounded-b-[5px]">
+                                    <p className="text-lg font-semibold">No Data Found</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
