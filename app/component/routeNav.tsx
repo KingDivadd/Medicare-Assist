@@ -29,7 +29,7 @@ const RouteNav = () => {
                     <p className="text-slate-300 text-[15px]">Home</p>
                 </Link>
                 
-                <Link href={'/ehr'} className={page === '/'? 'active-route-nav-item':'route-nav-item'}>
+                <Link href={'/'} className={page === '/'? 'active-route-nav-item':'route-nav-item'}>
                     <BiNotepad size={23} className="text-slate-300" />
                     <p className="text-slate-300 text-[15px]">EHR</p>
                 </Link>
@@ -44,9 +44,9 @@ const RouteNav = () => {
                     <p className="text-slate-300 text-[15px]">Scheduling</p>
                 </Link>
                 
-                <Link href={'/pmr'} className={page === '/pmr'? 'active-route-nav-item':'route-nav-item'}>
+                <Link href={'/pm'} className={page === '/pm'? 'active-route-nav-item':'route-nav-item'}>
                     <PiNotepad size={24} className="text-slate-300" />
-                    <p className="text-slate-300 text-[15px]">PMR</p>
+                    <p className="text-slate-300 text-[15px]">PM</p>
                 </Link>
                 
                 <Link href={'/reports'} className={page === '/reports'? 'active-route-nav-item':'route-nav-item'}>

@@ -12,7 +12,7 @@ import RouteNav from '../routeNav'
 const AdminOneDashboard = () => {
     return (
         <main className='w-full h-screen flex items-start justify-center bg-slate-200'>
-            <div className="w-full h-screen flex flex-col gap-1 bg-slate-200 overflow-y-auto xl:max-w-[1650px] mx-auto">
+            <div className="w-full h-screen flex flex-col gap-1 bg-slate-100 overflow-y-auto mx-auto">
                 <RouteNav />
                 <div className="w-full flex-1 flex flex-row gap-2">
                     <SideBar />

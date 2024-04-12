@@ -5,8 +5,8 @@ import React from 'react'
 const TabBar = ({tab, setTab}:SchedulingTabProps) => {
 
     return (
-        <div className="w-full bg-sky-700 h-[57px] flex flex-row items-end justify-between bg-white ">
-            <div className="flex flex-row h-[57px] gap-1 items-center w-auto h-[80%]">
+        <div className="w-full bg-sky-700 flex flex-row items-end justify-between bg-white pt-2">
+            <div className="flex flex-row h-[40px] gap-1 items-center w-auto">
                 <span onClick={()=>{setTab('calender')}} className={tab === 'calender' || tab === ''? 'active-scheduling-tab-item': 'scheduling-tab-item '}>
                     <p className="h-[57px] flex items-center text-[15px]">Calender</p>
                 </span>

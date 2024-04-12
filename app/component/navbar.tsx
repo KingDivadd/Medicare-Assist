@@ -6,7 +6,7 @@ import CustomButton from './custombuttom'
 const NavBar = () => {
     return (
         <header className='w-full absolute z-10'>
-            <nav className="max-w-[1440px] mx-auto flex justify-between items-center  max-sm:px-6 px-20 py-4">
+            <nav className=" mx-auto flex justify-between items-center  max-sm:px-6 px-20 py-4">
                 <Link href={'/'} className='flex justify-center items-center'>
                     <p className='text-blue-500 font-bold text-[20px]'>Medicare</p><p className='text-black font-bold text-[20px]'>Assist</p>
                     {/* <Image src={'/logo.svg'} alt='logo' width={118} height={18} className='object-contain'></Image> */}

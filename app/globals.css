@@ -126,3 +126,15 @@
 .fincancial-cont {
     height: calc(100vh - 205px);
 }
+
+.payment-btn {
+    @apply px-3 border-2 border-sky-600 bg-white text-slate-700 text-[14px] rounded-t-[3px] border-b-0 h-[35px];
+}
+
+.active-payment-btn {
+    @apply px-3 border-2 border-sky-600 bg-sky-600 text-white text-[14px] rounded-t-[3px] border-b-0 h-[35px]
+}
+
+.cont-3 {
+    height: calc(100vh - 189px);
+}

@@ -8,7 +8,7 @@ const Hero = () => {
 
     return (
         <div className="hero mx-auto gap-10 overflow-hidden ">
-            <div className="flex justify-between xl:flex-row flex-col mx-auto max-w-[1440px] max-sm:px-6 px-10 overflow-hidden gap-10 ">
+            <div className="flex justify-between xl:flex-row flex-col mx-auto px-20 max-sm:px-6 px-10 overflow-hidden gap-10 ">
                 <div className="w-5/10 xl:w-full  flex-1 pt-36 padding-x max-lg:px-10  ">
                     <h1 className="2xl:text-[50px] sm:text-[54px] text-[44px] font-extrabold text-black-400">
                         Optimize billing processes with AI: Precise, Swift, and Seamless.

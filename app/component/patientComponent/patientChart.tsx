@@ -14,14 +14,14 @@ import Image from 'next/image';
 
 const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
     return (
-        <main className="w-full h-screen flex flex-col bg-slate-200 overflow-hidden">
-            <div className="w-full h-screen flex flex-col bg-slate-200 overflow-hidden xl:max-w-[1650px] mx-auto">
+        <main className="w-full h-screen flex flex-col bg-slate-100 overflow-hidden">
+            <div className="w-full h-screen flex flex-col bg-slate-100 overflow-hidden mx-auto">
                 <RouteNav />
                 <TabBar patient_tab={patient_tab} setPatient_tab={setPatient_tab} />
 
                 <div className="w-full bg-sky-600 flex-1 py-3 overflow-hidden">
 
-                    <div className="flex w-full bg-gray-200 cont-2 overflow-y-auto px-5">
+                    <div className="flex w-full bg-gray-100 cont-2 overflow-y-auto px-5">
                         <div className="w-full h-auto flex-col">
 
                             <span className="w-full flex flex-row items-center justify-between gap-3 h-[50px] px-4">

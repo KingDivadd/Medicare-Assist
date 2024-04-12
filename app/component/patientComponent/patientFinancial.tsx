@@ -1,5 +1,6 @@
+'use client'
 import { PatientTabProps } from '@/types'
-import React from 'react'
+import React, { useState } from 'react'
 import RouteNav from '../routeNav'
 import TabBar from './tabBar'
 import { IoMdSettings } from 'react-icons/io'
@@ -7,6 +8,12 @@ import { IoPrintOutline } from 'react-icons/io5'
 import AgingBarChat from '../agingBarChat'
 
 const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
+    const [paymentBtnStatus, setPaymentBtnStatus] = useState(true)
+
+    const handlePaymentBtn = ()=>{
+        if (paymentBtnStatus){setPaymentBtnStatus(false)}
+        if (!paymentBtnStatus){setPaymentBtnStatus(true)}
+    }
     return (
         <main className="w-full h-screen flex flex-col bg-gray-100 overflow-hidden">
             <RouteNav />
@@ -115,9 +122,9 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     </div>
                                 </div>
                                 <div className="flex flex-col justify-start items-center w-[66%] h-auto shadow-xl bg-white">
-                                    <span className="flex flex-row w-full items-end justify-start border-b-[8px] border-sky-600 h-auto px-10 gap-4 h-[45px]">
-                                        <button type="button" className='h-[35px] px-3 border-2 border-sky-600 bg-sky-600 text-white text-[14px] rounded-t-[5px] border-b-0' >Statement History</button>
-                                        <button type="button" className='h-[35px] px-3 border-2 border-sky-600 text-[14px] rounded-t-[5px] border-b-0 bg-white' >Patient Payment</button>
+                                    <span className="flex flex-row w-full items-end justify-start border-b-[8px] border-sky-600 px-10 gap-4 pt-2 rounded-t-[10px]">
+                                        <button type="button" onClick={handlePaymentBtn} className={paymentBtnStatus?'active-payment-btn' : 'payment-btn'} >Statement History</button>
+                                        <button type="button" onClick={handlePaymentBtn} className={paymentBtnStatus?'payment-btn':'active-payment-btn'} >Patient Payment</button>
                                     </span>
 
                                     <div className="w-full h-auto flex flex-col justify-start items-center pt-3">
@@ -125,11 +132,11 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                             Statement History
                                         </span>
                                         <span className="flex flex-row items-center justify-between w-full h-[35px]">
-                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Print Date</p>
-                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Type</p>
-                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Printed By</p>
-                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-300 border-r border-slate-400">Amount</p>
-                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-300">E-Statement</p>
+                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-200 border-r border-slate-400">Print Date</p>
+                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-200 border-r border-slate-400">Type</p>
+                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-200 border-r border-slate-400">Printed By</p>
+                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-200 border-r border-slate-400">Amount</p>
+                                            <p className="h-full flex px-3 items-center justify-start text-[14px] text-slate-600 w-1/5 bg-slate-200">E-Statement</p>
                                         </span>
                                         <div className="w-full h-[200px] flex items-center justify-center bg-white mb-3">
                                             <p className="text-[15px] font-semibold text-slate-600">

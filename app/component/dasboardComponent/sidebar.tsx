@@ -12,63 +12,56 @@ const SideBar = () => {
                 </span>
                 
                 <span className=" bord">
-                    <p className="text-white text-sm">Today's appointment</p>
+                    <p className="text-white text-sm">Today's Appointment</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>
                 <span className=" bord">
-                    <p className="text-white text-sm">Patient in office</p>
+                    <p className="text-white text-sm">Patient in Office</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>
                 <span className=" bord">
-                    <p className="text-white text-sm">Notes in progress</p>
+                    <p className="text-white text-sm">Notes in Progress</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>
                 <span className=" bord">
-                    <p className="text-white text-sm">Not billed encounters</p>
+                    <p className="text-white text-sm">Not Billed Encounters</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>
                 <span className=" bord">
-                    <p className="text-white text-sm">Pending review labs</p>
+                    <p className="text-white text-sm">Pending Review Labs</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>
                 <span className=" bord">
-                    <p className="text-white text-sm">Pending review tab</p>
+                    <p className="text-white text-sm">Help and Tutorial Learning</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>
                 <span className=" bord">
-                    <p className="text-white text-sm">Help and tutorial learning</p>
+                    <p className="text-white text-sm">Customer Support</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>
                 <span className=" bord">
-                    <p className="text-white text-sm">Customer support</p>
-                    <span className="flex flex-row items-center justify-end gap-3 h-fill">
-                        <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
-                        <FiRefreshCcw size={18} className='text-slate-200' />
-                    </span>
-                </span>
-                <span className=" bord">
-                    <p className="text-white text-sm">File maintenance </p>
+                    <p className="text-white text-sm">File Maintenance </p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
@@ -82,7 +75,7 @@ const SideBar = () => {
                     </span>
                 </span>
                 <span className=" bord">
-                    <p className="text-white text-sm">Medical scrubbers</p>
+                    <p className="text-white text-sm">Medical Scrubbers</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
@@ -96,21 +89,21 @@ const SideBar = () => {
                     </span>
                 </span>
                 <span className=" bord">
-                    <p className="text-white text-sm">Support center</p>
+                    <p className="text-white text-sm">Support Center</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>
                 <span className=" bord">
-                    <p className="text-white text-sm">Patient porter</p>
+                    <p className="text-white text-sm">Patient Porter</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>
                 <span className=" bord">
-                    <p className="text-white text-sm">Provider schedule</p>
+                    <p className="text-white text-sm">Provider Schedule</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
