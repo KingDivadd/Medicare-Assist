@@ -19,6 +19,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                             New Plan
                         </button>
                     </div>
+                    {/* The right side */}
                     <div className="h-full flex-1 cont-5 overflow-y-auto">
                         <div className="w-full h-full flex-1">
                             <span className="w-full flex flex-row items-center justify-between gap-3 h-[55px] px-4 mb-4">
@@ -29,12 +30,12 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                 <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
-                                        <p className="text-sm font-semibold text-sky-500 w-[25%] h-full flex items-center justify-end">Relation</p>
+                                        <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Relation</p>
                                         <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
                                     </span>
 
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
-                                        <p className="text-sm font-semibold text-sky-500 w-[25%] h-full flex items-center justify-end">Relation</p>
+                                        <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Relation</p>
                                         <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
                                     </span>
                                 </div>
@@ -66,12 +67,12 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                 <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
-                                        <p className="text-sm font-semibold text-sky-500 w-[25%] h-full flex items-center justify-end">Address 1</p>
+                                        <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Address 1</p>
                                         <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
                                     </span>
 
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
-                                        <p className="text-sm font-semibold text-sky-500 w-[25%] h-full flex items-center justify-end">City</p>
+                                        <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">City</p>
                                         <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
                                     </span>
                                 </div>
@@ -112,7 +113,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                 <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
-                                        <p className="text-sm font-semibold text-sky-500 w-[25%] h-full flex items-center justify-end">Plan</p>
+                                        <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Plan</p>
                                         <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
                                     </span>
 
@@ -141,7 +142,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     </span>
 
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
-                                        <p className="text-sm font-semibold text-sky-500 w-[25%] h-full flex items-center justify-end">Eligibility</p>
+                                        <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Eligibility</p>
                                         <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
                                     </span>
 
@@ -199,7 +200,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                 <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
-                                        <p className="text-sm font-semibold text-sky-500 w-[25%] h-full flex items-center justify-end">Address</p>
+                                        <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Address</p>
                                         <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
                                     </span>
 
@@ -259,13 +260,13 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                 <div className="w-[90%] h-[80px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
-                                        <p className="text-sm font-semibold text-sky-500 w-[25%] h-full flex items-center justify-end">Comments</p>
+                                        <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Comments</p>
                                         <textarea  id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' ></textarea>
                                     </span>
 
                                     <span className="flex flex-col h-full w-1/2 items-center justify-start gap-3">
                                         <span className="flex flex-row h-[35px] item-center justify-between gap-5 w-full">
-                                            <p className="text-sm font-semibold text-sky-500 w-[25%] h-full flex items-center justify-end">Medicare Sec Plan Type</p>
+                                            <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Medicare Sec Plan Type</p>
                                             <input  id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
                                         </span>
                                         <span className="flex flex-row w-full h-[35px] items-center justify-between gap-5 ">
@@ -289,7 +290,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                     <span className="flex flex-col h-full w-1/2 items-center justify-start gap-3">
                                         <span className="flex flex-row h-full item-center justify-between gap-5 w-full">
-                                            <p className="text-sm font-semibold text-sky-500 w-[25%] h-full flex items-center justify-end">Initial Teatment Date</p>
+                                            <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Initial Teatment Date</p>
                                             <input  id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-[35px] items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
                                         </span>
                                         <span className="flex flex-row w-full h-[35px] items-center justify-between gap-5 "></span>
@@ -301,7 +302,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                             </div>
                             <span className="w-full flex h-auto items-center justify-center">
-                                <button type="button" className="mx-auto mt-5  h-10 px-3 text-white bg-lime-500 hover:bg-lime-600">
+                                <button type="button" className="mx-auto mt-5  h-10 px-3 text-white bg-lime-500 hover:bg-lime-600 rounded-[3px]">
                                     Update Plan
                                 </button>
                             </span>

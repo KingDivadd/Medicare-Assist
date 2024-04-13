@@ -299,10 +299,10 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
                                     <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Active</p>
                                     <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full">
-                                        <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                        <input type="checkbox" name="" id=""  className='h-[20px] w-[20px]' />
                                         <span className="flex flex-row items-center justify-between gap-3">
                                             <p className="text-[15px] text-sky-600 font-semibold">Adv. Directive</p>
-                                            <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                            <input type="checkbox" name="" id=""  className='h-[20px] w-[20px]' />
                                         </span>
                                     </span>
                                 </span>
@@ -310,14 +310,14 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
                                     <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Statement</p>
                                     <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full ">
-                                        <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                        <input type="checkbox" name="" id=""  className='h-[20px] w-[20px]' />
                                         <span className="flex flex-row items-center justify-between gap-3">
                                             <p className="text-[15px] text-sky-600 font-semibold">e-statement</p>
-                                            <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                            <input type="checkbox" name="" id=""  className='h-[20px] w-[20px]' />
                                         </span>
                                         <span className="flex flex-row items-center justify-between gap-3">
                                             <p className="text-[15px] text-sky-600 font-semibold">Pregnant</p>
-                                            <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                            <input type="checkbox" name="" id=""  className='h-[20px] w-[20px]' />
                                         </span>
                                     </span>
                                 </span>
@@ -325,10 +325,10 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
                                     <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Drug Hist Consent</p>
                                     <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full">
-                                        <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                        <input type="checkbox" name="" id=""  className='h-[20px] w-[20px]' />
                                         <span className="flex flex-row items-center justify-between gap-3">
                                             <p className="text-[15px] text-sky-600 font-semibold">Exempt Reporting</p>
-                                            <input type="checkbox" name="" id=""  className='h-[13px] w-[13px]' />
+                                            <input type="checkbox" name="" id=""  className='h-[20px] w-[20px]' />
                                         </span>
                                     </span>
                                 </span>
