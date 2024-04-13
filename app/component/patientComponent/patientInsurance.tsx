@@ -28,7 +28,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <p className="text-lg text-sky-800 font-semibold h-full flex items-end">Insured Party</p>
                                 <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[73%]"></span>
                             </span>
-                            <div className="w-full px-20 flex flex-col items-end justify-start gap-3">
+                            <div className="w-full px-15 flex flex-col items-end justify-start gap-3">
 
                                 <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
@@ -111,7 +111,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[73%]"></span>
                             </span>
 
-                            <div className="w-full  px-20 flex flex-col items-end justify-start gap-3">
+                            <div className="w-full  px-15 flex flex-col items-end justify-start gap-3">
 
                                 <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
