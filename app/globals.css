@@ -128,11 +128,11 @@
 }
 
 .payment-btn {
-    @apply px-3 border-2 border-sky-600 bg-white text-slate-700 text-[14px] rounded-t-[3px] border-b-0 h-[35px];
+    @apply px-3 border-2 border-sky-600 bg-white text-slate-700 text-[14px] rounded-t-[3px] border-b-0 h-[30px];
 }
 
 .active-payment-btn {
-    @apply px-3 border-2 border-sky-600 bg-sky-600 text-white text-[14px] rounded-t-[3px] border-b-0 h-[35px]
+    @apply px-3 border-2 border-sky-600 bg-sky-600 text-white text-[14px] rounded-t-[3px] border-b-0 h-[30px]
 }
 
 .cont-3 {

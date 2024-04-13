@@ -1,10 +1,17 @@
+'use clidnt'
 import { PatientTabProps } from '@/types'
-import React from 'react'
+import React, { useState } from 'react'
 import RouteNav from '../routeNav'
 import TabBar from './tabBar'
 import { IoMdAdd } from "react-icons/io";
 
 const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
+    const [eligibility, setEligibility] = useState(true)
+    const handleEligibility = ()=>{
+        
+    }
+
+
     return (
         <main className="w-full h-screen flex flex-col bg-slate-100 overflow-hidden">
             <RouteNav />
@@ -28,9 +35,9 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <p className="text-lg text-sky-800 font-semibold h-full flex items-end">Insured Party</p>
                                 <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[73%]"></span>
                             </span>
-                            <div className="w-full px-15 flex flex-col items-end justify-start gap-3">
+                            <div className="w-full px-10 flex flex-col items-end justify-start gap-3">
 
-                                <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
+                                <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
                                         <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Relation</p>
                                         <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
@@ -42,7 +49,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     </span>
                                 </div>
                                 
-                                <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
+                                <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full w-1/2 items-center justify-between gap-5 ">
                                         <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">First Name</p>
                                         <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full">
@@ -67,7 +74,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                 </div>
 
-                                <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
+                                <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
                                         <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Address 1</p>
                                         <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
@@ -79,7 +86,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     </span>
                                 </div>
 
-                                <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
+                                <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full w-1/2 items-center justify-between gap-5 ">
                                         <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">State</p>
                                         <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full">
@@ -111,9 +118,9 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <span className="flex flex-1 flex-row items-center justify-end gap-2 border-b-2 border-sky-700 h-[73%]"></span>
                             </span>
 
-                            <div className="w-full  px-15 flex flex-col items-end justify-start gap-3">
+                            <div className="w-full  px-10 flex flex-col items-end justify-start gap-3">
 
-                                <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
+                                <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
                                         <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Plan</p>
                                         <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
@@ -131,7 +138,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     </span>
                                 </div>
                                 
-                                <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
+                                <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full w-1/2 items-center justify-between gap-5 ">
                                         <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">ID #</p>
                                         <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full">
@@ -150,7 +157,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                 </div>
 
-                                <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
+                                <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full w-1/2 items-center justify-between gap-5 ">
                                         <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Gropp</p>
                                         <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full">
@@ -175,7 +182,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                 </div>
 
-                                <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
+                                <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full w-1/2 items-center justify-between gap-5 ">
                                         <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">WC Case</p>
                                         <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full">
@@ -200,7 +207,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                 </div>
 
-                                <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
+                                <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
                                         <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Address</p>
                                         <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
@@ -225,7 +232,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     </span>
                                 </div>
 
-                                <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
+                                <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
                                         <p className="text-[15px] max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold "></p>
                                         <span className="flex items-center justify-center w-[75%]">
@@ -260,7 +267,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     </span>
                                 </div>
 
-                                <div className="w-[90%] h-[80px] flex flex-row gap-5 ">
+                                <div className="w-[95%] h-[80px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2">
                                         <p className="text-sm font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Comments</p>
                                         <textarea  id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' ></textarea>
@@ -287,7 +294,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     
                                 </div>
 
-                                <div className="w-[90%] h-[35px] flex flex-row gap-5 ">
+                                <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-5 w-1/2"></span>
 
                                     <span className="flex flex-col h-full w-1/2 items-center justify-start gap-3">
@@ -333,10 +340,10 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                             </div>
 
                             <div className="flex flex-row w-full gap-3 pt-3 border-b-[5px] border-sky-600 rounded-[5px] mt-5">
-                                <button type="button" className="px-3 h-[30px] text-slate-100 bg-sky-600 hover:bg-sky-700 text-sm rounded-[3px] border border-sky-600 border-b-0">Eligibilities</button>
-                                <button type="button" className="px-3 h-[30px] text-slate-600 bg-slate-100 hover:bg-slate-200 text-sm rounded-[3px] border border-sky-600 border-b-0 ">Other Insurance</button>
+                                <button type="button" onClick={()=>{setEligibility(true)}} className={eligibility?'active-payment-btn':'payment-btn'}>Eligibilities</button>
+                                <button type="button" onClick={()=>{setEligibility(false)}} className={eligibility?'payment-btn':'active-payment-btn'}>Other Insurance</button>
                             </div>
-                            <div className="flex flex-col items-center justify-start w-full mt-2 ">
+                            {eligibility?<div className="flex flex-col items-center justify-start w-full mt-2 ">
                                 <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2 bg-sky-600 text-[15px] text-white h-[40px] font-semibold">
                                     Eligibilities
                                     <span className="flex flex-row items-center justify-end gap-5">
@@ -358,10 +365,34 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Entered By</p>
                                     
                                 </span>
-                                <div className="w-full flex items-center justify-center h-[200px] bg-white rounded-b-[5px]">
+                                <div className="w-full flex items-center justify-center h-[300px] bg-white rounded-b-[5px]">
                                     <p className="text-lg font-semibold">No Data Found</p>
                                 </div>
                             </div>
+                            :
+                            <div className="flex flex-col items-center justify-start w-full mt-2 ">
+                                <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2 bg-sky-600 text-[15px] text-white h-[40px] font-semibold">
+                                    Other Insurance
+                                    <span className="flex flex-row items-center justify-end gap-5">
+                                    </span>
+                                </span>
+                                <span className="w-full flex flex-row items-center justify-between h-[35px] bg-gray-300">
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Response</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Plan</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Plan Priority</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Eligibility Data</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Service Date</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Copay</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Deductible</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Provider</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Location</p>
+                                    <p className="text-sm px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Entered By</p>
+                                    
+                                </span>
+                                <div className="w-full flex items-center justify-center h-[300px] bg-white rounded-b-[5px]">
+                                    <p className="text-lg font-semibold">No Data Found</p>
+                                </div>
+                            </div>}
 
                         </div>
                     </div>
