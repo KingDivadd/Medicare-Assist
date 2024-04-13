@@ -13,7 +13,9 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                 <div className="w-full h-full flex flex-row gap-3 items-start pt-3 justify-between bg-slate-100 pb-3 overflow-hidden">
                     <div className=" w-[200px] h-full flex flex-col justify-start">
                         <span className="w-full h-10 bg-blue-100"></span>
-                        <span className="w-full h-10 bg-sky-500"></span>
+                        <span className="w-full h-10 bg-sky-500 text-white text-sm flex flex-row items-center justify-start px-2">
+                            BCBS SC
+                        </span>
                         <button type="button" className="text-sm text-white flex items-center justify-center gap-1 h-10 bg-sky-500 hover:bg-sky-600 mt-5 w-[100px] mx-auto rounded-[3px]">
                             <IoMdAdd size={20} />
                             New Plan
