@@ -26,8 +26,8 @@ const SchedulingSchedule = ({tab, setTab}:SchedulingTabProps) => {
                         <span className="flex flex-row items-center justify-between h-[40px] w-full bg-sky-600 border-2 border-sky-600 rounded-t-[6px] px-3">
                             <p className="text-slate-100 font-semibold text-[15px]">Provider/Resoureces Schedule</p>
                             <span className="flex flex-row items-center h-full justify-end w-auto gap-3">
-                                <button type="button" className='px-4 text-[15px] h-[27px] text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-[3px]'>Create new schedule</button>
-                                <button type="button" className='px-4 text-[15px] h-[27px] text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-[3px]'>Batch schedule</button>
+                                <button type="button" className='px-4 text-sm h-[30px] text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-[3px]'>Create new schedule</button>
+                                <button type="button" className='px-4 text-sm h-[30px] text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-[3px]'>Batch schedule</button>
                             </span>
                         </span>
 
@@ -50,15 +50,15 @@ const SchedulingSchedule = ({tab, setTab}:SchedulingTabProps) => {
                                     {[1,2,3,4,5,6,7,8,9,10,11,12,1,1,1,1,1,1].map((data, ind)=>{
                                         return (
                                                 <tr key={ind} className='h-[50px]'>
-                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 ..."></td>
-                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 ..."></td>
-                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 ..."></td>
-                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 ..."></td>
-                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 ..."></td>
-                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 ..."></td>
-                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 ..."></td>
-                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 ..."></td>
-                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 ..."><p className="w-[30px]"></p> <ImBin size={16} color='red' className='cursor-pointer mx-auto ' /> </td>
+                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 text-sm ..."></td>
+                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 text-sm ..."></td>
+                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 text-sm ..."></td>
+                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 text-sm ..."></td>
+                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 text-sm ..."></td>
+                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 text-sm ..."></td>
+                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 text-sm ..."></td>
+                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 text-sm ..."></td>
+                                                    <td className="border border-slate-200 border-r-0 border-l-0 pl-1 text-sm ..."><p className="w-[30px]"></p> <ImBin size={16} color='red' className='cursor-pointer mx-auto ' /> </td>
                                                 </tr>
                                         )
                                     })}

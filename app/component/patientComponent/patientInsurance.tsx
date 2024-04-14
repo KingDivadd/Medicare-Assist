@@ -19,11 +19,11 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
             <div className="w-full bg-sky-600 flex-1 py-3">
                 <div className="w-full h-full flex flex-row gap-3 items-start pt-3 justify-between bg-slate-100 pb-3 overflow-hidden">
                     <div className=" w-[200px] h-full flex flex-col justify-start">
-                        <span className="w-full h-10 bg-blue-100"></span>
-                        <span className="w-full h-10 bg-sky-500 text-white text-sm flex flex-row items-center justify-start px-2">
+                        <span className="w-full h-10 bg-blue-200"></span>
+                        <span className="w-full h-10 bg-sky-600 text-white text-sm flex flex-row items-center justify-start px-2">
                             BCBS SC
                         </span>
-                        <button type="button" className="text-sm text-white flex items-center justify-center gap-1 h-10 bg-sky-500 hover:bg-sky-600 mt-5 w-[100px] mx-auto rounded-[3px]">
+                        <button type="button" className="text-sm text-white flex items-center justify-center gap-1 h-10 bg-sky-600 hover:bg-sky-700 mt-5 px-3 mx-auto rounded-[3px]">
                             <IoMdAdd size={20} />
                             New Plan
                         </button>
@@ -319,7 +319,7 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                             <div className="flex flex-col items-center justify-start w-full mt-5 ">
                                 <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2 bg-sky-600 text-[15px] text-white h-[40px] font-semibold">
                                     Ref. Management
-                                    <button type="button" className='px-3 h-[25px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Add New</button>
+                                    <button type="button" className='px-3 h-[30px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Add New</button>
                                 </span>
                                 <span className="w-full flex flex-row items-center justify-between h-[35px] bg-gray-300">
                                     <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[10%] border-r border-gray-700">Ref Provider</p>
@@ -347,9 +347,9 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2 bg-sky-600 text-[15px] text-white h-[40px] font-semibold">
                                     Eligibilities
                                     <span className="flex flex-row items-center justify-end gap-5">
-                                        <button type="button" className='px-3 h-[25px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Advanced Eligibility</button>
-                                        <button type="button" className='px-3 h-[25px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Get Eligibility</button>
-                                        <button type="button" className='px-3 h-[25px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>View Audid</button>
+                                        <button type="button" className='px-3 h-[30px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Advanced Eligibility</button>
+                                        <button type="button" className='px-3 h-[30px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>Get Eligibility</button>
+                                        <button type="button" className='px-3 h-[30px] rounded-[3px] text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 '>View Audid</button>
                                     </span>
                                 </span>
                                 <span className="w-full flex flex-row items-center justify-between h-[35px] bg-gray-300">

@@ -17,9 +17,9 @@ const SchedulingDaySheet = ({tab, setTab}:SchedulingTabProps) => {
                         </span>
                     </span>
 
-                    <div className="w-full flex flex-col items-center justify-start overflow-y-auto cont-3 gap-3">
+                    <div className="w-full flex flex-col items-center justify-start overflow-y-auto cont-3 ">
                         
-                        <div className="flex flex-col xl:w-[95%] px-10 py-6 mx-auto bg-blue-100 gap-3 shadow-xl">
+                        <div className="flex flex-col xl:w-[95%] px-10 py-6 mx-auto bg-blue-200 gap-3 ">
                             <div className="flex flex-col w-full items-center justify-center gap-2">
                                 
                                 <span className="flex flex-row gap-[140px] w-full items-center justify-center h-auto">
@@ -160,7 +160,7 @@ const SchedulingDaySheet = ({tab, setTab}:SchedulingTabProps) => {
 
                         </div>
 
-                        <span className="xl:w-[95%] mx-auto flex flex-row items-center justify-between bg-sky-600 h-[40px] mt-2 px-2 rounded-t-[6px] border-2 border-sky-600">
+                        <span className="xl:w-[95%] mx-auto flex flex-row items-center justify-between bg-sky-600 h-[40px] mt-5 px-2 rounded-t-[6px] border-2 border-sky-600">
                             <p className="text-slate-100 text-[15px] font-semibold">Search Result</p>
                             <span className="w-auto flex flex-row items-center h-full jusitify-between">
                                 <button type="button" className='w-[100px] h-[30px] rounded-[3px] bg-slate-100 hover:bg-slate-200 text-slate-600'>Print</button>

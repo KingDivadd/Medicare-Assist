@@ -17,7 +17,7 @@ const ScheduleWaitList = ({tab, setTab}:SchedulingTabProps) => {
                     </span>
                 </span>
 
-                <div className="flex flex-col xl:w-[93%] px-10 py-6 mx-auto bg-blue-100 gap-3 shadow-xl">
+                <div className="flex flex-col xl:w-[93%] px-10 py-6 mx-auto bg-blue-200 gap-3 ">
                     <div className="flex flex-col w-full items-center justify-center gap-2">
                         
                         <span className="flex flex-row gap-[140px] w-full items-center justify-center h-auto">

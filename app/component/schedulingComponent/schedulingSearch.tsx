@@ -18,7 +18,7 @@ const ScheduleingSearch = ({tab, setTab}:SchedulingTabProps) => {
                     </span>
 
 
-                    <div className="flex flex-col w-[93%] px-10 py-6 mx-auto bg-blue-100 shadow-xl ">
+                    <div className="flex flex-col w-[93%] px-10 py-6 mx-auto bg-blue-200 ">
                         <span className="flex flex-row gap-2  px-2 h-[50px] items-center justify-between w-full">
                             <p className="text-slate-600 text-[15px] font-semibold">Status Colors</p>
                             <span className="flex-1 border-b border-sky-600 h-[9px]"></span>
