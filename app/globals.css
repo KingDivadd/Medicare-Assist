@@ -17,7 +17,7 @@
 
 ::-webkit-scrollbar-thumb {
     /* background-color: red; */
-    @apply bg-sky-700
+    @apply bg-sky-600 rounded-[5px];
 }
 
 .route-nav-item {
