@@ -24,9 +24,9 @@ const AppointmentStatusBar = () => {
                         <p className="text-white text-[16px]">Seen</p>
                     </span>
                     <div className="flex flex-col h-full py-[4px] justify-center items-center gap-1">
-                        <p className="text-black text-lg">40</p>
-                        <p className="text-black text-lg">8</p>
-                        <p className="text-black text-lg">2334</p>
+                        <p className="text-black text-lg">0</p>
+                        <p className="text-black text-lg">0</p>
+                        <p className="text-black text-lg">0</p>
                     </div>
                 </div>
                 
@@ -35,9 +35,9 @@ const AppointmentStatusBar = () => {
                         <p className="text-white text-[16px]">No Show</p>
                     </span>
                     <div className="flex flex-col h-full py-[4px] justify-center items-center gap-1">
-                        <p className="text-black text-lg">40</p>
-                        <p className="text-black text-lg">8</p>
-                        <p className="text-black text-lg">2334</p>
+                        <p className="text-black text-lg">0</p>
+                        <p className="text-black text-lg">0</p>
+                        <p className="text-black text-lg">0</p>
                     </div>
                 </div>
                 
@@ -46,9 +46,9 @@ const AppointmentStatusBar = () => {
                         <p className="text-white text-[16px]">Cancelled</p>
                     </span>
                     <div className="flex flex-col h-full py-[4px] justify-center items-center gap-1">
-                        <p className="text-black text-lg">40</p>
-                        <p className="text-black text-lg">8</p>
-                        <p className="text-black text-lg">2334</p>
+                        <p className="text-black text-lg">0</p>
+                        <p className="text-black text-lg">0</p>
+                        <p className="text-black text-lg">0</p>
                     </div>
                 </div>
 
@@ -57,9 +57,9 @@ const AppointmentStatusBar = () => {
                         <p className="text-white text-[16px]">Rescheduled</p>
                     </span>
                     <div className="flex flex-col h-full py-[4px] justify-center items-center gap-1">
-                        <p className="text-black text-lg">40</p>
-                        <p className="text-black text-lg">8</p>
-                        <p className="text-black text-lg">2334</p>
+                        <p className="text-black text-lg">0</p>
+                        <p className="text-black text-lg">0</p>
+                        <p className="text-black text-lg">0</p>
                     </div>
                 </div>
 
