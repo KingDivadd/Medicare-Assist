@@ -148,7 +148,7 @@
 }
 
 .drop-element {
-    @apply flex items-center justify-start px-2 text-sm text-slate-600 h-[25px] w-full bg-white cursor-pointer;
+    @apply flex items-center justify-start px-2 text-sm text-slate-600 h-[30px] w-full bg-white cursor-pointer;
 }
 
 .drop-element:hover {
