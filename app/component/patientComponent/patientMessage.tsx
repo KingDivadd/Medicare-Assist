@@ -5,6 +5,7 @@ import RouteNav from '../routeNav'
 import TabBar from './tabBar'
 import { FaCaretUp } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa6";
+import NewMessageModal from './newMessageModal'
 
 
 const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
@@ -15,11 +16,9 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
         if(dropMenu){setDropMenu(false)}
         if(!dropMenu){setDropMenu(true)}
     }
-    const handleDropElement = (data:any)=>{
-
-    }
+    
     return (
-        <main className="w-full h-screen flex flex-col bg-slate-100 overflow-hidden">
+        <main className="relative w-full h-screen flex flex-col bg-slate-100 overflow-hidden">
             <RouteNav />
             <TabBar patient_tab={patient_tab} setPatient_tab={setPatient_tab} />
             <div className="w-full bg-sky-600 flex-1 py-3 overflow-hidden">
@@ -47,13 +46,6 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     </span>
                                     }
                                 </div>
-
-
-
-
-
-
-
 
                             </span>
                             <span className="flex flex-row w-full items-center jusity-between gap-3">
@@ -107,6 +99,7 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                 </div>
             </div>
+            <NewMessageModal />
         </main>
     )
 }
