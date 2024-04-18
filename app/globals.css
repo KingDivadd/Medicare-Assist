@@ -156,9 +156,9 @@
 }
 
 .drop-element:first-child {
-    @apply rounded-t-[3px]
+    @apply rounded-t-[5px]
 }
 
 .drop-element:last-child {
-    @apply rounded-b-[3px]
+    @apply rounded-b-[5px]
 }
