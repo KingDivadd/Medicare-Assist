@@ -1,9 +1,23 @@
+'use client'
 import { PatientTabProps } from '@/types'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import RouteNav from '../routeNav'
 import TabBar from './tabBar'
+import { FaCaretUp } from "react-icons/fa6";
+import { FaCaretDown } from "react-icons/fa6";
+
 
 const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
+    const [dropMenu, setDropMenu] = useState(false)
+    const [dropElement, setDropElement] = useState('SELECT')
+
+    const handleDropMenu =()=>{
+        if(dropMenu){setDropMenu(false)}
+        if(!dropMenu){setDropMenu(true)}
+    }
+    const handleDropElement = (data:any)=>{
+
+    }
     return (
         <main className="w-full h-screen flex flex-col bg-slate-100 overflow-hidden">
             <RouteNav />
@@ -14,7 +28,33 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                         <div className="w-[450px] flex flex-col gap-4 justify-center items-center">
                             <span className="flex flex-row w-full items-center jusity-between gap-3">
                                 <p className="text-sm text-sky-600 w-[30%] font-semibold">Message Type</p>
-                                <input type="text" name="" id="" placeholder='' className='w-[70%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+
+                                <div className="relative flex h-auto items-center justify-start w-[30%] w-full">
+                                    <span onClick={handleDropMenu} className="flex flex-row item-center jusitify-between w-full h-[25px] cursor-pointer ">
+                                        <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white text-slate-600 text-sm">{dropElement}</span>
+                                        <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 text-white">
+                                            {dropMenu? <FaCaretUp  /> : <FaCaretDown  />}
+                                        </span>
+                                    </span>
+
+                                    {dropMenu && 
+                                    <span className="absolute flex flex-col justify-start items-center w-full h-auto top-[30px] left-0">
+                                        {['SELECT','Amendment', 'Collect Balance', 'Dunning', 'eRefil', 'Financial', 'Laboratory', 'Medication', 'Message', 'Other', 'Patient Refil', 'Phone Log', 'Reminder', 'Rx Change', 'Rx Fill', 'Secure Email' ].map((data, ind)=>{
+                                            return (
+                                                <span onClick={()=> {setDropElement(data)}} key={ind} className="drop-element">{data}</span>
+                                            )
+                                        })}
+                                    </span>
+                                    }
+                                </div>
+
+
+
+
+
+
+
+
                             </span>
                             <span className="flex flex-row w-full items-center jusity-between gap-3">
                                 <p className="text-sm text-sky-600 w-[30%] font-semibold">Message Status</p>

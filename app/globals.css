@@ -146,3 +146,19 @@
 .cont-5 {
     height: calc(100vh - 135px)
 }
+
+.drop-element {
+    @apply flex items-center justify-start px-2 text-sm text-slate-600 h-[25px] w-full bg-white cursor-pointer;
+}
+
+.drop-element:hover {
+    @apply bg-sky-600 text-white;
+}
+
+.drop-element:first-child {
+    @apply rounded-t-[3px]
+}
+
+.drop-element:last-child {
+    @apply rounded-b-[3px]
+}
