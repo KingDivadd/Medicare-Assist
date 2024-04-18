@@ -39,7 +39,7 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                     {dropMenu && 
                                     <span className="absolute flex flex-col justify-start items-center w-full h-auto top-[30px] left-0 border border-sky-600 rounded-[5px] shadow-xl ">
-                                        {['SELECT','Amendment', 'Collect Balance', 'Dunning', 'eRefil', 'Financial', 'Laboratory', 'Medication', 'Message', 'Other', 'Patient Refil', 'Phone Log', 'Reminder', 'Rx Change', 'Rx Fill', 'Secure Email' ].map((data, ind)=>{
+                                        {['SELECT','Collect Balances', 'eRefill', 'Financial', 'Laboratory', 'Medication', 'Message', 'Other', 'Patient Refill', 'Phone Log', 'Reminders', 'Rx Change', 'Rx Fill', 'Secure Email' ].map((data, ind)=>{
                                             return (
                                                 <span onClick={()=> {setDropElement(data)}} key={ind} className="drop-element">{data}</span>
                                             )
