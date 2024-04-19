@@ -97,7 +97,7 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Assigned CC</p>
                                     <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[9%]">Entered By</p>
                                 </span>
-                                <div className="w-full flex flex-col items-center justify-start bg-white rounded-b-[5px] overflow-y-auto min-h-[400px]">
+                                <div className="w-full flex flex-col items-center justify-start bg-white rounded-b-[5px] overflow-y-auto min-h-[250px]">
                                         {message.length === 0 ? <p className="text-lg my-auto">No Data Found</p> : <>
                                             {message.map((data, ind)=>{
                                                 const {type, status, alertType, assignedTo, priority, assignedCC, trackingField, predefinedMessage, calledDate, message, patientView, byText, byEmail} = data
