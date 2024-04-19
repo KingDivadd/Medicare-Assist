@@ -33,7 +33,6 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
     })
 
     useEffect(() => {
-        console.log('selected message here ',selectedMessage)
         if (selectedMessage.ind + 1){
             setUpdateBtn(true)
         }
@@ -62,17 +61,16 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
     const handleCreateMessage = (e:any)=>{
         e.preventDefault()
         setMessage([...message, dropElements])
-        console.log(dropElements)
         handleCloseModal()
     }
 
     const handleMessageUpdate = ()=>{
-        console.log(message)
         message[selectedMessage.ind] = dropElements
         setMessage(message)
+        handleCloseModal()
     }
     return (
-        <div className="fixed z-10 inset-0 overflow-y-auto" id="modal" onClick={()=>{console.log('clicked')}}>
+        <div className="fixed z-10 inset-0 overflow-y-auto" id="modal">
             <div className="flex items-center justify-center min-h-screen">
                 <div className="fixed inset-0 transition-opacity" aria-hidden="true">
                     <div className="absolute inset-0 bg-gray-500 opacity-35"></div>
