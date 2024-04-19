@@ -83,18 +83,19 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                         <div className="w-full flex flex-col cont-6 overflow-y-auto">
                             <div className="w-full flex flex-col justify-start item-center">
                                 <span className="w-full flex flex-row items-center justify-between h-[40px] bg-gray-300">
-                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[17.5%] border-r border-gray-400">Message</p>
-                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Status</p>
-                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Type</p>
-                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Priority</p>
-                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Called Date</p>
-                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Cell #</p>
-                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Email</p>
-                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Patient View</p>
-                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Tracking Field</p>
-                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Assigned To</p>
-                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Entered By</p>
-                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%]">Entered Date</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[17.5%] border-r border-gray-400">Message</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[6%] border-r border-gray-400">Status</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Type</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Priority</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[6.5%] border-r border-gray-400">Called Date</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Alert Type</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[5%] border-r border-gray-400">By Email</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[5%] border-r border-gray-400">By Text</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[6%] border-r border-gray-400">Patient View</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[8%] border-r border-gray-400">Tracking Field</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Assigned To</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Assigned CC</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[9%]">Entered By</p>
                                 </span>
                                 <div className="w-full flex flex-col items-center justify-start bg-white rounded-b-[5px] overflow-y-auto min-h-[400px]">
                                         {message.length === 0 ? <p className="text-lg my-auto">No Data Found</p> : <>
@@ -102,18 +103,19 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                                 const {type, status, alertType, assignedTo, priority, assignedCC, trackingField, predefinedMessage, calledDate, message, patientView, byText, byEmail} = data
                                                 return (
                                                     <span key={ind} onClick={()=> {setSelectedMessage({ind, data}); setMessageModal(true)}} className="w-full flex flex-row items-center justify-between h-[38px] cursor-pointer hover:bg-gray-100">
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[17.5%] border-r border-gray-400">{message}</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{status}</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{type}</p>
-                                                        <p className="text-sm text-start px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{priority}</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{calledDate}</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{byText? 'True': 'False'}</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{byEmail? 'True': 'False'}</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{patientView? 'True': 'False'}</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{trackingField}</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{assignedTo}</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Entered By</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%]">Entered Date</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[17.5%] border-r border-gray-300">{message}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[6%] border-r border-gray-300">{status}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-300">{type}</p>
+                                                        <p className="text-sm text-start px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-300">{priority}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[6.5%] border-r border-gray-300">{calledDate}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-300">{alertType}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[5%] border-r border-gray-300">{byEmail? 'True': 'False'}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[5%] border-r border-gray-300">{byText? 'True': 'False'}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[6%] border-r border-gray-300">{patientView? 'True': 'False'}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[8%] border-r border-gray-300">{trackingField}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-300">{assignedTo}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-300">{assignedCC}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[9%]">{'David George'}</p>
                                                     </span>
                                                 )
                                             })}
