@@ -31,3 +31,12 @@ export interface PatientTabProps {
     patient_tab: string;
     setPatient_tab: (patient_tab: string)=> void;
 }
+
+export interface MessageModalProps {
+    messageModal: boolean;
+    message: any[]; 
+    setMessage: (message: any[]) => void;
+    setMessageModal: (messageModal: boolean) => void;
+    selectedMessage: any;
+    setSelectedMessage: (selectedMessage: any) => void
+}

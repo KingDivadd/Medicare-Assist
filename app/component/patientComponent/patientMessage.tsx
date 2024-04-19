@@ -1,6 +1,6 @@
 'use client'
 import { PatientTabProps } from '@/types'
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect,} from 'react'
 import RouteNav from '../routeNav'
 import TabBar from './tabBar'
 import { FaCaretUp } from "react-icons/fa6";
@@ -11,6 +11,9 @@ import NewMessageModal from './newMessageModal'
 const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
     const [dropMenu, setDropMenu] = useState(false)
     const [dropElement, setDropElement] = useState('SELECT')
+    const [messageModal, setMessageModal] = useState(false)
+    const [message, setMessage] = useState<any[]>([]);
+    const [selectedMessage, setSelectedMessage] = useState({})
 
     const handleDropMenu =()=>{
         if(dropMenu){setDropMenu(false)}
@@ -70,36 +73,60 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                         </div>
                     </div>
 
-                    <div className="w-full flex flex-col justify-start">
+                    <div className="w-full flex flex-col justify-start overflow-hidden">
                         <span className="w-full flex flex-row items-center justify-between bg-sky-600 text-[15px] text-white rounded-t-[5px] h-[40px] px-3 ">
                             Patient Message
-                            <button type="button" className='flex items-center justify-center text-sm text-slate-700 rounded-[3px] h-[30px] bg-slate-100 hover:bg-slate-200 px-3'>
+                            <button type="button" onClick={()=>{setMessageModal(true)}} className='flex items-center justify-center text-sm text-slate-700 rounded-[3px] h-[30px] bg-slate-100 hover:bg-slate-200 px-4'>
                                 New Message
                             </button>
                         </span>
-                        <span className="w-full flex flex-row items-center justify-between h-[35px] bg-gray-300">
-                            <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[17.5%] border-r border-gray-600">Message</p>
-                            <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-600">Status</p>
-                            <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-600">Type</p>
-                            <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-600">Priority</p>
-                            <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-600">Called Date</p>
-                            <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-600">Cell #</p>
-                            <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-600">Email</p>
-                            <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-600">Patient View</p>
-                            <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-600">Tracking Field</p>
-                            <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-600">Assigned To</p>
-                            <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-600">Entered By</p>
-                            <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%]">Entered Date</p>
-                        </span>
-                        <div className="w-full flex items-center justify-center h-[350px] bg-white rounded-b-[5px]">
-                            <p className="text-lg">No Data Found</p>
+                        <div className="w-full flex flex-col cont-6 overflow-y-auto">
+                            <div className="w-full flex flex-col justify-start item-center">
+                                <span className="w-full flex flex-row items-center justify-between h-[40px] bg-gray-300">
+                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[17.5%] border-r border-gray-400">Message</p>
+                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Status</p>
+                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Type</p>
+                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Priority</p>
+                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Called Date</p>
+                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Cell #</p>
+                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Email</p>
+                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Patient View</p>
+                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Tracking Field</p>
+                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Assigned To</p>
+                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Entered By</p>
+                                    <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%]">Entered Date</p>
+                                </span>
+                                <div className="w-full flex flex-col items-center justify-start bg-white rounded-b-[5px] overflow-y-auto min-h-[400px]">
+                                        {message.length === 0 ? <p className="text-lg my-auto">No Data Found</p> : <>
+                                            {message.map((data, ind)=>{
+                                                const {type, status, alertType, assignedTo, priority, assignedCC, trackingField, predefinedMessage, calledDate, message, patientView, byText, byEmail} = data
+                                                return (
+                                                    <span key={ind} onClick={()=> {setSelectedMessage({ind, data}); setMessageModal(true)}} className="w-full flex flex-row items-center justify-between h-[38px] cursor-pointer hover:bg-gray-100">
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[17.5%] border-r border-gray-400">{message}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{status}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{type}</p>
+                                                        <p className="text-sm text-start px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{priority}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{calledDate}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{byText? 'True': 'False'}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{byEmail? 'True': 'False'}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{patientView? 'True': 'False'}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{trackingField}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">{assignedTo}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Entered By</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%]">Entered Date</p>
+                                                    </span>
+                                                )
+                                            })}
+                                        </>}
+                                </div>
+                            </div>
                         </div>
                     </div>
 
 
                 </div>
             </div>
-            <NewMessageModal />
+            {messageModal && <NewMessageModal messageModal={messageModal} setMessageModal={setMessageModal} setMessage={setMessage} message={message} selectedMessage={selectedMessage} setSelectedMessage={setSelectedMessage} />}
         </main>
     )
 }
