@@ -35,6 +35,9 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
     useEffect(() => {
         if (selectedMessage.ind + 1){
             setUpdateBtn(true)
+            const {type, status, alertType, assignedTo, priority, assignedCC, trackingField, predefinedMessage, calledDate, message, patientView, byText, byEmail} = selectedMessage.data
+            setDropElements({...dropElements, type: type, status: status, alertType: alertType, assignedTo: assignedTo, trackingField: trackingField, predefinedMessage: predefinedMessage, calledDate, message: message, patientView: patientView, byText: byText, byEmail: byEmail})
+
         }
     }, [])
 
