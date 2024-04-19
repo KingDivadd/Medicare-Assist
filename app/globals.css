@@ -158,6 +158,10 @@
     height: calc(100vh - 360px)
 }
 
+.cont-7 {
+    height: calc(100vh - 200px)
+}
+
 .drop-element {
     @apply flex items-center justify-start px-2 text-sm text-slate-600 h-[30px] w-full bg-white cursor-pointer;
 }
