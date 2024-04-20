@@ -10,7 +10,7 @@ const DropDown = ({title, dropArray, handleDropMenu, dropElements, dropMenus, se
             <span onClick={()=> {handleDropMenu(title)}} className="flex flex-row item-center jusitify-between w-full h-[35px] cursor-pointer rounded-[3px]  ">
                 <span className="flex flex-1 h-full items-center justify-start px-3 bg-slate-100 rounded-l-[3px] border border-slate-500 text-slate-600 text-sm">{dropElements[title]}</span>
                 <span className="flex flex-row w-[35px] h-full items-center justify-center bg-sky-600 text-white rounded-r-[3px] border border-sky-600">
-                    {dropMenus.title ? <FaCaretUp  /> : <FaCaretDown  />}
+                    {dropMenus[title] ? <FaCaretUp  /> : <FaCaretDown  />}
                 </span>
             </span>
 
