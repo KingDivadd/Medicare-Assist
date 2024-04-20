@@ -18,8 +18,6 @@ const RouteNav = () => {
     useEffect(() => {
         const path = window.location.pathname;
         setPage(path)
-        console.log(path); // This will log the path after localhost:3000/
-
     }, [])
     return (
         <nav className='w-full bg-sky-700 flex flex-row items-center justify-between positon-fixed'>

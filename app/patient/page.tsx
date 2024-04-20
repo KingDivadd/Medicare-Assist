@@ -23,7 +23,6 @@ const Patient = () => {
 
     useEffect(() => {
         if (patient_tab.trim() !== ''){
-            console.log('saving ', patient_tab)
             sessionStorage.setItem('patient_tab',patient_tab)
         }
     }, [patient_tab])
