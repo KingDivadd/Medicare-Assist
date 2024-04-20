@@ -4,12 +4,37 @@ import React, { useState } from 'react'
 import RouteNav from '../routeNav'
 import TabBar from './tabBar'
 import { IoMdAdd } from "react-icons/io";
+import DropDown from '../dropDown'
 
 const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
     const [eligibility, setEligibility] = useState(true)
-    const handleEligibility = ()=>{
+    const [dropMenus, setDropMenus] = useState<{ [key: string]: boolean }>({
+        relation: false,
+        sex: false,
+        plan: false,
+        eligibility: false,
+        accidentHour: false,
+        medicareSec: false,
         
-    }
+    });
+    const [dropElements, setDropElements] = useState({
+        relation: 'SELECT',
+        sex: 'SELECT',
+        plan: 'SELECT',
+        eligibility: 'SELECT',
+        accidentHour: 'SELECT',
+        medicareSec: 'SELECT',
+        
+    })
+
+    const handleDropMenu = (dropdown: any) => {
+        const updatedDropMenus = Object.keys(dropMenus).reduce((acc, key) => {
+            acc[key] = key === dropdown ? !dropMenus[key] : false;
+            return acc;
+        }, {} as { [key: string]: boolean });
+        setDropMenus(updatedDropMenus);
+        setDropElements({...dropElements, [dropdown]: 'SELECT'});
+    };
 
 
     return (
@@ -40,7 +65,9 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-4 w-1/2">
                                         <p className="text-sm text-end font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Relation</p>
-                                        <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        <span className="w-[75%] h-full ">
+                                            <DropDown title={'relation'} dropArray={['Spouse', 'Brother', 'Sister', 'Father', 'Mother']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                        </span>
                                     </span>
 
                                     <span className="flex flex-row h-full item-center justify-between gap-4 w-1/2">
@@ -67,7 +94,9 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                             <input type="text" name="" id="" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
                                             <span className="flex flex-row gap-2 items-center justify-between flex-1 h-full">
                                                 <p className="text-sm text-end w-[25%] flex items-center justify-end text-sky-600 font-semibold">SEX</p>
-                                                <input type="text" name="" id="" placeholder='' className='w-[75%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                                <span className="w-[75%] h-full ">
+                                                    <DropDown title={'sex'} dropArray={['Male', 'Female', 'Not Sure']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                                </span>
                                             </span>
                                         </span>
                                     </span>
@@ -123,7 +152,9 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <div className="w-[95%] h-[35px] flex flex-row gap-5 ">
                                     <span className="flex flex-row h-full item-center justify-between gap-4 w-1/2">
                                         <p className="text-sm text-end font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Plan</p>
-                                        <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        <span className="w-[75%] h-full ">
+                                            <DropDown title={'plan'} dropArray={['BCBS OF SC-BCBS SC']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                        </span>
                                     </span>
 
                                     <span className="flex flex-row h-full w-1/2 items-center justify-between gap-4 ">
@@ -152,7 +183,9 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                     <span className="flex flex-row h-full item-center justify-between gap-4 w-1/2">
                                         <p className="text-sm text-end font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Eligibility</p>
-                                        <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        <span className="w-[75%] h-full ">
+                                            <DropDown title={'eligibility'} dropArray={['Active', 'InActive']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                        </span>
                                     </span>
 
                                 </div>
@@ -258,8 +291,10 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     <span className="flex flex-row h-full w-1/2 items-center justify-between gap-4 ">
                                         <p className="text-sm text-end max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Accident Hour</p>
                                         <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[60%] h-full">
-                                            <input type="text" name="" id="" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
-                                            <span className="flex flex-row gap-2 items-center justify-between flex-1 h-full">
+                                            <span className="w-[40%] h-full ">
+                                                <DropDown title={'accidentHour'} dropArray={['NONE']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                            </span>
+                                            <span className="flex flex-row gap-2 items-center justify-between flex-1 h-full ">
                                                 <p className="text-sm text-end w-[25%] flex items-center justify-end text-sky-600 font-semibold">Accident State</p>
                                                 <input type="text" name="" id="" placeholder='' className='w-[75%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
                                             </span>
@@ -276,7 +311,9 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     <span className="flex flex-col h-full w-1/2 items-center justify-start gap-3">
                                         <span className="flex flex-row h-[35px] item-center justify-between gap-4 w-full">
                                             <p className="text-sm text-end font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end">Medicare Sec Plan Type</p>
-                                            <input  id="" placeholder='' className='w-[75%] max-2xl:w-[60%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                            <span className="w-[75%] h-full ">
+                                                <DropDown title={'medicareSec'} dropArray={['Option 1', 'Option 2']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                            </span>
                                         </span>
                                         <span className="flex flex-row w-full h-[35px] items-center justify-between gap-4 ">
                                             <p className="text-sm text-end max-2xl:w-[40%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Last Seen Date</p>
