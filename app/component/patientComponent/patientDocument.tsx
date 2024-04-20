@@ -13,7 +13,7 @@ const PatientDocument = ({patient_tab, setPatient_tab}:PatientTabProps) => {
     const [selectedMessage, setSelectedMessage] = useState({})
 
     useEffect(() => {
-        let test:any = [1,2,3,4,5,6,6,6,6,6,6,6,6,6,6,6,6]
+        let test:any = [1,2,3,4,5,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,]
         setMessage(test)
     }, [])
     return (
@@ -50,10 +50,10 @@ const PatientDocument = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     <span className="w-full flex flex-row items-center justify-between h-[40px] rounded-t-[5px] bg-sky-600 px-3 ">
                                         <p className="text-sm text-white font-semibold">Patient Documents</p>
                                         <span className="flex flex-row items-center justify-end gap-3 ">
-                                            <button type="button" className="text-slate-600 rounded-[3px] bg-white hover:bg-slate-100 px-3 h-[30px] ">Delete</button>
-                                            <button type="button" className="text-slate-600 rounded-[3px] bg-white hover:bg-slate-100 px-3 h-[30px] ">Fax</button>
-                                            <button type="button" className="text-slate-600 rounded-[3px] bg-white hover:bg-slate-100 px-3 h-[30px] ">Link to Message</button>
-                                            <button type="button" className="text-slate-600 rounded-[3px] bg-white hover:bg-slate-100 px-3 h-[30px] ">Download</button>
+                                            <button type="button" className="text-slate-600 rounded-[3px] font-semibold bg-white hover:bg-slate-100 px-3 h-[30px] ">Delete</button>
+                                            <button type="button" className="text-slate-600 rounded-[3px] font-semibold bg-white hover:bg-slate-100 px-3 h-[30px] ">Fax</button>
+                                            <button type="button" className="text-slate-600 rounded-[3px] font-semibold bg-white hover:bg-slate-100 px-3 h-[30px] ">Link to Message</button>
+                                            <button type="button" className="text-slate-600 rounded-[3px] font-semibold bg-white hover:bg-slate-100 px-3 h-[30px] ">Download</button>
                                         </span>
                                     </span>
                                     <span className="w-full flex flex-row items-center justify-between h-[37px] bg-gray-200">

@@ -1,10 +1,60 @@
+'use client'
 import { PatientTabProps } from '@/types'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import RouteNav from '../routeNav'
 import TabBar from './tabBar'
 import InputComponent from '../inputComponent'
+import DropDown from '../dropDown'
 
 const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
+    const [dropMenus, setDropMenus] = useState<{ [key: string]: boolean }>({
+        sex: false,
+        maritalStatus: false,
+        practice: false,
+        location: false,
+        primaryContact: false,
+        provider: false,
+        preferredLanguage: false,
+        preferredCommunication: false,
+        genderIdentity: false,
+        class: false,
+        sexualOrientation: false,
+        referralSource: false,
+        bloodGroup: false,
+    });
+    const [dropElements, setDropElements] = useState({
+        sex: 'SELECT',
+        maritalStatus: 'SELECT',
+        practice: 'SELECT',
+        location: 'SELECT',
+        primaryContact: 'SELECT',
+        provider: 'SELECT',
+        preferredLanguage: 'SELECT',
+        preferredCommunication: 'SELECT',
+        genderIdentity: 'SELECT',
+        class: 'SELECT',
+        sexualOrientation: 'SELECT',
+        referralSource: 'SELECT',
+        bloodGroup: 'SELECT',
+    })
+    // useEffect(() => {
+    //     if (selectedMessage.ind + 1){
+    //         // setUpdateBtn(true)
+    //         const {type, status, alertType, assignedTo, priority, assignedCC, trackingField, predefinedMessage, calledDate, message, patientView, byText, byEmail} = selectedMessage.data
+    //         setDropElements({...dropElements, type: type, status: status, alertType: alertType, assignedTo: assignedTo, priority: priority, assignedCC: assignedCC, trackingField: trackingField, predefinedMessage: predefinedMessage, calledDate, message: message, patientView: patientView, byText: byText, byEmail: byEmail})
+
+    //     }
+    // }, [])
+
+    const handleDropMenu = (dropdown: any) => {
+        const updatedDropMenus = Object.keys(dropMenus).reduce((acc, key) => {
+            acc[key] = key === dropdown ? !dropMenus[key] : false;
+            return acc;
+        }, {} as { [key: string]: boolean });
+        setDropMenus(updatedDropMenus);
+        setDropElements({...dropElements, [dropdown]: 'SELECT'});
+    };
+
     return (
         <main className="w-full h-screen flex flex-col bg-slate-100 overflow-hidden">
             <RouteNav />
@@ -78,7 +128,9 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                         <input type="text" name="" id="" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
                                         <span className="flex flex-row gap-1 items-center justify-between flex-1 h-full">
                                             <p className="text-sm text-end w-[25%] flex items-center justify-end text-sky-600 font-semibold">Sex</p>
-                                            <input type="text" name="" id="" placeholder='' className='w-[75%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                            <span className="w-[75%] h-full ">
+                                                <DropDown title={'sex'} dropArray={['Male', 'Female']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                            </span>
                                         </span>
                                     </span>
                                 </span>
@@ -90,7 +142,9 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
                                     <p className="text-sm text-end max-2xl:w-[30%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Marital Status</p>
-                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[70%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                    <span className="w-[75%] h-full ">
+                                        <DropDown title={'maritalStatus'} dropArray={['Single', 'Married']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                    </span>
                                 </span>
                                 
                             </div>
@@ -167,7 +221,9 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
                                     <p className="text-sm text-end max-2xl:w-[30%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Primary Contact</p>
-                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[70%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                    <span className="w-[75%] h-full ">
+                                        <DropDown title={'primaryContact'} dropArray={['Contact 1', 'Contact 2']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                    </span>
                                 </span>
                             </div>
 
@@ -175,17 +231,23 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
                                     <p className="text-sm text-end max-2xl:w-[30%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Practice</p>
-                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[70%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                    <span className="w-[75%] h-full ">
+                                        <DropDown title={'practice'} dropArray={['Practive', '2nd Practive']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                    </span>
                                 </span>
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
                                     <p className="text-sm text-end max-2xl:w-[30%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Location</p>
-                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[70%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                    <span className="w-[75%] h-full ">
+                                        <DropDown title={'location'} dropArray={['Male', 'Female']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                    </span>
                                 </span>
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
                                     <p className="text-sm text-end max-2xl:w-[30%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Provider</p>
-                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[70%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                    <span className="w-[75%] h-full ">
+                                        <DropDown title={'provider'} dropArray={['Option 1', 'Option 2']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                    </span>
                                 </span>
                             </div>
 
@@ -208,12 +270,16 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
                                     <p className="text-sm text-end max-2xl:w-[30%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Preferred Language</p>
-                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[70%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                    <span className="w-[75%] h-full ">
+                                        <DropDown title={'preferredLanguage'} dropArray={['English', 'French', 'German']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                    </span>
                                 </span>
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
                                     <p className="text-sm text-end max-2xl:w-[30%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Preferred Communication</p>
-                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[70%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                    <span className="w-[75%] h-full ">
+                                        <DropDown title={'preferredCommunication'} dropArray={['Virtual', 'Physical']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                    </span>
                                 </span>
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
@@ -257,27 +323,33 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
                                     <p className="text-sm text-end max-2xl:w-[30%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Gender Identity</p>
-                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[70%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                    <span className="w-[75%] h-full ">
+                                        <DropDown title={'genderIdentity'} dropArray={['Male', 'Female']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                    </span>
                                 </span>
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5">
                                     <p className="text-sm text-end max-2xl:w-[30%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Class</p>
-                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[70%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                    <span className="w-[75%] h-full ">
+                                        <DropDown title={'class'} dropArray={['Option 1', 'Option 2']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                    </span>
                                 </span>
                                 
                             </div>
 
-                            <div className="flex w-full flex-row items-center justify-between gap-2 h-[35px]">
+                            <div className="flex w-full flex-row items-center justify-between gap-2 ">
                                 
                                 
-                                <span className="flex flex-row h-full w-2/3 items-center justify-between gap-5">
-                                    <p className="text-sm text-end max-2xl:w-[16.5%] flex-1 flex items-center justify-end text-sky-600 font-semibold ">Gender Identity</p>
-                                    <input type="" name="" id="" placeholder='' className='w-[86%] max-2xl:w-[83.5%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                <span className="flex flex-row h-full w-2/3 items-start justify-between gap-5">
+                                    <p className="text-sm text-end max-2xl:w-[16.5%] flex-1 flex items-center justify-end text-sky-600 font-semibold h-[35px] ">Comment</p>
+                                    <textarea name="" id="" placeholder='' rows={3}  className='w-[86%] max-2xl:w-[83.5%] flex items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' ></textarea>
                                 </span>
                                 
-                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
+                                <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 h-[35px] ">
                                     <p className="text-sm text-end max-2xl:w-[30%] w-[25%] flex items-center justify-end text-sky-600 font-semibold">Sexual Orientation</p>
-                                    <input type="text" name="" id="" placeholder='' className='w-[75%] max-2xl:w-[70%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                    <span className="w-[75%] h-full ">
+                                        <DropDown title={'sexualOrientation'} dropArray={['Male', 'Female']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                    </span>
                                 </span>
                                 
                             </div>
@@ -380,10 +452,14 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 ">
                                     <p className="text-sm text-end max-2xl:w-[30%] w-[25%] flex items-center justify-end text-sky-600 font-semibold ">Patient Referral Source</p>
                                     <span className="flex flex-row items-center justify-between gap-2 w-[75%] max-2xl:w-[70%] h-full ">
-                                        <input type="text" name="" id="" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                        <span className="w-[50%] h-full ">
+                                            <DropDown title={'referralSource'} dropArray={['Adds', 'Internet']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                        </span>
                                         <span className="flex flex-row gap-1 items-center justify-between flex-1 h-full">
                                             <p className="text-sm text-end w-[25%] flex items-center justify-end text-sky-600 font-semibold">Blood Group</p>
-                                            <input type="text" name="" id="" placeholder='' className='w-[75%] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px]' />
+                                            <span className="w-[75%] h-full ">
+                                                <DropDown title={'bloodGroup'} dropArray={['A+', 'O']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                            </span>
                                         </span>
                                     </span>
                                 </span>

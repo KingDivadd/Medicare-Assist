@@ -40,3 +40,15 @@ export interface MessageModalProps {
     selectedMessage: any;
     setSelectedMessage: (selectedMessage: any) => void
 }
+
+export type HandleDropMenuFunction = (dropdown: any) => void;
+
+export interface DropDownProps {
+    title: any; 
+    dropArray: string[];
+    handleDropMenu: HandleDropMenuFunction;
+    dropElements: any; 
+    dropMenus:any; 
+    setDropElements: (dropElements: any) => void, 
+    setDropMenus: (dropMenus: any) => void 
+}

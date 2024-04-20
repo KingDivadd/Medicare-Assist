@@ -74,7 +74,7 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                     </div>
 
                     <div className="w-full flex flex-col justify-start overflow-hidden">
-                        <span className="w-full flex flex-row items-center justify-between bg-sky-600 text-[15px] text-white rounded-t-[5px] h-[40px] px-3 ">
+                        <span className="w-full flex flex-row items-center justify-between bg-sky-600 text-[15px] font-semibold text-white rounded-t-[5px] h-[40px] px-3 ">
                             Patient Message
                             <button type="button" onClick={()=>{setMessageModal(true)}} className='flex items-center justify-center text-sm text-slate-700 rounded-[3px] h-[30px] bg-slate-100 hover:bg-slate-200 px-4'>
                                 New Message
