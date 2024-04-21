@@ -133,16 +133,17 @@ const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                 <div className="flex-1 flex flex-col bg-sky-600 rounded-b-[5px] rounded-t-[5px]">
                                     <span className="flex items-center justify-between px-3 rounded-t-[5px] bg-sky-600 h-[40px]">
-                                        <p className="text-[15px] text-slate-100 font-semibold">VISIT</p>
+                                        <p className="text-[15px] text-white font-semibold">VISIT</p>
                                         <span className="flex flex-row items-center justify-end gap-2">
-                                            <button type="button" className='text-[13px] text-slate-200 bg-amber-500 hover:bg-amber-600 h-[27px] my-auto px-3 flex flex-row items-center justify-center rounded-[3px] text-white'>
-                                                <IoAdd className='text-white font-extrabold text-5lg' />
-                                                New Visit
+                                            <button type="button" className='bg-amber-500 hover:bg-amber-600 h-[30px] my-auto px-3 flex flex-row items-center justify-center rounded-[3px]'>
+                                                <IoAdd size={22} className='text-white font-extrabold' />
+                                                <p className="text-sm text-white font-semibold">New Visit</p>
                                             </button>
-                                            <button type="button" className='text-[14px] text-slate-200 bg-amber-500 hover:bg-amber-600 h-[27px] my-auto px-3 flex flex-row items-center justify-center rounded-[3px]'>
-                                                <IoAdd size={25} className='text-slate-200 font-extrabold' />
-                                                New Encounter
+                                            <button type="button" className='bg-amber-500 hover:bg-amber-600 h-[30px] my-auto px-3 flex flex-row items-center justify-center rounded-[3px]'>
+                                                <IoAdd size={22} className='text-white font-extrabold ' />
+                                                <p className="text-sm text-white font-semibold">New Encounter</p>
                                             </button>
+                                            
                                         </span>
                                     </span>
                                     <div className="w-full flex-1 flex items-center justify-center p-2 pt-0">
@@ -167,7 +168,7 @@ const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <div className="w-[65%] h-full flex flex-col gap-3">
                                     <div className="h-full flex flex-col w-full bg-white rounded-[5px] shadow-xl">
                                         <span className="flex flex-row items-center justify-start rounded-t-[5px] w-full bg-sky-600 h-[40px] border-2 border-sky-600 px-3">
-                                            <p className="text-[15px] text-slate-100 font-semibold">APPOINTMENTS</p>
+                                            <p className="text-[15px] text-white font-semibold">APPOINTMENTS</p>
                                         </span>
                                         <div className="w-full flex items-center jusitify-center px-2 py-2">
                                             <span className="flex flex-row items-center justify-start w-full rounded-[3px] h-[40px] bg-amber-100 px-2">
@@ -191,7 +192,7 @@ const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 <div className="w-[35%] h-full flex flex-col gap-3 pb-3">
                                     <div className="h-full flex flex-col gap-3 justify-start w-full bg-white rounded-[5px] shadow-xl">
                                         <span className="flex flex-row items-center justify-start rounded-t-[5px] w-full bg-sky-600 h-[40px] border-2 border-sky-600 px-3">
-                                            <p className="text-[15px] text-slate-100 font-semibold">PROBLEM LIST</p>
+                                            <p className="text-[15px] text-white font-semibold">PROBLEM LIST</p>
                                         </span>
                                         <div className="w-full flex items-center jusitify-center px-2 py-2">
                                             <span className="flex flex-row items-center justify-start w-full rounded-[3px] h-[20px] px-2">
@@ -202,7 +203,7 @@ const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                     <div className="h-full flex flex-col gap-3 justify-start w-full bg-white rounded-[5px] shadow-xl">
                                         <span className="flex flex-row items-center justify-start rounded-t-[5px] w-full bg-sky-600 h-[40px] border-2 border-sky-600 px-3">
-                                            <p className="text-[15px] text-slate-100 font-semibold">LAST CPT</p>
+                                            <p className="text-[15px] text-white font-semibold">LAST CPT</p>
                                         </span>
                                         <div className="w-full flex items-center jusitify-center px-2 py-2">
                                             <span className="flex flex-row items-center justify-start w-full rounded-[3px] h-[35px] px-2">
@@ -213,7 +214,7 @@ const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                                     <div className="h-full flex flex-col gap-3 justify-start w-full bg-white rounded-[5px] shadow-xl">
                                         <span className="flex flex-row items-center justify-start rounded-t-[5px] w-full bg-sky-600 h-[40px] border-2 border-sky-600 px-3">
-                                            <p className="text-[15px] text-slate-100 font-semibold">PATIENT GENERATED HEALTH DATA</p>
+                                            <p className="text-[15px] text-white font-semibold">PATIENT GENERATED HEALTH DATA</p>
                                         </span>
                                         <div className="w-full flex items-center jusitify-center px-2 py-2">
                                             <span className="flex flex-row items-center justify-center w-full rounded-[3px] h-[40px] px-2">

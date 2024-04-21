@@ -49,7 +49,7 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                         <div className="w-full flex flex-col jusitify-start overflow-y-auto gap-3 fincancial-cont">
                             <div className="flex flex-row w-full h-auto items-start justify-between gap-3">
                                 <div className="flex flex-col items-center justify-start w-[35%] shadow-xl">
-                                    <span className="flex items-center justify-start w-full border border-blue-200 bg-sky-600 text-[15px] font-bold text-slate-100 px-2 h-[40px] rounded-t-[5px] ">
+                                    <span className="flex items-center justify-start w-full border border-blue-200 bg-sky-600 text-[15px] font-bold text-white px-2 h-[40px] rounded-t-[5px] ">
                                         Advance Payment
                                     </span>
                                     <span className="w-full flex flex-row items-center justify-between bg-slate-300 h-[35px]">
@@ -72,7 +72,7 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 </div>
 
                                 <div className="flex flex-col w-[65%] h-full flex-1 shadow-xl">
-                                    <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-[15px] font-bold text-slate-100 px-2 h-[40px] rounded-t-[5px] ">
+                                    <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-[15px] font-bold text-white px-2 h-[40px] rounded-t-[5px] ">
                                         Aging
                                     </span>
                                     <div className="w-full flex-1 bg-white flex flex-row rounded-b-[10px] h-[335px]">
@@ -107,7 +107,7 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
 
                             <div className="flex flex-row w-full h-auto items-start justify-between gap-3 pb-3">
                                 <div className="flex flex-col justify-start items-center w-[34%] shadow-xl">
-                                    <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-[15px] font-semibold text-slate-100 px-2 h-[40px] rounded-t-[5px] ">
+                                    <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-[15px] font-semibold text-white px-2 h-[40px] rounded-t-[5px] ">
                                         Last Payment Date / Amount Paid
                                     </span>
                                     <div className="flex flex-col px-2 items-center justify-center gap-4 h-[200px] bg-white w-full rounded-b-[5px]">
@@ -128,7 +128,7 @@ const PatientFinancial = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     </span>
 
                                     <div className="w-full h-auto flex flex-col justify-start items-center pt-3">
-                                        <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-[15px] font-semibold text-slate-100 px-2 h-[40px] rounded-t-[5px]">
+                                        <span className="flex items-center justify-start w-full border border-sky-600 bg-sky-600 text-[15px] font-semibold text-white px-2 h-[40px] rounded-t-[5px]">
                                             Statement History
                                         </span>
                                         <span className="flex flex-row items-center justify-between w-full h-[35px]">
