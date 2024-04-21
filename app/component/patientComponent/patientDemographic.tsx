@@ -342,7 +342,7 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 
                                 <span className="flex flex-row h-full w-2/3 items-start justify-between gap-5">
                                     <p className="text-sm text-end max-2xl:w-[16.5%] flex-1 flex items-center justify-end text-sky-600 font-semibold h-[35px] ">Comment</p>
-                                    <textarea name="" id="" placeholder='' rows={3}  className='w-[86%] max-2xl:w-[83.5%] flex items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px] resize-none' ></textarea>
+                                    <textarea name="" id="" placeholder='' rows={3}  className='w-[86%] max-2xl:w-[83.5%] flex items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 p-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px] resize-none' ></textarea>
                                 </span>
                                 
                                 <span className="flex flex-row h-full w-1/3 items-center justify-between gap-5 h-[35px] ">
