@@ -303,9 +303,9 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                 </div>
 
                                 <div className="w-[95%] h-[80px] flex flex-row gap-5 ">
-                                    <span className="flex flex-row h-full item-start justify-between gap-4 w-1/2">
-                                        <p className="text-sm text-end font-semibold text-sky-600 w-[25%] h-full flex items-center justify-end h-[35px] ">Comments</p>
-                                        <textarea  id="" placeholder='' rows={4} className='w-[75%] max-2xl:w-[60%] flex items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px] resize-none ' ></textarea>
+                                    <span className="flex flex-row item-start justify-between gap-4 w-1/2">
+                                        <p className="text-sm text-end font-semibold text-sky-600 w-[25%] flex items-start justify-end h-[35px] ">Comments</p>
+                                        <textarea  id="" placeholder='' rows={4} className='w-[75%] max-2xl:w-[60%] flex items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 py-2 bg-slate-100 focus:bg-gray-200 focus:outline-none rounded-[3px] resize-none ' ></textarea>
                                     </span>
 
                                     <span className="flex flex-col h-full w-1/2 items-center justify-start gap-3">

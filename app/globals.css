@@ -24,7 +24,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-sky-600 rounded-[5px];
+    @apply bg-sky-600 rounded-[5px] cursor-pointer;
 }
 
 .route-nav-item {
@@ -162,6 +162,10 @@
     height: calc(100vh - 250px)
 }
 
+.cont-8 {
+    height: calc(100vh - 170px)
+}
+
 .drop-element {
     @apply flex items-center justify-start px-2 text-sm text-slate-600 h-[30px] w-full bg-white cursor-pointer;
 }
@@ -180,4 +184,34 @@
 
 #calledDate[type="date"]::-webkit-calendar-picker-indicator {
     @apply text-sky-600 cursor-pointer;
+}
+
+.elem-1 {
+    position: relative;
+}
+
+.elem-1::after {
+    position: absolute;
+    content: '';
+    height: 12px;
+    width: 8px;
+    /* background-color: red; */
+    top: 0;
+    right: -8px;
+    border-bottom: 1px solid gray;
+}
+
+.elem-2 {
+    position: relative;
+}
+
+.elem-2::before {
+    position: absolute;
+    content: '';
+    height: 12px;
+    width: 8px;
+    /* background-color: red; */
+    top: 0;
+    left: -8px;
+    border-bottom: 1px solid gray;
 }
