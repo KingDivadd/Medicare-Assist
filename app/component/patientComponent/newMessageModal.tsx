@@ -92,8 +92,8 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
                                     <p className="text-sm text-end w-[40%]">Type</p>
                                     <div className="relative flex h-auto items-center justify-start w-[60%] w-full">
                                         <span onClick={()=> handleDropMenu('type')} className="flex flex-row item-center jusitify-between w-full h-[35px] cursor-pointer  ">
-                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 text-slate-600 text-sm">{dropElements.type}</span>
-                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 text-white">
+                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 rounded-l-[3px] text-slate-600 text-sm">{dropElements.type}</span>
+                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 rounded-r-[3px] text-white">
                                                 {dropMenus.type ? <FaCaretUp  /> : <FaCaretDown  />}
                                             </span>
                                         </span>
@@ -114,8 +114,8 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
                                     <p className="text-sm text-end w-[40%]">Status</p>
                                     <div className="relative flex h-auto items-center justify-start w-[60%] w-full">
                                         <span onClick={()=> handleDropMenu('status')} className="flex flex-row item-center jusitify-between w-full h-[35px] cursor-pointer  ">
-                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 text-slate-600 text-sm">{dropElements.status}</span>
-                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 text-white">
+                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 rounded-l-[3px] text-slate-600 text-sm">{dropElements.status}</span>
+                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 rounded-r-[3px] text-white">
                                                 {dropMenus.status? <FaCaretUp  /> : <FaCaretDown  />}
                                             </span>
                                         </span>
@@ -147,8 +147,8 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
                                     <div className="w-[70%] flex flex-row gap-3 items-center justify-between">
                                         <div className="relative flex h-auto items-center justify-start w-[60%]">
                                             <span onClick={()=> handleDropMenu('alertType')} className="flex flex-row item-center jusitify-between w-full h-[35px] cursor-pointer  ">
-                                                <span className="flex w-[80%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 text-slate-600 text-sm">{dropElements.alertType}</span>
-                                                <span className="flex flex-row w-[20%] h-full items-center justify-center bg-sky-600 border border-sky-600 text-white">
+                                                <span className="flex w-[80%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 text-slate-600 rounded-l-[3px] text-sm">{dropElements.alertType}</span>
+                                                <span className="flex flex-row w-[20%] h-full items-center justify-center bg-sky-600 border border-sky-600 rounded-r-[3px] text-white">
                                                     {dropMenus.alertType? <FaCaretUp  /> : <FaCaretDown  />}
                                                 </span>
                                             </span>
@@ -177,8 +177,8 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
                                     <p className="text-sm text-end w-[40%]">Assigned To</p>
                                     <div className="relative flex h-auto items-center justify-start w-[60%] w-full">
                                         <span onClick={()=> handleDropMenu('assignedTo')} className="flex flex-row item-center jusitify-between w-full h-[35px] cursor-pointer  ">
-                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 text-slate-600 text-sm">{dropElements.assignedTo}</span>
-                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 text-white">
+                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 rounded-l-[3px] text-slate-600 text-sm">{dropElements.assignedTo}</span>
+                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 rounded-r-[3px] text-white">
                                                 {dropMenus.assignedTo? <FaCaretUp  /> : <FaCaretDown  />}
                                             </span>
                                         </span>
@@ -199,8 +199,8 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
                                     <p className="text-sm text-end w-[40%]">Priority</p>
                                     <div className="relative flex h-auto items-center justify-start w-[60%] w-full">
                                         <span onClick={()=> handleDropMenu('priority')} className="flex flex-row item-center jusitify-between w-full h-[35px] cursor-pointer  ">
-                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 text-slate-600 text-sm">{dropElements.priority}</span>
-                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 text-white">
+                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 rounded-l-[3px] text-slate-600 text-sm">{dropElements.priority}</span>
+                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 rounded-r-[3px] text-white">
                                                 {dropMenus.priority? <FaCaretUp  /> : <FaCaretDown  />}
                                             </span>
                                         </span>
@@ -224,8 +224,8 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
                                     <p className="text-sm text-end w-[40%]">Assigned CC</p>
                                     <div className="relative flex h-auto items-center justify-start w-[60%] w-full">
                                         <span onClick={()=> handleDropMenu('assignedCC')} className="flex flex-row item-center jusitify-between w-full h-[35px] cursor-pointer  ">
-                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 text-slate-600 text-sm">{dropElements.assignedCC}</span>
-                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 text-white">
+                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 rounded-l-[3px] text-slate-600 text-sm">{dropElements.assignedCC}</span>
+                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 rounded-r-[3px] text-white">
                                                 {dropMenus.assignedCC? <FaCaretUp  /> : <FaCaretDown  />}
                                             </span>
                                         </span>
@@ -246,8 +246,8 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
                                     <p className="text-sm text-end w-[40%]">Tracking Field</p>
                                     <div className="relative flex h-auto items-center justify-start w-[60%] w-full">
                                         <span onClick={()=> handleDropMenu('trackingField')} className="flex flex-row item-center jusitify-between w-full h-[35px] cursor-pointer  ">
-                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 text-slate-600 text-sm">{dropElements.trackingField}</span>
-                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 text-white">
+                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 rounded-l-[3px] text-slate-600 text-sm">{dropElements.trackingField}</span>
+                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 rounded-r-[3px] text-white">
                                                 {dropMenus.trackingField? <FaCaretUp  /> : <FaCaretDown  />}
                                             </span>
                                         </span>
@@ -271,8 +271,8 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
                                     <p className="text-sm text-end w-[40%]">Pre-defined Message</p>
                                     <div className="relative flex h-auto items-center justify-start w-[60%] w-full">
                                         <span onClick={()=> handleDropMenu('predefinedMessage')} className="flex flex-row item-center jusitify-between w-full h-[35px] cursor-pointer  ">
-                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 text-slate-600 text-sm">{dropElements.predefinedMessage}</span>
-                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 text-white">
+                                            <span className="flex w-[90%] h-full items-center justify-start px-3 bg-white border border-slate-400 border-r-0 rounded-l-[3px] text-slate-600 text-">{dropElements.predefinedMessage}</span>
+                                            <span className="flex flex-row w-[10%] h-full items-center justify-center bg-sky-600 border border-sky-600 rounded-r-[3px] text-white">
                                                 {dropMenus.predefinedMessage? <FaCaretUp  /> : <FaCaretDown  />}
                                             </span>
                                         </span>
