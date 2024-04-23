@@ -86,15 +86,15 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                     <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[17.5%] border-r border-gray-400">Message</p>
                                     <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[6%] border-r border-gray-400">Status</p>
                                     <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Type</p>
-                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Priority</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[6%] border-r border-gray-400">Priority</p>
                                     <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[6.5%] border-r border-gray-400">Called Date</p>
-                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Alert Type</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[6%] border-r border-gray-400">Alert Type</p>
                                     <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[5%] border-r border-gray-400">By Email</p>
                                     <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[5%] border-r border-gray-400">By Text</p>
                                     <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[6%] border-r border-gray-400">Patient View</p>
                                     <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[8%] border-r border-gray-400">Tracking Field</p>
-                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Assigned To</p>
-                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-400">Assigned CC</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[9%] border-r border-gray-400">Assigned To</p>
+                                    <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[9%] border-r border-gray-400">Assigned CC</p>
                                     <p className="text-sm text-end font-semibold px-2 h-full flex items-center justify-start w-[9%]">Entered By</p>
                                 </span>
                                 <div className="w-full flex flex-col items-center justify-start bg-white rounded-b-[5px] overflow-y-auto min-h-[250px]">
@@ -106,15 +106,15 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
                                                         <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[17.5%] border-r border-gray-300">{message}</p>
                                                         <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[6%] border-r border-gray-300">{status}</p>
                                                         <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-300">{type}</p>
-                                                        <p className="text-sm text-start px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-300">{priority}</p>
+                                                        <p className="text-sm text-start px-2 h-full flex items-center justify-start w-[6%] border-r border-gray-300">{priority}</p>
                                                         <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[6.5%] border-r border-gray-300">{calledDate}</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-300">{alertType}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[6%] border-r border-gray-300">{alertType}</p>
                                                         <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[5%] border-r border-gray-300">{byEmail? 'True': 'False'}</p>
                                                         <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[5%] border-r border-gray-300">{byText? 'True': 'False'}</p>
                                                         <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[6%] border-r border-gray-300">{patientView? 'True': 'False'}</p>
                                                         <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[8%] border-r border-gray-300">{trackingField}</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-300">{assignedTo}</p>
-                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[7.5%] border-r border-gray-300">{assignedCC}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[9%] border-r border-gray-300">{assignedTo}</p>
+                                                        <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[9%] border-r border-gray-300">{assignedCC}</p>
                                                         <p className="text-sm text-end px-2 h-full flex items-center justify-start w-[9%]">{'David George'}</p>
                                                     </span>
                                                 )

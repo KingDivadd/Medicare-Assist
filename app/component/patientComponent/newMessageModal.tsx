@@ -84,7 +84,7 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
                             New Message                            
                         </span>
                         {/* the container for the input fields */}
-                        <div onClick={(e) => e.stopPropagation()} className="w-full flex flex-col items-end justify-start gap-5 h-auto bg-white  py-[30px]">
+                        <div onClick={(e) => e.stopPropagation()} className="w-full flex flex-col items-end justify-start gap-5 h-auto bg-white  py-[30px] rounded-b-[5px] ">
                             {/* each particular rows */}
                             
                             <div className="w-full h-[35px] flex flex-row items-center justify-end gap-4  pl-[100px] pr-[20px]">
