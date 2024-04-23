@@ -122,7 +122,7 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
 
                                         {dropMenus.status && 
                                         <span className="absolute flex flex-col justify-start items-center w-full h-auto top-[40px] left-0 rounded-[6px] z-10 border border-slate-400 shadow-xl ">
-                                            {['SELECT', 'Resolved', 'Unresolved', 'All' ].map((data, ind)=>{
+                                            {['SELECT', 'Resolved', 'Unresolved', ].map((data, ind)=>{
                                                 return (
                                                     <span onClick={()=> {setDropElements({...dropElements, status: data}); setDropMenus({...dropMenus, status: false})}} key={ind} className="drop-element">{data}</span>
                                                 )
@@ -155,7 +155,7 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
 
                                             {dropMenus.alertType && 
                                             <span className="absolute flex flex-col justify-start items-center w-full h-auto top-[40px] left-0 rounded-[6px] z-10 border border-slate-400 shadow-xl ">
-                                                {['SELECT','Collect Balances', 'eRefill', 'Financial', ].map((data, ind)=>{
+                                                {['SELECT','None', 'Clinical', 'Financial', ].map((data, ind)=>{
                                                     return (
                                                         <span onClick={()=> {setDropElements({...dropElements, alertType: data}); setDropMenus({...dropMenus, alertType: false})}} key={ind} className="drop-element">{data}</span>
                                                     )
@@ -185,7 +185,7 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
 
                                         {dropMenus.assignedTo && 
                                         <span className="absolute flex flex-col justify-start items-center w-full h-auto top-[40px] left-0 rounded-[6px] z-10 border border-slate-400 shadow-xl ">
-                                            {['SELECT','Collect Balances', 'eRefill', 'Financial', ].map((data, ind)=>{
+                                            {['SELECT','Employees in the DB', ].map((data, ind)=>{
                                                 return (
                                                     <span onClick={()=> {setDropElements({...dropElements, assignedTo: data}); setDropMenus({...dropMenus, assignedTo: false})}} key={ind} className="drop-element">{data}</span>
                                                 )
@@ -207,7 +207,7 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
 
                                         {dropMenus.priority && 
                                         <span className="absolute flex flex-col justify-start items-center w-full h-auto top-[40px] left-0 rounded-[6px] z-10 border border-slate-400 shadow-xl ">
-                                            {['SELECT','Collect Balances', 'eRefill', 'Financial', ].map((data, ind)=>{
+                                            {['SELECT','High', 'Low'].map((data, ind)=>{
                                                 return (
                                                     <span onClick={()=> {setDropElements({...dropElements, priority: data}); setDropMenus({...dropMenus, priority: false})}} key={ind} className="drop-element">{data}</span>
                                                 )
@@ -232,7 +232,7 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
 
                                         {dropMenus.assignedCC && 
                                         <span className="absolute flex flex-col justify-start items-center w-full h-auto top-[40px] left-0 rounded-[6px] z-10 border border-slate-400 shadow-xl ">
-                                            {['SELECT','Collect Balances', 'eRefill', 'Financial', ].map((data, ind)=>{
+                                            {['SELECT', 'Employees in the DB' ].map((data, ind)=>{
                                                 return (
                                                     <span onClick={()=> {setDropElements({...dropElements, assignedCC: data}); setDropMenus({...dropMenus, assignedCC: false})}} key={ind} className="drop-element">{data}</span>
                                                 )
@@ -279,7 +279,7 @@ const NewMessageModal = ({messageModal, setMessageModal, message, setMessage, se
 
                                         {dropMenus.predefinedMessage && 
                                         <span className="absolute flex flex-col justify-start items-center w-full h-auto top-[40px] left-0 rounded-[6px] z-10 border border-slate-400 shadow-xl ">
-                                            {['SELECT','Collect Balances', 'eRefill', 'Financial', ].map((data, ind)=>{
+                                            {['SELECT','One Time Appt Link', 'Multi-use Appt Link', 'Pay Online', 'Statement' ].map((data, ind)=>{
                                                 return (
                                                     <span onClick={()=> {setDropElements({...dropElements, predefinedMessage: data}); setDropMenus({...dropMenus, predefinedMessage: false})}} key={ind} className="drop-element">{data}</span>
                                                 )
