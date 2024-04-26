@@ -7,7 +7,7 @@ import TabBar from './tabBar'
 const SchedulingDaySheet = ({tab, setTab}:SchedulingTabProps) => {
     return (
         <main className="w-full h-screen flex flex-col bg-slate-100 overflow-hidden">
-            <RouteNav />
+            <RouteNav userRole='admin-1'/>
             <TabBar tab={tab} setTab={setTab} />
             <div className="w-full flex-1 flex flex-row gap-2 bg-sky-600 py-3">
                 <div className="flex flex-col w-full bg-white gap-3">

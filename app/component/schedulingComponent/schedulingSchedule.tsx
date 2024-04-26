@@ -8,7 +8,7 @@ import { ImBin } from "react-icons/im";
 const SchedulingSchedule = ({tab, setTab}:SchedulingTabProps) => {
     return (
         <main className='w-full h-screen flex flex-col bg-slate-100 overflow-hidden'>
-            <RouteNav />
+            <RouteNav userRole='admin-1' />
             <TabBar tab={tab} setTab={setTab} />
             <div className="w-full bg-sky-600 py-3 flex-1 flex items-center jusitify-center">
                 <div className="w-full mx-auto flex flex-col h-full bg-slate-100 pt-2">
