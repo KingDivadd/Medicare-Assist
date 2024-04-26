@@ -128,20 +128,22 @@ const SideBar = ({userRole}: RouteNavProps) => {
                 {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
                     <p className="text-sky-600 font-semibold text-sm">Eligibility Request</p>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between bg-sky-600 h-[40px] px-2 cursor-pointer border-b border-slate-300 mt-3 ">
+                
+                <span className="flex flex-row items-center justify-between bg-sky-600 h-[40px] px-2 cursor-pointer border-b border-slate-300 mt-3 ">
                     <p className="text-white text-sm font-semibold">Claims</p>
+                </span>
+                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
+                    <p className="text-sky-600 font-semibold text-sm">Manage Claims</p>
                 </span>}
+
                 {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
                     <p className="text-sky-600 font-semibold text-sm">Create a Claim</p>
                 </span>}
                 {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
                     <p className="text-sky-600 font-semibold text-sm">Claim Status Inquiry</p>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
-                    <p className="text-sky-600 font-semibold text-sm">Claim Status Report</p>
-                </span>}
                 {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer rounded-b-[5px]">
-                    <p className="text-sky-600 font-semibold text-sm">Clearing House</p>
+                    <p className="text-sky-600 font-semibold text-sm">Claim Status Report</p>
                 </span>}
             </div>
 
