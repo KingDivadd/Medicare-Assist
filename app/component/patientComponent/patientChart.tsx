@@ -1,5 +1,6 @@
+'use client'
 import { PatientTabProps } from '@/types'
-import React from 'react'
+import React, { useState } from 'react'
 import RouteNav from '../routeNav'
 import TabBar from './tabBar'
 import { IoPrintOutline } from "react-icons/io5";
@@ -13,10 +14,11 @@ import Image from 'next/image';
 
 
 const PatientChart = ({patient_tab, setPatient_tab}:PatientTabProps) => {
+    const [userRole, setUserRole] = useState('admin-1')
     return (
         <main className="w-full h-screen flex flex-col bg-slate-100 overflow-hidden">
             <div className="w-full h-screen flex flex-col bg-slate-100 overflow-hidden mx-auto">
-                <RouteNav />
+                <RouteNav  userRole={userRole} />
                 <TabBar patient_tab={patient_tab} setPatient_tab={setPatient_tab} />
 
                 <div className="w-full bg-sky-600 flex-1 py-3 overflow-hidden">

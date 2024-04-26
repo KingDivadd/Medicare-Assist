@@ -28,7 +28,7 @@ const PatientDocument = ({patient_tab, setPatient_tab}:PatientTabProps) => {
     
     return (
         <main className="w-full h-screen flex flex-col bg-slate-100 overflow-hidden">
-            <RouteNav />
+            <RouteNav userRole='admin-1' />
             <TabBar patient_tab={patient_tab} setPatient_tab={setPatient_tab} />
             <div className="w-full bg-sky-600 flex-1 flex flex-col py-3 overflow-hidden">
                 <span className="w-full bg-white flex flex-row items-end justify-start px-5 border-b-[6px] gap-2 border-sky-600 pt-3">

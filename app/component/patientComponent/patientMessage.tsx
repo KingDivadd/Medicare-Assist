@@ -22,7 +22,7 @@ const PatientMessage = ({patient_tab, setPatient_tab}:PatientTabProps) => {
     
     return (
         <main className="relative w-full h-screen flex flex-col bg-slate-100 overflow-hidden">
-            <RouteNav />
+            <RouteNav userRole='admin-1' />
             <TabBar patient_tab={patient_tab} setPatient_tab={setPatient_tab} />
             <div className="w-full bg-sky-600 flex-1 py-3 overflow-hidden">
                 <div className="h-[100%] flex flex-col w-full bg-slate-100 justify-start items-center gap-4 px-3 py-3">
