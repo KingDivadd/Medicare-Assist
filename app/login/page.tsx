@@ -8,10 +8,19 @@ import { useRouter } from 'next/navigation';
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa6";
 import { redirect } from 'next/navigation';
+import DropDown from '../component/dropDown';
 
 const Login = () => {
     const router = useRouter();
     const [loading, setLoading] = useState(false); // State to manage loading state of the button
+
+    const [dropMenus, setDropMenus] = useState<{ [key: string]: boolean }>({
+        userRole: false
+        
+    });
+    const [dropElements, setDropElements] = useState({
+        userRole: 'SELECT',     
+    })
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -26,6 +35,21 @@ const Login = () => {
         // Reset loading state to false
         setLoading(false);
     };
+
+    const handleDropMenu = (dropdown: any) => {
+        const updatedDropMenus = Object.keys(dropMenus).reduce((acc, key) => {
+            acc[key] = key === dropdown ? !dropMenus[key] : false;
+            return acc;
+        }, {} as { [key: string]: boolean });
+        setDropMenus(updatedDropMenus);
+        setDropElements({...dropElements, [dropdown]: 'SELECT'});
+    };
+
+    const handleSelectDropdown = (dropdown: any)=>{
+        // console.log('checking to know selected data :: ',dropdown)
+        setDropElements({...dropElements, userRole: dropdown}); setDropMenus({...dropMenus, userRole: false})
+        sessionStorage.setItem('userRole', dropdown.toLowerCase().replace(/ /g,'-'))
+    }
 
     return (
         <main className="relative w-full flex items-center justify-center h-screen mx-auto">
@@ -44,6 +68,8 @@ const Login = () => {
                             <p className="text-gray-500 text-[18px]">Simplifying Healthcare</p>
                         </div>
                     </div>
+
+                    <DropDown title={'userRole'} dropArray={['Admin 1', 'Admin 2', 'Office Manager', 'Front Desk', 'Billing', 'Physician', 'Medical Assistant']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} handleSelectDropdown={handleSelectDropdown} setDropElements={setDropElements} setDropMenus={setDropMenus} />
 
                     <form onSubmit={handleSubmit} className='w-full full my-auto flex items-center flex-col gap-5'>
                         <div className="input-group w-full flex flex-col gap-3">
@@ -72,8 +98,9 @@ const Login = () => {
                             <p className="text-[17px] font-extrabold text-gray-500">ENTERPRISE</p>
                         </span>
 
-                        {/* Disable the button when loading state is true */}
+                        {/* Disable the button when loading state is tr  ue */}
                         <CustomButton title={loading ? "Loading..." : "Login"} btnType="submit" disabledd={false} containerStyles="w-full text-[17px] rounded-[7px] bg-blue-600 hover:bg-blue-500 font-bold text-white mt-5" />
+
                         <Link href="/">
                             <span className="w-full flex justify-center items-center text-[14px] text-blue-600 hover:text-blue-500 font-bold">Forgot password?</span>
                         </Link>

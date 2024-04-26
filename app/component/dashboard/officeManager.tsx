@@ -10,8 +10,8 @@ import SideBar from '../dasboardComponent/sidebar'
 import VisitBar from '../dasboardComponent/visitBar'
 import RouteNav from '../routeNav'
 
-const AdminTwoDashboard = () => {
-    const [userRole, setUserRole] = useState('admin-2')
+const OfficeManagerDashboard = () => {
+    const [userRole, setUserRole] = useState('office-manager')
     return (
         <main className='w-full h-screen flex items-start justify-center bg-slate-200'>
             <div className="w-full h-screen flex flex-col gap-1 bg-slate-100 overflow-y-auto mx-auto">
@@ -33,4 +33,4 @@ const AdminTwoDashboard = () => {
     )
 }
 
-export default AdminTwoDashboard
+export default OfficeManagerDashboard

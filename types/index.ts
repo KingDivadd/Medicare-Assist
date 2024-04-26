@@ -43,12 +43,19 @@ export interface MessageModalProps {
 
 export type HandleDropMenuFunction = (dropdown: any) => void;
 
+export type HandleDropDownFunction = (dropdown: string) => void;
+
 export interface DropDownProps {
     title: any; 
     dropArray: string[];
     handleDropMenu: HandleDropMenuFunction;
+    handleSelectDropdown: HandleDropDownFunction;
     dropElements: any; 
     dropMenus:any; 
     setDropElements: (dropElements: any) => void, 
     setDropMenus: (dropMenus: any) => void 
+}
+
+export interface RouteNavProps {
+    userRole: string;
 }

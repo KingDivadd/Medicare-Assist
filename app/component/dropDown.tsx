@@ -3,7 +3,7 @@ import { DropDownProps } from '@/types';
 import React from 'react'
 import { FaCaretUp, FaCaretDown } from 'react-icons/fa6';
 
-const DropDown = ({title, dropArray, handleDropMenu, dropElements, dropMenus, setDropElements, setDropMenus }: DropDownProps) => {
+const DropDown = ({title, dropArray, handleDropMenu, handleSelectDropdown, dropElements, dropMenus, setDropElements, setDropMenus }: DropDownProps) => {
     
     return (
         <div className="relative flex h-auto items-center justify-start w-[60%] w-full">
@@ -18,7 +18,7 @@ const DropDown = ({title, dropArray, handleDropMenu, dropElements, dropMenus, se
             <span className="absolute flex flex-col justify-start items-center w-full h-auto top-[40px] left-0 rounded-[6px] z-10 border border-slate-400 shadow-xl ">
                 {dropArray.map((data, ind)=>{
                     return (
-                        <span onClick={()=> {setDropElements({...dropElements, [title]: data}); setDropMenus({...dropMenus, [title.replace(/'/g, '')]: false})}} key={ind} className="drop-element">{data}</span>
+                        <span onClick={()=> {handleSelectDropdown(data)} } key={ind} className="drop-element">{data}</span>
                     )
                 })}
             </span>
