@@ -17,7 +17,7 @@ const MedicalAssistantDashboard = () => {
             <div className="w-full h-screen flex flex-col gap-1 bg-slate-100 overflow-y-auto mx-auto">
                 <RouteNav userRole={userRole} />
                 <div className="w-full flex-1 flex flex-row gap-2">
-                    <SideBar />
+                    <SideBar userRole={userRole} />
                     <div className="w-[80%] flex flex-col gap-3 py-2 pr-3 pl-1">
                         <MessageBar />
                         <AppointmentStatusBar />
