@@ -7,6 +7,7 @@ import BillingDashboard from "@/app/component/dashboard/billing";
 import FrontDeskDashboard from "@/app/component/dashboard/frontdesk";
 import MedicalAssistantDashboard from "@/app/component/dashboard/medicalassistant";
 import OfficeManagerDashboard from "@/app/component/dashboard/officeManager";
+import PhysicianDashboard from "@/app/component/dashboard/physician";
 
 
 const Dashboard = () => {
@@ -27,6 +28,7 @@ const Dashboard = () => {
             {userRole === 'office-manager' && <OfficeManagerDashboard />}
             {userRole === 'front-desk' && <FrontDeskDashboard />}
             {userRole === 'billing' && <BillingDashboard />}
+            {userRole === 'physician' && <PhysicianDashboard />}
             {userRole === 'medical-assistant' && <MedicalAssistantDashboard />}
         </>
         

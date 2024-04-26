@@ -32,7 +32,7 @@ const SideBar = ({userRole}: RouteNavProps) => {
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'physician', 'medical-assistant'].includes(userRole) && <span className="bord">
+                {['admin-1', 'admin-2', 'office-manager'].includes(userRole) && <span className="bord">
                     <p className="text-white text-sm">Not Billed Encounters</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
@@ -53,35 +53,35 @@ const SideBar = ({userRole}: RouteNavProps) => {
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="bord">
+                {['admin-1', 'admin-2', 'office-manager', 'billing'].includes(userRole) && <span className="bord">
                     <p className="text-white text-sm">Customer Support</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'physician', 'medical-assistant'].includes(userRole) && <span className="bord">
+                {['admin-1', 'admin-2', 'office-manager'].includes(userRole) && <span className="bord">
                     <p className="text-white text-sm">File Maintenance </p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'physician', 'medical-assistant'].includes(userRole) && <span className="bord">
+                {['admin-1', 'admin-2', 'office-manager'].includes(userRole) && <span className="bord">
                     <p className="text-white text-sm">Users</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'physician', 'medical-assistant'].includes(userRole) && <span className="bord">
+                {['admin-1', 'admin-2', 'office-manager'].includes(userRole) && <span className="bord">
                     <p className="text-white text-sm">Medical Scrubbers</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'front-desk', 'physician', 'medical-assistant'].includes(userRole) && <span className="bord">
+                {['admin-1', 'front-desk'].includes(userRole) && <span className="bord">
                     <p className="text-white text-sm">Invoicing </p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
@@ -113,38 +113,39 @@ const SideBar = ({userRole}: RouteNavProps) => {
 
             {/* This should handle the shortcuts */}
 
-            <div className="flex flex-col bg-white rounded-b-[10px] w-full h-auto p-2 border border-sky-600 ">
-                <span className="h-[40px] flex items-center justify-start ">
+            {['admin-1', 'admin-2', 'office-manager', 'billing',].includes(userRole) && <div className="flex flex-col bg-white rounded-b-[10px] w-full h-auto p-2 border border-sky-600 ">
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="h-[40px] flex items-center justify-start ">
                     <p className="text-amber-600 text-sm font-semibold">Shortcuts</p>
-                </span>
+                </span>}
 
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between bg-sky-600 h-[40px] px-2 cursor-pointer border-b border-slate-300">
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between bg-sky-600 h-[40px] px-2 cursor-pointer border-b border-slate-300">
                     <p className="text-white text-sm font-semibold">Patient</p>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
                     <p className="text-sky-600 font-semibold text-sm">Register a new Patient</p>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
                     <p className="text-sky-600 font-semibold text-sm">Eligibility Request</p>
                 </span>}
                 
-                <span className="flex flex-row items-center justify-between bg-sky-600 h-[40px] px-2 cursor-pointer border-b border-slate-300 mt-3 ">
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between bg-sky-600 h-[40px] px-2 cursor-pointer border-b border-slate-300 mt-3 ">
                     <p className="text-white text-sm font-semibold">Claims</p>
-                </span>
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
+                </span>}
+
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
                     <p className="text-sky-600 font-semibold text-sm">Manage Claims</p>
                 </span>}
 
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
                     <p className="text-sky-600 font-semibold text-sm">Create a Claim</p>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
+                {['admin-1', 'admin-2', 'office-manager',  'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
                     <p className="text-sky-600 font-semibold text-sm">Claim Status Inquiry</p>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer rounded-b-[5px]">
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer rounded-b-[5px]">
                     <p className="text-sky-600 font-semibold text-sm">Claim Status Report</p>
                 </span>}
-            </div>
+            </div>}
 
         </div>
     )
