@@ -53,12 +53,6 @@ const SystemAdminSideBar = () => {
                     </span>
                 </span>
                 <span className=" bord">
-                    <p className="text-white text-sm">Patients</p>
-                    <span className="flex flex-row items-center justify-end gap-3 h-fill">
-                        
-                    </span>
-                </span>
-                <span className=" bord">
                     <p className="text-white text-sm">Appointment Schedule</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         
