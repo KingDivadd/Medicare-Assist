@@ -24,10 +24,10 @@ const Dashboard = () => {
         <>
             {userRole === 'admin-1' && <AdminOneDashboard />}
             {userRole === 'admin-2' && <AdminTwoDashboard />}
-            {userRole === 'billing' && <BillingDashboard />}
-            {userRole === 'front-desk' && <FrontDeskDashboard />}
-            {userRole === 'medical-assistant' && <MedicalAssistantDashboard />}
             {userRole === 'office-manager' && <OfficeManagerDashboard />}
+            {userRole === 'front-desk' && <FrontDeskDashboard />}
+            {userRole === 'billing' && <BillingDashboard />}
+            {userRole === 'medical-assistant' && <MedicalAssistantDashboard />}
         </>
         
     );
