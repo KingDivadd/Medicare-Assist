@@ -114,7 +114,7 @@ const SideBar = ({userRole}: RouteNavProps) => {
 
             {/* This should handle the shortcuts */}
 
-            <div className="flex flex-col bg-white rounded-b-[10px] w-full h-auto p-2">
+            <div className="flex flex-col bg-white rounded-b-[10px] w-full h-auto p-2 border border-sky-600 ">
                 <span className="h-[40px] flex items-center justify-start ">
                     <p className="text-amber-600 text-sm font-semibold">Shortcuts</p>
                 </span>
