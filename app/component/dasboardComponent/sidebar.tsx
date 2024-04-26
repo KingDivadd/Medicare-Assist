@@ -3,7 +3,6 @@ import React from 'react'
 import { FiRefreshCcw } from "react-icons/fi";
 
 
-
 const SideBar = ({userRole}: RouteNavProps) => {
     return (
         <div className='w-[20%] flex flex-col items-center justify-start pl-3 gap-3'>
@@ -82,7 +81,7 @@ const SideBar = ({userRole}: RouteNavProps) => {
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="bord">
+                {['admin-1', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="bord">
                     <p className="text-white text-sm">Invoicing </p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
