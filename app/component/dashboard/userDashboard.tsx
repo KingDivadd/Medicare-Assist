@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AgingBar from '../dasboardComponent/agingBar'
 import AppointmentStatusBar from '../dasboardComponent/appointmentStatusBar'
 import CopayCollectedBar from '../dasboardComponent/copayCollectedBar'
@@ -9,15 +9,16 @@ import PerformanceTrendBar from '../dasboardComponent/performanceTrendBar'
 import SideBar from '../dasboardComponent/sidebar'
 import VisitBar from '../dasboardComponent/visitBar'
 import RouteNav from '../routeNav'
+import SystemAdminSideBar from '../dasboardComponent/systemAdminSideBar'
+import { RouteNavProps } from '@/types'
 
-const FrontDeskDashboard = () => {
-    const [userRole, setUserRole] = useState('front-desk')
+const UserDashboard = ({userRole}:RouteNavProps) => {
     return (
         <main className='w-full h-screen flex items-start justify-center bg-slate-200'>
             <div className="w-full h-screen flex flex-col gap-1 bg-slate-100 overflow-y-auto mx-auto">
                 <RouteNav userRole={userRole} />
                 <div className="w-full flex-1 flex flex-row gap-2">
-                    <SideBar  userRole={userRole} />
+                    <SideBar userRole={userRole} />
                     <div className="w-[80%] flex flex-col gap-3 py-2 pr-3 pl-1">
                         <MessageBar />
                         <AppointmentStatusBar />
@@ -33,4 +34,4 @@ const FrontDeskDashboard = () => {
     )
 }
 
-export default FrontDeskDashboard
+export default UserDashboard

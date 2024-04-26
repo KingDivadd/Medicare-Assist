@@ -43,7 +43,7 @@ export interface MessageModalProps {
 
 export type HandleDropMenuFunction = (dropdown: any) => void;
 
-export type HandleDropDownFunction = (dropdown: string) => void;
+export type HandleDropDownFunction = (dropdown: string, title:any) => void;
 
 export interface DropDownProps {
     title: any; 

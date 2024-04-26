@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import CustomButton from '../component/custombuttom';
@@ -14,9 +14,11 @@ const Login = () => {
     const router = useRouter();
     const [loading, setLoading] = useState(false); // State to manage loading state of the button
 
+    useEffect(() => {
+        sessionStorage.clear()
+    }, [])
     const [dropMenus, setDropMenus] = useState<{ [key: string]: boolean }>({
         userRole: false
-        
     });
     const [dropElements, setDropElements] = useState({
         userRole: 'SELECT',     
@@ -115,3 +117,8 @@ const Login = () => {
 };
 
 export default Login;
+
+// function useEffect(arg0: () => void, arg1: never[]) {
+//     throw new Error('Function not implemented.');
+// }
+

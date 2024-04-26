@@ -39,10 +39,8 @@ const PatientDemographic = ({patient_tab, setPatient_tab}:PatientTabProps) => {
         bloodGroup: 'SELECT',
     })
 
-    const handleSelectDropdown = (dropdown: any)=>{
-        // console.log('checking to know selected data :: ',dropdown)
-        setDropElements({...dropElements, sex: dropdown}); setDropMenus({...dropMenus, userRole: false})
-        sessionStorage.setItem('userRole', dropdown.toLowerCase().replace(/ /g,'-'))
+    const handleSelectDropdown = (dropdown: any, title:any)=>{
+        setDropElements({...dropElements, [title]: dropdown}); setDropMenus({...dropMenus, [title]: false})
     }
 
 

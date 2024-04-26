@@ -1,13 +1,7 @@
 'use client'
 import React, {useState, useEffect} from "react";
 import { useRouter } from 'next/navigation';
-import AdminOneDashboard from "@/app/component/dashboard/admin-1";
-import AdminTwoDashboard from "@/app/component/dashboard/admin-2";
-import BillingDashboard from "@/app/component/dashboard/billing";
-import FrontDeskDashboard from "@/app/component/dashboard/frontdesk";
-import MedicalAssistantDashboard from "@/app/component/dashboard/medicalassistant";
-import OfficeManagerDashboard from "@/app/component/dashboard/officeManager";
-import PhysicianDashboard from "@/app/component/dashboard/physician";
+import UserDashboard from "@/app/component/dashboard/userDashboard";
 
 
 const Dashboard = () => {
@@ -23,13 +17,7 @@ const Dashboard = () => {
     }, [])
     return (
         <>
-            {userRole === 'admin-1' && <AdminOneDashboard />}
-            {userRole === 'admin-2' && <AdminTwoDashboard />}
-            {userRole === 'office-manager' && <OfficeManagerDashboard />}
-            {userRole === 'front-desk' && <FrontDeskDashboard />}
-            {userRole === 'billing' && <BillingDashboard />}
-            {userRole === 'physician' && <PhysicianDashboard />}
-            {userRole === 'medical-assistant' && <MedicalAssistantDashboard />}
+            <UserDashboard userRole={userRole} />
         </>
         
     );

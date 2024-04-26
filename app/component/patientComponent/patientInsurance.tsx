@@ -36,8 +36,8 @@ const PatientInsurance = ({patient_tab, setPatient_tab}:PatientTabProps) => {
         setDropElements({...dropElements, [dropdown]: 'SELECT'});
     };
 
-    const handleSelectDropdown = (dropdown: string)=>{
-        console.log(dropdown)
+    const handleSelectDropdown = (dropdown: any, title:any)=>{
+        setDropElements({...dropElements, [title]: dropdown}); setDropMenus({...dropMenus, [title]: false})
     }
 
 

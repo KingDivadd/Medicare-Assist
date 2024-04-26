@@ -18,7 +18,7 @@ const DropDown = ({title, dropArray, handleDropMenu, handleSelectDropdown, dropE
             <span className="absolute flex flex-col justify-start items-center w-full h-auto top-[40px] left-0 rounded-[6px] z-10 border border-slate-400 shadow-xl ">
                 {dropArray.map((data, ind)=>{
                     return (
-                        <span onClick={()=> {handleSelectDropdown(data)} } key={ind} className="drop-element">{data}</span>
+                        <span onClick={()=> {handleSelectDropdown(data, title)} } key={ind} className="drop-element">{data}</span>
                     )
                 })}
             </span>
