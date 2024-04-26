@@ -51,7 +51,7 @@ const RouteNav = ({userRole}: RouteNavProps) => {
                         <span className="flex flex-col items-end justify-center">
                             <span className="flex flex-row items-center justify-center">
                                 <p className="text-[23px] text-slate-600 font-semibold">Practice</p>
-                                <p className="text-[23px] text-sky-700 font-semibold">EHR</p>
+                                <p className="text-[23px] text-blue-600 font-semibold">EHR</p>
                             </span>
                             <p className="text-xs text-slate-600">Simplifying Healthcare</p>
                         </span>
