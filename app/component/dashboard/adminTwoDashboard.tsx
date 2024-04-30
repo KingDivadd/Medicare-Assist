@@ -12,21 +12,25 @@ import RouteNav from '../routeNav'
 import SystemAdminSideBar from '../dasboardComponent/systemAdminSideBar'
 import { RouteNavProps } from '@/types'
 
-const UserDashboard = ({userRole}:RouteNavProps) => {
+const AdminTwoDashboard = ({userRole}:RouteNavProps) => {
     return (
         <main className='w-full h-screen flex items-start justify-center bg-slate-200'>
             <div className="w-full h-screen flex flex-col gap-1 bg-slate-100 overflow-y-auto mx-auto">
                 <RouteNav userRole={userRole} />
                 <div className="w-full flex-1 flex flex-row gap-2">
                     <SideBar userRole={userRole} />
-                    <div className="w-[80%] flex flex-col gap-3 py-2 pr-3 pl-1">
-                        <MessageBar />
-                        <AppointmentStatusBar />
-                        <CopayCollectedBar />
-                        <VisitBar />
-                        <PerformanceTrendBar />
-                        <MoneyBar />
-                        <AgingBar /> 
+                    {/* The below should be viewed only by admin 1, admin 2, and office manager */}
+
+                    <div className="w-[80%] flex items-start justify-center">
+                        <div className="w-full flex flex-col gap-3 py-2 pr-2 pl-1 bg-blue-100">
+                            <MessageBar />
+                            <AppointmentStatusBar />
+                            <CopayCollectedBar />
+                            <VisitBar />
+                            <PerformanceTrendBar />
+                            <MoneyBar />
+                            <AgingBar /> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -34,4 +38,4 @@ const UserDashboard = ({userRole}:RouteNavProps) => {
     )
 }
 
-export default UserDashboard
+export default AdminTwoDashboard

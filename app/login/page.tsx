@@ -33,7 +33,13 @@ const Login = () => {
         // Simulate an asynchronous request (replace with your actual login logic)
         await new Promise(resolve => setTimeout(resolve, 2000));
         // After the request is processed, navigate to the next page
-        router.push('/home/dashboard')
+        console.log(dropElements.userRole.replace(/ /g, '-'))
+        if (['admin-1','admin-2', 'office-manager'].includes(dropElements.userRole.toLowerCase().replace(/ /g,'-'))) {
+            router.push('/home/dashboard')
+        }
+        else if (['front-desk'].includes(dropElements.userRole.toLowerCase().replace(/ /g,'-'))){
+            router.push('/home/todays-appointment')
+        }
         // Reset loading state to false
         setLoading(false);
     };
