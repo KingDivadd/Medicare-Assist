@@ -17,6 +17,7 @@ import MedicalScrubbers from '../sideBarPages/medicalScrubbers'
 import SupportCenter from '../sideBarPages/supportCenter'
 import PatientPorter from '../sideBarPages/patientPorter'
 import ProviderSchedule from '../sideBarPages/providerSchedule'
+import Invoicing from '../sideBarPages/invoicing'
 
 const AdminOneDashboard = ({userRole}:RouteNavProps) => {
     const [sidebar_tab, setSidebar_tab] = useState('')
@@ -27,7 +28,6 @@ const AdminOneDashboard = ({userRole}:RouteNavProps) => {
         }
         if (scheduled_tab === null && sidebar_tab === ''){
             setSidebar_tab('dashboard')
-            console.log('currently here')
         }
     }, [])
 
@@ -53,6 +53,7 @@ const AdminOneDashboard = ({userRole}:RouteNavProps) => {
                     {sidebar_tab  === 'file-maintenance' && <FileMaintenance />}
                     {sidebar_tab  === 'users' && <Users />}
                     {sidebar_tab  === 'medical-scrubbers' && <MedicalScrubbers />}
+                    {sidebar_tab  === 'invoicing' && <Invoicing />}
                     {sidebar_tab  === 'support-center' && <SupportCenter />}
                     {sidebar_tab  === 'patient-porter' && <PatientPorter />}
                     {sidebar_tab  === 'provider-schedule' && <ProviderSchedule />}

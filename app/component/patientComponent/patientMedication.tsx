@@ -10,12 +10,6 @@ const endpoint = 'http://localhost:6000';
 
 const PatientMedication = ({patient_tab, setPatient_tab}:PatientTabProps) => {
     const [amount, setAmount] = useState(0)
-    // useEffect(() => {
-    //     const socket = io(endpoint)
-    //     socket.on('connect', ()=>{
-    //         console.log('connected to socket.io successfully')
-    //     })
-    // }, [])
 
     const handlePay = async()=>{
         if (!amount || amount === 0) {

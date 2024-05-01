@@ -31,7 +31,7 @@ const RouteNav = ({userRole}: RouteNavProps) => {
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files) {
-            console.log(e.target.files);
+            // console.log(e.target.files);
         }
     };
 

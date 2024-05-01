@@ -170,6 +170,10 @@
     height: calc(100vh - 170px)
 }
 
+.cont-side-bar-right {
+    height: calc(100vh - 160px)
+}
+
 .drop-element {
     @apply flex items-center justify-start px-2 text-sm text-slate-600 h-[30px] w-full bg-white cursor-pointer;
 }

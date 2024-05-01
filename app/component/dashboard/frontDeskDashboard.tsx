@@ -3,6 +3,12 @@ import React, { useEffect, useState } from 'react'
 import SideBar from '../dasboardComponent/sidebar'
 import RouteNav from '../routeNav'
 import { RouteNavProps } from '@/types'
+import HelpAndTutorialLearning from '../sideBarPages/helpAndTutorialLearning'
+import Invoicing from '../sideBarPages/invoicing'
+import PatientInOffice from '../sideBarPages/patientInOffice'
+import PatientPorter from '../sideBarPages/patientPorter'
+import ProviderSchedule from '../sideBarPages/providerSchedule'
+import TodaysAppointment from '../sideBarPages/todaysAppointment'
 
 const FrontDeskDashboard = ({userRole}:RouteNavProps) => {
     const [sidebar_tab, setSidebar_tab] = useState('')
@@ -29,12 +35,12 @@ const FrontDeskDashboard = ({userRole}:RouteNavProps) => {
                 <div className="w-full flex-1 flex flex-row gap-2">
                     <SideBar userRole={userRole} sidebar_tab={sidebar_tab} setSidebar_tab={setSidebar_tab} />   
 
-                    <div className="w-[80%] flex h-full items-start justify-center">
-                        <div className="w-full h-full flex flex-col gap-3 py-2 pr-2 pl-1">
-                            Front desk right side
-                            {/* <TodaysAppointment /> */}
-                        </div>
-                    </div>
+                    {sidebar_tab  === 'todays-appointment' && <TodaysAppointment />}
+                    {sidebar_tab  === 'patient-in-office' && <PatientInOffice />}
+                    {sidebar_tab  === 'help-and-tutorial-learning' && <HelpAndTutorialLearning />}
+                    {sidebar_tab  === 'invoicing' && <Invoicing />}
+                    {sidebar_tab  === 'patient-porter' && <PatientPorter />}
+                    {sidebar_tab  === 'provider-schedule' && <ProviderSchedule />}
                 </div>
             </div>
         </main>

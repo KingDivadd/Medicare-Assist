@@ -11,6 +11,10 @@ import VisitBar from '../dasboardComponent/visitBar'
 import RouteNav from '../routeNav'
 import SystemAdminSideBar from '../dasboardComponent/systemAdminSideBar'
 import { RouteNavProps } from '@/types'
+import CustomerSupport from '../sideBarPages/customerSupport'
+import SupportCenter from '../sideBarPages/supportCenter'
+import HelpAndTutorialLearning from '../sideBarPages/helpAndTutorialLearning'
+import PatientPorter from '../sideBarPages/patientPorter'
 
 const BillingDashboard = ({userRole}:RouteNavProps) => {
     const [sidebar_tab, setSidebar_tab] = useState('')
@@ -21,7 +25,6 @@ const BillingDashboard = ({userRole}:RouteNavProps) => {
         }
         if (scheduled_tab === null && sidebar_tab === ''){
             setSidebar_tab('help-and-tutorial-learning')
-            console.log('currently here')
         }
     }, [])
 
@@ -37,11 +40,10 @@ const BillingDashboard = ({userRole}:RouteNavProps) => {
                 <div className="w-full flex-1 flex flex-row gap-2">
                     <SideBar userRole={userRole} sidebar_tab={sidebar_tab} setSidebar_tab={setSidebar_tab} />
 
-                    <div className="w-[80%] flex items-start justify-center">
-                        <div className="w-full flex-1 flex flex-col gap-3 py-2 pr-2 pl-1 bg-blue-100">
-                                
-                        </div>
-                    </div>
+                    {sidebar_tab  === 'help-and-tutorial-learning' && <HelpAndTutorialLearning />}
+                    {sidebar_tab  === 'customer-support' && <CustomerSupport />}
+                    {sidebar_tab  === 'support-center' && <SupportCenter />}
+                    {sidebar_tab  === 'patient-porter' && <PatientPorter />}
                 </div>
             </div>
         </main>

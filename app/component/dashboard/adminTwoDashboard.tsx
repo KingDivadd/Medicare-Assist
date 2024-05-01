@@ -1,16 +1,22 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import AgingBar from '../dasboardComponent/agingBar'
-import AppointmentStatusBar from '../dasboardComponent/appointmentStatusBar'
-import CopayCollectedBar from '../dasboardComponent/copayCollectedBar'
-import MessageBar from '../dasboardComponent/messageBar'
-import MoneyBar from '../dasboardComponent/moneyBar'
-import PerformanceTrendBar from '../dasboardComponent/performanceTrendBar'
 import SideBar from '../dasboardComponent/sidebar'
-import VisitBar from '../dasboardComponent/visitBar'
 import RouteNav from '../routeNav'
-import SystemAdminSideBar from '../dasboardComponent/systemAdminSideBar'
 import { RouteNavProps } from '@/types'
+import Analytics from '../sideBarPages/analytics'
+import CustomerSupport from '../sideBarPages/customerSupport'
+import FileMaintenance from '../sideBarPages/fileMainternance'
+import HelpAndTutorialLearning from '../sideBarPages/helpAndTutorialLearning'
+import MedicalScrubbers from '../sideBarPages/medicalScrubbers'
+import NotBilledEncounters from '../sideBarPages/notBilledEncounters'
+import NotesInProgress from '../sideBarPages/notesInProgress'
+import PatientInOffice from '../sideBarPages/patientInOffice'
+import PatientPorter from '../sideBarPages/patientPorter'
+import PendingReviewLabs from '../sideBarPages/pendingReviewLabs'
+import ProviderSchedule from '../sideBarPages/providerSchedule'
+import SupportCenter from '../sideBarPages/supportCenter'
+import TodaysAppointment from '../sideBarPages/todaysAppointment'
+import Users from '../sideBarPages/users'
 
 const AdminTwoDashboard = ({userRole}:RouteNavProps) => {
     const [sidebar_tab, setSidebar_tab] = useState('')
@@ -35,19 +41,20 @@ const AdminTwoDashboard = ({userRole}:RouteNavProps) => {
                 <RouteNav userRole={userRole} />
                 <div className="w-full flex-1 flex flex-row gap-2">
                     <SideBar userRole={userRole} sidebar_tab={sidebar_tab} setSidebar_tab={setSidebar_tab} />
-                    {/* The below should be viewed only by admin 1, admin 2, and office manager */}
-
-                    <div className="w-[80%] flex items-start justify-center">
-                        <div className="w-full flex flex-col gap-3 py-2 pr-2 pl-1 bg-blue-100">
-                            <MessageBar />
-                            <AppointmentStatusBar />
-                            <CopayCollectedBar />
-                            <VisitBar />
-                            <PerformanceTrendBar />
-                            <MoneyBar />
-                            <AgingBar /> 
-                        </div>
-                    </div>
+                    {sidebar_tab  === 'dashboard' && <Analytics />}
+                    {sidebar_tab  === 'todays-appointment' && <TodaysAppointment />}
+                    {sidebar_tab  === 'patient-in-office' && <PatientInOffice />}
+                    {sidebar_tab  === 'notes-in-progress' && <NotesInProgress />}
+                    {sidebar_tab  === 'not-billed-encounters' && <NotBilledEncounters />}
+                    {sidebar_tab  === 'pending-review-labs' && <PendingReviewLabs />}
+                    {sidebar_tab  === 'help-and-tutorial-learning' && <HelpAndTutorialLearning />}
+                    {sidebar_tab  === 'customer-support' && <CustomerSupport />}
+                    {sidebar_tab  === 'file-maintenance' && <FileMaintenance />}
+                    {sidebar_tab  === 'users' && <Users />}
+                    {sidebar_tab  === 'medical-scrubbers' && <MedicalScrubbers />}
+                    {sidebar_tab  === 'support-center' && <SupportCenter />}
+                    {sidebar_tab  === 'patient-porter' && <PatientPorter />}
+                    {sidebar_tab  === 'provider-schedule' && <ProviderSchedule />}
                 </div>
             </div>
         </main>
