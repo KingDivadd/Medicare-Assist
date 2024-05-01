@@ -7,23 +7,6 @@ import { useRouter } from 'next/navigation';
 
 const SideBar = ({userRole, sidebar_tab, setSidebar_tab}:SideBarProps) => {
     const router = useRouter()
-    // useEffect(() => {
-    //     console.log('side bar - userRole',userRole)
-    //     if (['admin-1', 'admin-2', 'office-manager'].includes(userRole)){
-    //         // sessionStorage.setItem('side-tab', 'dashboard')
-    //         setsidebar_tab('dashboard')
-    //     }
-    //     else if (['front-desk', 'physician', 'medical-assistant'].includes(userRole)){
-    //         // sessionStorage.setItem('side-tab', 'todays-appointment')
-    //         console.log('here :: ', userRole)
-    //         setsidebar_tab('todays-appointment')
-    //     }
-    //     else if (['billing'].includes(userRole)){
-    //         setsidebar_tab('help-and-tutorial-learning')
-    //     }
-
-    // }, [])
-
     
     return (
         <div className='w-[20%] flex flex-col items-center justify-start pl-3 gap-3'>
