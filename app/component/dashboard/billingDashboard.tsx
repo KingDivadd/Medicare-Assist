@@ -15,6 +15,12 @@ import CustomerSupport from '../sideBarPages/customerSupport'
 import SupportCenter from '../sideBarPages/supportCenter'
 import HelpAndTutorialLearning from '../sideBarPages/helpAndTutorialLearning'
 import PatientPorter from '../sideBarPages/patientPorter'
+import ClaimStatusReport from '../sideBarPages/claimStatusReport'
+import ClaimStatusInquiry from '../sideBarPages/clainStatusInquiry'
+import CreateClaim from '../sideBarPages/createClaim'
+import EligibilityRequest from '../sideBarPages/eligibilityRequest'
+import ManageClaims from '../sideBarPages/manageClaims'
+import NewPatient from '../sideBarPages/newPatient'
 
 const BillingDashboard = ({userRole}:RouteNavProps) => {
     const [sidebar_tab, setSidebar_tab] = useState('')
@@ -44,6 +50,13 @@ const BillingDashboard = ({userRole}:RouteNavProps) => {
                     {sidebar_tab  === 'customer-support' && <CustomerSupport />}
                     {sidebar_tab  === 'support-center' && <SupportCenter />}
                     {sidebar_tab  === 'patient-porter' && <PatientPorter />}
+
+                    {sidebar_tab  === 'register-a-new-patient' && <NewPatient />}
+                    {sidebar_tab  === 'eligibility-request' && <EligibilityRequest />}
+                    {sidebar_tab  === 'manage-claims' && <ManageClaims />}
+                    {sidebar_tab  === 'create-a-claim' && <CreateClaim />}
+                    {sidebar_tab  === 'claim-status-inquiry' && <ClaimStatusInquiry />}
+                    {sidebar_tab  === 'claim-status-report' && <ClaimStatusReport />}
                 </div>
             </div>
         </main>

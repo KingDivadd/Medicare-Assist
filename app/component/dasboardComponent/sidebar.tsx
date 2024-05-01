@@ -125,10 +125,10 @@ const SideBar = ({userRole, sidebar_tab, setSidebar_tab}:SideBarProps) => {
                 {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between bg-sky-600 h-[40px] px-2 cursor-pointer border-b border-slate-300">
                     <p className="text-white text-sm font-semibold">Patient</p>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'register-a-new-patient'? 'active-shortcut-style': 'shortcut-style'} onClick={()=> {setSidebar_tab('register-a-new-patient')}}>
                     <p className="text-sky-600 font-semibold text-sm">Register a new Patient</p>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'eligibility-request'? 'active-shortcut-style': 'shortcut-style'} onClick={()=> {setSidebar_tab('eligibility-request')}}>
                     <p className="text-sky-600 font-semibold text-sm">Eligibility Request</p>
                 </span>}
                 
@@ -136,17 +136,17 @@ const SideBar = ({userRole, sidebar_tab, setSidebar_tab}:SideBarProps) => {
                     <p className="text-white text-sm font-semibold">Claims</p>
                 </span>}
 
-                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'manage-claims'? 'active-shortcut-style': 'shortcut-style'} onClick={()=> {setSidebar_tab('manage-claims')}}>
                     <p className="text-sky-600 font-semibold text-sm">Manage Claims</p>
                 </span>}
 
-                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'create-a-claim'? 'active-shortcut-style': 'shortcut-style'} onClick={()=> {setSidebar_tab('create-a-claim')}}>
                     <p className="text-sky-600 font-semibold text-sm">Create a Claim</p>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager',  'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer border-b border-slate-300">
+                {['admin-1', 'admin-2', 'office-manager',  'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'claim-status-inquiry'? 'active-shortcut-style': 'shortcut-style'} onClick={()=> {setSidebar_tab('claim-status-inquiry')}}>
                     <p className="text-sky-600 font-semibold text-sm">Claim Status Inquiry</p>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className="flex flex-row items-center justify-between hover:bg-slate-200 h-[40px] px-2 cursor-pointer rounded-b-[5px]">
+            {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'claim-status-report' ? 'active-shortcut-style': 'shortcut-style'} onClick={()=> {setSidebar_tab('claim-status-report')}}>
                     <p className="text-sky-600 font-semibold text-sm">Claim Status Report</p>
                 </span>}
             </div>}

@@ -18,6 +18,12 @@ import SupportCenter from '../sideBarPages/supportCenter'
 import PatientPorter from '../sideBarPages/patientPorter'
 import ProviderSchedule from '../sideBarPages/providerSchedule'
 import Invoicing from '../sideBarPages/invoicing'
+import NewPatient from '../sideBarPages/newPatient'
+import EligibilityRequest from '../sideBarPages/eligibilityRequest'
+import ManageClaims from '../sideBarPages/manageClaims'
+import CreateClaim from '../sideBarPages/createClaim'
+import ClaimStatusInquiry from '../sideBarPages/clainStatusInquiry'
+import ClaimStatusReport from '../sideBarPages/claimStatusReport'
 
 const AdminOneDashboard = ({userRole}:RouteNavProps) => {
     const [sidebar_tab, setSidebar_tab] = useState('')
@@ -35,6 +41,7 @@ const AdminOneDashboard = ({userRole}:RouteNavProps) => {
         if (sidebar_tab.trim() !== ''){
             sessionStorage.setItem('sidebar_tab',sidebar_tab)
         }
+        console.log('clicked :: ',sidebar_tab)
     }, [sidebar_tab])
     return (
         <main className='w-full h-screen flex items-start justify-center bg-slate-200'>
@@ -57,6 +64,13 @@ const AdminOneDashboard = ({userRole}:RouteNavProps) => {
                     {sidebar_tab  === 'support-center' && <SupportCenter />}
                     {sidebar_tab  === 'patient-porter' && <PatientPorter />}
                     {sidebar_tab  === 'provider-schedule' && <ProviderSchedule />}
+                    
+                    {sidebar_tab  === 'register-a-new-patient' && <NewPatient />}
+                    {sidebar_tab  === 'eligibility-request' && <EligibilityRequest />}
+                    {sidebar_tab  === 'manage-claims' && <ManageClaims />}
+                    {sidebar_tab  === 'create-a-claim' && <CreateClaim />}
+                    {sidebar_tab  === 'claim-status-inquiry' && <ClaimStatusInquiry />}
+                    {sidebar_tab  === 'claim-status-report' && <ClaimStatusReport />}
                 </div>
             </div>
         </main>
