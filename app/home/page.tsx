@@ -18,9 +18,7 @@ const Dashboard = () => {
         if ( role === null || role === ''){
             router.push('/login')
         }
-        setUserRole(sessionStorage.getItem('userRole') || '')
-        console.log('userRole'+userRole)
-        
+        setUserRole(sessionStorage.getItem('userRole') || '')        
     }, [])
     return (
         <>

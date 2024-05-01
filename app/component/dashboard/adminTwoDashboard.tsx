@@ -13,12 +13,28 @@ import SystemAdminSideBar from '../dasboardComponent/systemAdminSideBar'
 import { RouteNavProps } from '@/types'
 
 const AdminTwoDashboard = ({userRole}:RouteNavProps) => {
+    const [sidebar_tab, setSidebar_tab] = useState('')
+    useEffect(() => {
+        const scheduled_tab = sessionStorage.getItem('sidebar_tab')
+        if(scheduled_tab !== null){
+            setSidebar_tab(scheduled_tab)
+        }
+        if (scheduled_tab === null && sidebar_tab === ''){
+            setSidebar_tab('dashboard')
+        }
+    }, [])
+
+    useEffect(() => {
+        if (sidebar_tab.trim() !== ''){
+            sessionStorage.setItem('sidebar_tab',sidebar_tab)
+        }
+    }, [sidebar_tab])
     return (
         <main className='w-full h-screen flex items-start justify-center bg-slate-200'>
             <div className="w-full h-screen flex flex-col gap-1 bg-slate-100 overflow-y-auto mx-auto">
                 <RouteNav userRole={userRole} />
                 <div className="w-full flex-1 flex flex-row gap-2">
-                    <SideBar userRole={userRole} />
+                    <SideBar userRole={userRole} sidebar_tab={sidebar_tab} setSidebar_tab={setSidebar_tab} />
                     {/* The below should be viewed only by admin 1, admin 2, and office manager */}
 
                     <div className="w-[80%] flex items-start justify-center">

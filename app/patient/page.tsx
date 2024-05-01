@@ -17,7 +17,6 @@ const Patient = () => {
         }
         if (scheduled_tab === null && patient_tab === ''){
             setPatient_tab('chart')
-            console.log('currently here')
         }
     }, [])
 

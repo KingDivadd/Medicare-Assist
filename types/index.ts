@@ -59,3 +59,9 @@ export interface DropDownProps {
 export interface RouteNavProps {
     userRole: string;
 }
+
+export interface SideBarProps {
+    userRole: string;
+    sidebar_tab: string;
+    setSidebar_tab: (patient_tab: string)=> void;
+}

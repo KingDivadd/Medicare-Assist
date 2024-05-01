@@ -1,121 +1,129 @@
 'use client'
-import { RouteNavProps } from '@/types';
+import { RouteNavProps, SideBarProps } from '@/types';
 import React, { useEffect, useState } from 'react'
 import { FiRefreshCcw } from "react-icons/fi";
 import { useRouter } from 'next/navigation';
 
 
-const SideBar = ({userRole}:RouteNavProps) => {
+const SideBar = ({userRole, sidebar_tab, setSidebar_tab}:SideBarProps) => {
     const router = useRouter()
-    const [selected, setSelected] = useState('')
-    useEffect(() => {
-        const path = window.location.pathname;
-        const elem = path.split('/')
-        setSelected(elem[elem.length - 1])
-    }, [])
+    // useEffect(() => {
+    //     console.log('side bar - userRole',userRole)
+    //     if (['admin-1', 'admin-2', 'office-manager'].includes(userRole)){
+    //         // sessionStorage.setItem('side-tab', 'dashboard')
+    //         setsidebar_tab('dashboard')
+    //     }
+    //     else if (['front-desk', 'physician', 'medical-assistant'].includes(userRole)){
+    //         // sessionStorage.setItem('side-tab', 'todays-appointment')
+    //         console.log('here :: ', userRole)
+    //         setsidebar_tab('todays-appointment')
+    //     }
+    //     else if (['billing'].includes(userRole)){
+    //         setsidebar_tab('help-and-tutorial-learning')
+    //     }
 
-    const handleSelect = (item:string)=>{
-        setSelected(item)
-    }
+    // }, [])
+
+    
     return (
         <div className='w-[20%] flex flex-col items-center justify-start pl-3 gap-3'>
             <div className="flex flex-col bg-slate-100 rounded-b-[10px] w-full h-auto">
-                {['admin-1', 'admin-2', 'office-manager',].includes(userRole) && <span className={selected === 'dashboard'? 'active-bord': 'bord' } onClick={()=> handleSelect('dashboard')} >
+                {['admin-1', 'admin-2', 'office-manager',].includes(userRole) && <span className={sidebar_tab === 'dashboard'? 'active-bord': 'bord' } onClick={()=> setSidebar_tab('dashboard')} >
                     <p className="text-white text-sm">Dashboard</p>
                 </span>}
                 
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'physician', 'medical-assistant'].includes(userRole) && <span className={selected === 'todays-appointment'? 'active-bord': 'bord' } onClick={()=> {handleSelect('todays-appointment'); router.push('/home/todays-appointment')}} >
+                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'todays-appointment'? 'active-bord': 'bord' } onClick={()=> {setSidebar_tab('todays-appointment')}} >
                     <p className="text-white text-sm">Today's Appointment</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'physician', 'medical-assistant'].includes(userRole) && <span className={selected === 'patient-in-office'? 'active-bord': 'bord' } onClick={()=> {handleSelect('patient-in-office'); router.push('/home/patient-in-office')}} >
+                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'patient-in-office'? 'active-bord': 'bord' } onClick={()=> {setSidebar_tab('patient-in-office')}} >
                     <p className="text-white text-sm">Patient in Office</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'physician', 'medical-assistant'].includes(userRole) && <span className={selected === 'notes-in-progress'? 'active-bord': 'bord' } onClick={()=> handleSelect('notes-in-progress')} >
+                {['admin-1', 'admin-2', 'office-manager', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'notes-in-progress'? 'active-bord': 'bord' } onClick={()=> setSidebar_tab('notes-in-progress')} >
                     <p className="text-white text-sm">Notes in Progress</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager'].includes(userRole) && <span className={selected === 'not-billed-encounters'? 'active-bord': 'bord' } onClick={()=> handleSelect('not-billed-encounters')} >
+                {['admin-1', 'admin-2', 'office-manager'].includes(userRole) && <span className={sidebar_tab === 'not-billed-encounters'? 'active-bord': 'bord' } onClick={()=> setSidebar_tab('not-billed-encounters')} >
                     <p className="text-white text-sm">Not Billed Encounters</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'physician', 'medical-assistant'].includes(userRole) && <span className={selected === 'pending-review-labs'? 'active-bord': 'bord' } onClick={()=> handleSelect('pending-review-labs')} >
+                {['admin-1', 'admin-2', 'office-manager', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'pending-review-labs'? 'active-bord': 'bord' } onClick={()=> setSidebar_tab('pending-review-labs')} >
                     <p className="text-white text-sm">Pending Review Labs</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className={selected === 'help-and-tutorial-learning'? 'active-bord': 'bord' } onClick={()=> {handleSelect('help-and-tutorial-learning'); router.push('help-and-tutorial-learning')}} >
+                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'help-and-tutorial-learning'? 'active-bord': 'bord' } onClick={()=> {setSidebar_tab('help-and-tutorial-learning')}} >
                     <p className="text-white text-sm">Help and Tutorial Learning</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'billing'].includes(userRole) && <span className={selected === 'customer-support'? 'active-bord': 'bord' } onClick={()=> handleSelect('customer-support')} >
+                {['admin-1', 'admin-2', 'office-manager', 'billing'].includes(userRole) && <span className={sidebar_tab === 'customer-support'? 'active-bord': 'bord' } onClick={()=> setSidebar_tab('customer-support')} >
                     <p className="text-white text-sm">Customer Support</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager'].includes(userRole) && <span className={selected === 'file-maintenance'? 'active-bord': 'bord' } onClick={()=> handleSelect('file-maintenance')} >
+                {['admin-1', 'admin-2', 'office-manager'].includes(userRole) && <span className={sidebar_tab === 'file-maintenance'? 'active-bord': 'bord' } onClick={()=> setSidebar_tab('file-maintenance')} >
                     <p className="text-white text-sm">File Maintenance </p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager'].includes(userRole) && <span className={selected === 'users'? 'active-bord': 'bord' } onClick={()=> handleSelect('users')} >
+                {['admin-1', 'admin-2', 'office-manager'].includes(userRole) && <span className={sidebar_tab === 'users'? 'active-bord': 'bord' } onClick={()=> setSidebar_tab('users')} >
                     <p className="text-white text-sm">Users</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager'].includes(userRole) && <span className={selected === 'medical-scrubbers'? 'active-bord': 'bord' } onClick={()=> handleSelect('medical-scrubbers')} >
+                {['admin-1', 'admin-2', 'office-manager'].includes(userRole) && <span className={sidebar_tab === 'medical-scrubbers'? 'active-bord': 'bord' } onClick={()=> setSidebar_tab('medical-scrubbers')} >
                     <p className="text-white text-sm">Medical Scrubbers</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'front-desk'].includes(userRole) && <span className={selected === 'invoicing'? 'active-bord': 'bord' } onClick={()=> {handleSelect('invoicing'); router.push('/home/invoicing')}} >
+                {['admin-1', 'front-desk'].includes(userRole) && <span className={sidebar_tab === 'invoicing'? 'active-bord': 'bord' } onClick={()=> {setSidebar_tab('invoicing')}} >
                     <p className="text-white text-sm">Invoicing </p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className={selected === 'support-center'? 'active-bord': 'bord' } onClick={()=> handleSelect('support-center')} >
+                {['admin-1', 'admin-2', 'office-manager', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'support-center'? 'active-bord': 'bord' } onClick={()=> setSidebar_tab('support-center')} >
                     <p className="text-white text-sm">Support Center</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className={selected === 'patient-porter'? 'active-bord': 'bord' } onClick={()=> {handleSelect('patient-porter'); router.push('/home/patient-porter')}} >
+                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'billing', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'patient-porter'? 'active-bord': 'bord' } onClick={()=> {setSidebar_tab('patient-porter')}} >
                     <p className="text-white text-sm">Patient Porter</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>
                         <FiRefreshCcw size={18} className='text-slate-200' />
                     </span>
                 </span>}
-                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'physician', 'medical-assistant'].includes(userRole) && <span className={selected === 'provider-schedule'? 'active-bord': 'bord' } onClick={()=> {handleSelect('provider-schedule'); router.push('/home/provider-schedule')}} >
+                {['admin-1', 'admin-2', 'office-manager', 'front-desk', 'physician', 'medical-assistant'].includes(userRole) && <span className={sidebar_tab === 'provider-schedule'? 'active-bord': 'bord' } onClick={()=> {setSidebar_tab('provider-schedule')}} >
                     <p className="text-white text-sm">Provider Schedule</p>
                     <span className="flex flex-row items-center justify-end gap-3 h-fill">
                         <span className="px-[4px] py-[1px] rounded-[10px] text-sm text-slate-600 bg-slate-200 flex items-center justify-center">10</span>

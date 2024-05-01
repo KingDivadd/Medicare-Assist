@@ -96,7 +96,7 @@ const RouteNav = ({userRole}: RouteNavProps) => {
 
             <div className="w-full flex flex-row items-center justify-between">
                 <div className="flex flex-row gap-1 items-center w-auto h-[50px]">
-                    {['admin-1', 'admin-2','billing', 'front-desk', 'medical-assistant', 'office-manager', 'physician'].includes(userRole) &&  <Link href={'/home/dashboard'} className={page === '/home/dashboard'? 'active-route-nav-item':'route-nav-item'}>
+                    {['admin-1', 'admin-2','billing', 'front-desk', 'medical-assistant', 'office-manager', 'physician'].includes(userRole) &&  <Link href={'/home'} className={page === '/home'? 'active-route-nav-item':'route-nav-item'}>
                         <BiHomeAlt2 size={23} className="text-slate-300" />
                         <p className="text-slate-300 text-[15px]">Home</p>
                     </Link>}
