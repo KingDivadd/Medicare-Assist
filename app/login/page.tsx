@@ -32,7 +32,6 @@ const Login = () => {
 
         await new Promise(resolve => setTimeout(resolve, 2000));
         // After the request is processed, navigate to the next page
-        console.log(dropElements.userRole.replace(/ /g, '-'))
         router.push('/home')
         // if (['admin-1','admin-2', 'office-manager'].includes(dropElements.userRole.toLowerCase().replace(/ /g,'-'))) {
         // }

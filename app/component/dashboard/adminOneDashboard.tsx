@@ -41,7 +41,6 @@ const AdminOneDashboard = ({userRole}:RouteNavProps) => {
         if (sidebar_tab.trim() !== ''){
             sessionStorage.setItem('sidebar_tab',sidebar_tab)
         }
-        console.log('clicked :: ',sidebar_tab)
     }, [sidebar_tab])
     return (
         <main className='w-full h-screen flex items-start justify-center bg-slate-200'>

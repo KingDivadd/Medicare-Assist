@@ -1,16 +1,18 @@
+'u'
 import React from 'react'
 import { FiRefreshCcw } from "react-icons/fi";
 import MyDatePicker from './datepicker';
 import { IoCaretUp } from "react-icons/io5";
 import { IoCaretDown } from "react-icons/io5";
+import { SelectDateProps } from '@/types';
 
 
-const SchedulingSideBar = () => {
+const SchedulingSideBar = ({clickedDate, setClickedDate}: SelectDateProps) => {
     return (
         <div className='w-[400px] flex items-start justify-center pl-3 bg-sky-600'>
             <div className="flex flex-col  rounded-b-[10px] w-full h-auto gap-2 pt-[15px]">
                 <div className="h-[290px] w-full bg-blue-200 pt-[1px] flex itmes-center justify-start">
-                    <MyDatePicker />
+                    <MyDatePicker clickedDate={clickedDate} setClickedDate={setClickedDate} />
                 </div>
 
                 <div className=" w-full bg-red-200 pt-[1px] flex flex-col bg-white">

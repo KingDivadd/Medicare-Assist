@@ -65,3 +65,8 @@ export interface SideBarProps {
     sidebar_tab: string;
     setSidebar_tab: (patient_tab: string)=> void;
 }
+
+export interface SelectDateProps {
+    clickedDate: string; 
+    setClickedDate: (clickedDate: string)=> void;
+}
