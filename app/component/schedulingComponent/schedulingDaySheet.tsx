@@ -1,10 +1,50 @@
 import { SchedulingTabProps } from '@/types'
-import React from 'react'
+import React, { useState } from 'react'
 import { IoCaretDown, IoCaretDownCircle } from 'react-icons/io5'
 import RouteNav from '../routeNav'
 import TabBar from './tabBar'
+import DropDown from '../dropDown'
 
 const SchedulingDaySheet = ({tab, setTab}:SchedulingTabProps) => {
+    const [dropMenus, setDropMenus] = useState<{ [key: string]: boolean }>({
+        practice: false,
+        location: false,
+        provider: false,
+        reason: false,
+        status: false,
+    });
+    const [dropElements, setDropElements] = useState({
+        practice: 'SELECT',
+        location: 'SELECT',
+        provider: 'SELECT',
+        reason: 'SELECT',
+        status: 'SELECT',
+        fromDate: '',
+        toDate: '',
+        fromTime: '',
+        toTime: '',
+        unlinkedApt: false
+    })
+
+    const handleSelectDropdown = (dropdown: any, title:any)=>{
+        setDropElements({...dropElements, [title]: dropdown}); setDropMenus({...dropMenus, [title]: false})
+    }
+
+    const handleDropMenu = (dropdown: any) => {
+        const updatedDropMenus = Object.keys(dropMenus).reduce((acc, key) => {
+            acc[key] = key === dropdown ? !dropMenus[key] : false;
+            return acc;
+        }, {} as { [key: string]: boolean });
+        setDropMenus(updatedDropMenus);
+        setDropElements({...dropElements, [dropdown]: 'SELECT'});
+    };
+
+    const handleChange = (e:any)=>{
+        const name = e.target.name
+        const value = e.target.value
+        setDropElements({...dropElements, [name]:value})
+    }
+
     return (
         <main className="w-full h-screen flex flex-col bg-slate-100 overflow-hidden">
             <RouteNav userRole='admin-1'/>
@@ -22,135 +62,102 @@ const SchedulingDaySheet = ({tab, setTab}:SchedulingTabProps) => {
                         <div className="flex flex-col xl:w-[95%] px-10 py-6 mx-auto bg-blue-200 gap-3 ">
                             <div className="flex flex-col w-full items-center justify-center gap-2">
                                 
-                                <span className="flex flex-row gap-[140px] w-full items-center justify-center h-auto">
+                                <span className="flex flex-row gap-[50px] w-full items-center justify-center h-auto">
 
                                     <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px] ">
-                                        <p className="text-sky-600 text-[15px] font-semibold">Practice</p>
-                                        <span className=" h-[24px] w-[130px] flex flex-row items-center justify-end cursor-pointer">
-                                            <input type="text" name="" id="" placeholder='HIM' className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 focus:bg-slate-200 focus:outline-none' />
-                                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                                <IoCaretDown size={18} className='text-slate-200' />
-                                            </span>
+                                        <p className="text-sky-600 text-[15px] w-[120px] text-end font-semibold">Practice</p>
+                                        <span className=" h-[25px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
+                                            <DropDown title={'practice'} dropArray={['HIM', 'BALDRICH']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} handleSelectDropdown={handleSelectDropdown} setDropElements={setDropElements} setDropMenus={setDropMenus} />
                                         </span>
                                     </span>
                                     
                                     <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px]  ">
-                                        <p className="text-sky-600 text-[15px] font-semibold">Provider</p>
-                                        <span className=" h-[24px] w-[130px] flex flex-row items-center justify-end cursor-pointer">
-                                            <input type="text" name="" id="" placeholder='BALDRICH' className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 focus:bg-slate-200 focus:outline-none' />
-                                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                                <IoCaretDown size={18} className='text-slate-200' />
-                                            </span>
+                                        <p className="text-sky-600 text-[15px] w-[120px] text-end font-semibold">Location</p>
+                                        <span className=" h-[25px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
+                                            <DropDown title={'location'} dropArray={['HIM', 'BALDRICH']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} handleSelectDropdown={handleSelectDropdown} setDropElements={setDropElements} setDropMenus={setDropMenus} />
                                         </span>
                                     </span>
                                     
                                     <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px]  ">
-                                        <p className="text-sky-600 text-[15px] font-semibold">Location</p>
-                                        <span className=" h-[24px] w-[130px] flex flex-row items-center justify-end cursor-pointer">
-                                            <input type="text" name="" id="" placeholder='HIM' className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 focus:bg-slate-200 focus:outline-none' />
-                                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                                <IoCaretDown size={18} className='text-slate-200' />
-                                            </span>
+                                        <p className="text-sky-600 text-[15px] w-[120px] text-end font-semibold">Provider</p>
+                                        <span className=" h-[25px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
+                                            <DropDown title={'provider'} dropArray={['HIM', 'BALDRICH']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} handleSelectDropdown={handleSelectDropdown} setDropElements={setDropElements} setDropMenus={setDropMenus} />
                                         </span>
                                     </span>
                                     
                                     <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px]  ">
-                                        <p className="text-sky-600 text-[15px] font-semibold">Reason</p>
-                                        <span className=" h-[24px] w-[130px] flex flex-row items-center justify-end cursor-pointer">
-                                            <span className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 ' >-SELECT-</span>
-                                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                                <IoCaretDown size={18} className='text-slate-200' />
-                                            </span>
+                                        <p className="text-sky-600 text-[15px] w-[120px] text-end font-semibold">Reason</p>
+                                        <span className=" h-[25px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
+                                            <DropDown title={'reason'} dropArray={['HIM', 'BALDRICH']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} handleSelectDropdown={handleSelectDropdown} setDropElements={setDropElements} setDropMenus={setDropMenus} />
                                         </span>
                                     </span>
                                     
                                 </span>
                                 
-                                <span className="flex flex-row gap-[140px] w-full items-center justify-center h-auto">
+                                <span className="flex flex-row gap-[50px] w-full items-center justify-center h-auto">
 
                                     <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px]  ">
-                                        <p className="text-sky-600 text-[15px] font-semibold">Practice</p>
-                                        <span className=" h-[24px] w-[130px] flex flex-row items-center justify-end cursor-pointer">
-                                            <input type="text" name="" id="" placeholder='HIM' className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 focus:bg-slate-200 focus:outline-none' />
-                                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                                <IoCaretDown size={18} className='text-slate-200' />
-                                            </span>
+                                        <p className="text-sky-600 text-[15px] w-[120px] text-end font-semibold">From Date</p>
+                                        <span className=" h-[25px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
+                                            <label htmlFor="fromDate" className="w-full flex h-[35px] items-center justify-between cursor-pointer">
+                                                <input type='date' name='fromDate' id="fromDate" value={dropElements.fromDate} onChange={handleChange} className='w-full h-full text-slate-500 text-sm border border-slate-400 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px] cursor-pointer ' />
+                                            </label>
                                         </span>
                                     </span>
                                     
                                     <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px]  ">
-                                        <p className="text-sky-600 text-[15px] font-semibold">Provider</p>
-                                        <span className=" h-[24px] w-[130px] flex flex-row items-center justify-end cursor-pointer">
-                                            <input type="text" name="" id="" placeholder='BALDRICH' className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 focus:bg-slate-200 focus:outline-none' />
-                                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                                <IoCaretDown size={18} className='text-slate-200' />
-                                            </span>
+                                        <p className="text-sky-600 text-[15px] w-[120px] text-end font-semibold">To Date</p>
+                                        <span className=" h-[25px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
+                                            <label htmlFor="toDate" className="w-full flex h-[35px] items-center justify-between cursor-pointer">
+                                                <input type='date' name='toDate' id="toDate" value={dropElements.toDate} onChange={handleChange} className='w-full h-full text-slate-500 text-sm border border-slate-400 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px] cursor-pointer ' />
+                                            </label>
                                         </span>
                                     </span>
                                     
                                     <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px]  ">
-                                        <p className="text-sky-600 text-[15px] font-semibold">Location</p>
-                                        <span className=" h-[24px] w-[130px] flex flex-row items-center justify-end cursor-pointer">
-                                            <input type="text" name="" id="" placeholder='HIM' className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 focus:bg-slate-200 focus:outline-none' />
-                                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                                <IoCaretDown size={18} className='text-slate-200' />
-                                            </span>
+                                        <label htmlFor='unlinkedAppt' className="text-sky-600 text-[15px] w-[120px] text-end font-semibold">Unlinked Appt</label>
+                                        <span className=" h-[25px] w-[150px] flex items-center justify-start cursor-pointer">
+                                            <input onChange={(e:any)=> {setDropElements({...dropElements, unlinkedApt: e.target.checked})}} checked={dropElements.unlinkedApt} type="checkbox" name="" id="sundayId" className='h-[17px] w-[17px]' />
                                         </span>
                                     </span>
                                     
                                     <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px]  ">
-                                        <p className="text-sky-600 text-[15px] font-semibold">Reason</p>
-                                        <span className=" h-[24px] w-[130px] flex flex-row items-center justify-end cursor-pointer">
-                                            <input type="text" name="" id="" placeholder='HIM' className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 focus:bg-slate-200 focus:outline-none' />
-                                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                                <IoCaretDown size={18} className='text-slate-200' />
-                                            </span>
+                                        <p className="text-sky-600 text-[15px] w-[120px] text-end font-semibold">Status</p>
+                                        <span className=" h-[25px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
+                                            <DropDown title={'status'} dropArray={['All', 'HIM', 'BALDRICH']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} handleSelectDropdown={handleSelectDropdown} setDropElements={setDropElements} setDropMenus={setDropMenus} />
                                         </span>
                                     </span>
                                     
                                 </span>
                                 
-                                <span className="flex flex-row gap-[140px] w-full items-center justify-center h-auto">
+                                <span className="flex flex-row gap-[50px] w-full items-center justify-center h-auto">
 
                                     <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px]  ">
-                                        <p className="text-sky-600 text-[15px] font-semibold">Practice</p>
-                                        <span className=" h-[24px] w-[130px] flex flex-row items-center justify-end cursor-pointer">
-                                            <input type="text" name="" id="" placeholder='HIM' className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 focus:bg-slate-200 focus:outline-none' />
-                                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                                <IoCaretDown size={18} className='text-slate-200' />
-                                            </span>
+                                        <p className="text-sky-600 text-[15px] font-semibold  w-[120px] text-end">From Time</p>
+                                        <span className=" h-[25px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
+                                            <input type='time' name='fromTime' id="fromTime" value={dropElements.fromTime} onChange={handleChange} className='w-full h-[35px] text-slate-500 font-semibold text-sm border border-slate-400 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px] cursor-pointer ' />
+                                        </span>
+                                    </span>
+
+                                    <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px]  ">
+                                        <p className="text-sky-600 text-[15px] font-semibold  w-[120px] text-end">To Time</p>
+                                        <span className=" h-[25px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
+                                            <input type='time' name='toTime' id="toTime" value={dropElements.toTime} onChange={handleChange} className='w-full h-[35px] text-slate-500 font-semibold text-sm border border-slate-400 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px] cursor-pointer ' />
                                         </span>
                                     </span>
                                     
                                     <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px]  ">
-                                        <p className="text-sky-600 text-[15px] font-semibold">Provider</p>
-                                        <span className=" h-[24px] w-[130px] flex flex-row items-center justify-end cursor-pointer">
-                                            <input type="text" name="" id="" placeholder='BALDRICH' className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 focus:bg-slate-200 focus:outline-none' />
-                                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                                <IoCaretDown size={18} className='text-slate-200' />
-                                            </span>
+                                        <p className="text-sky-600 text-[15px] font-semibold  w-[120px] text-end"></p>
+                                        <span className=" h-[25px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
                                         </span>
                                     </span>
                                     
                                     <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px]  ">
-                                        <p className="text-sky-600 text-[15px] font-semibold">Location</p>
-                                        <span className=" h-[24px] w-[130px] flex flex-row items-center justify-end cursor-pointer">
-                                            <input type="text" name="" id="" placeholder='HIM' className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 focus:bg-slate-200 focus:outline-none' />
-                                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                                <IoCaretDown size={18} className='text-slate-200' />
-                                            </span>
+                                        <p className="text-sky-600 text-[15px] font-semibold  w-[120px] text-end"></p>
+                                        <span className=" h-[25px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
                                         </span>
                                     </span>
                                     
-                                    <span className="w-auto flex flex-row items-center justify-center gap-5 h-[40px]  ">
-                                        <p className="text-sky-600 text-[15px] font-semibold">Reason</p>
-                                        <span className=" h-[24px] w-[130px] flex flex-row items-center justify-end cursor-pointer">
-                                            <input type="text" name="" id="" placeholder='HIM' className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 focus:bg-slate-200 focus:outline-none' />
-                                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                                <IoCaretDown size={18} className='text-slate-200' />
-                                            </span>
-                                        </span>
-                                    </span>
                                     
                                 </span>
                                 
