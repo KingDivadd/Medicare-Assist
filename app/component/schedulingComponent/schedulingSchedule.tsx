@@ -1,11 +1,43 @@
+'use client'
 import { SchedulingTabProps } from '@/types'
-import React from 'react'
+import React, { useState } from 'react'
 import RouteNav from '../routeNav'
 import TabBar from './tabBar'
 import { IoCaretDown } from 'react-icons/io5'
 import { ImBin } from "react-icons/im";
+import DropDown from '../dropDown'
 
 const SchedulingSchedule = ({tab, setTab}:SchedulingTabProps) => {
+    const [dropMenus, setDropMenus] = useState<{ [key: string]: boolean }>({
+        provider: false,
+    });
+    const [dropElements, setDropElements] = useState({
+        provider: 'SELECT',
+    })
+
+    const handleSelectDropdown = (dropdown: any, title:any)=>{
+        setDropElements({...dropElements, [title]: dropdown}); setDropMenus({...dropMenus, [title]: false})
+    }
+
+    const handleDropMenu = (dropdown: any) => {
+        const updatedDropMenus = Object.keys(dropMenus).reduce((acc, key) => {
+            acc[key] = key === dropdown ? !dropMenus[key] : false;
+            return acc;
+        }, {} as { [key: string]: boolean });
+        setDropMenus(updatedDropMenus);
+        setDropElements({...dropElements, [dropdown]: 'SELECT'});
+    };
+
+    const handleChange = (e:any)=>{
+        const name = e.target.name
+        const value = e.target.value
+        setDropElements({...dropElements, [name]:value})
+    }
+    
+    const handleSearch = async()=>{
+        console.log('elements :: ',dropElements)
+    }
+
     return (
         <main className='w-full h-screen flex flex-col bg-slate-100 overflow-hidden'>
             <RouteNav userRole='admin-1' />
@@ -14,11 +46,8 @@ const SchedulingSchedule = ({tab, setTab}:SchedulingTabProps) => {
                 <div className="w-full mx-auto flex flex-col h-full bg-slate-100 pt-2">
                     <span className="w-auto flex flex-row items-center justify-center gap-5 h-[50px]">
                         <p className="text-sky-600 text-[15px] font-semibold">Provider</p>
-                        <span className=" h-[24px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
-                            <input type="text" name="" id="" placeholder='BALDRICH' className='w-full flex h-full items-center justify-center text-slate-500 text-sm font-semibold border-2 border-slate-400 border-r-0 px-2 bg-slate-100 focus:bg-slate-200 focus:outline-none' />
-                            <span className="h-full w-[40px] bg-sky-700 flex items-center justify-center">
-                                <IoCaretDown size={18} className='text-slate-200' />
-                            </span>
+                        <span className=" h-[25px] w-[150px] flex flex-row items-center justify-end cursor-pointer">
+                            <DropDown title={'provider'} dropArray={['HIM', 'BALDRICH']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} handleSelectDropdown={handleSelectDropdown} setDropElements={setDropElements} setDropMenus={setDropMenus} />
                         </span>
                     </span>
 
