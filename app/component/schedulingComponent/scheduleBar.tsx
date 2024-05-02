@@ -1,10 +1,30 @@
 'use client'
 import { SelectDateProps } from '@/types';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
+import DropDown from '../dropDown';
 
 const ScheduleBar = ({clickedDate, setClickedDate}:SelectDateProps) => {
+    const [dropMenus, setDropMenus] = useState<{ [key: string]: boolean }>({
+        jump: false,
+    });
+    const [dropElements, setDropElements] = useState({
+        jump: 'SELECT',
+    })
+
+    const handleSelectDropdown = (dropdown: any, title:any)=>{
+        setDropElements({...dropElements, [title]: dropdown}); setDropMenus({...dropMenus, [title]: false})
+    }
+
+    const handleDropMenu = (dropdown: any) => {
+        const updatedDropMenus = Object.keys(dropMenus).reduce((acc, key) => {
+            acc[key] = key === dropdown ? !dropMenus[key] : false;
+            return acc;
+        }, {} as { [key: string]: boolean });
+        setDropMenus(updatedDropMenus);
+        setDropElements({...dropElements, [dropdown]: 'SELECT'});
+    };
     useEffect(() => {
     const today:any = new Date()
     setClickedDate(formatDate(today))
@@ -46,6 +66,11 @@ const ScheduleBar = ({clickedDate, setClickedDate}:SelectDateProps) => {
                 </span>
             </div>
             <div className="flex flex-row py-1 px-2 gap-2">
+                <p className="text-[15px] font-semibold text-slate-700 text-center my-auto">Jump To:</p>
+                <span className="w-[150px]">
+                    <DropDown title={'jump'} dropArray={['', '']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} handleSelectDropdown={handleSelectDropdown} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                </span>
+                
                 <span className="w-[90px] h-[35px] bg-amber-500 hover:bg-amber-600 cursor-pointer flex items-center justify-center text-red text-slate-100 rounded-[3px]">Day</span>
                 <span className="w-[90px] h-[35px] bg-sky-600 hover:bg-sky-700 cursor-pointer flex items-center justify-center text-red text-slate-100 rounded-[3px]">Week</span>
                 <span className="w-[90px] h-[35px] bg-sky-600 hover:bg-sky-700 cursor-pointer flex items-center justify-center text-red text-slate-100 rounded-[3px]">Month</span>
