@@ -25,7 +25,7 @@ const ScheduleWaitList = ({tab, setTab}:SchedulingTabProps) => {
         first_name: '',
         last_name: '',
         fromDate: '',
-        toData: ''
+        toDate: ''
     })
 
     const handleSelectDropdown = (dropdown: any, title:any)=>{
