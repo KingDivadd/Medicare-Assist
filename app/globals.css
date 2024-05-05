@@ -170,6 +170,10 @@
     height: calc(100vh - 170px)
 }
 
+.cont-9 {
+    height: calc(130vh)
+}
+
 .cont-side-bar-right {
     height: calc(100vh - 160px)
 }
