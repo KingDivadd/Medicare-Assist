@@ -99,6 +99,7 @@ const ClientInfoPage = () => {
                     
                 </div>
             </div>
+            
             <div className="w-full h-auto flex flex-col justify-start items-center bg-white shadow-xl">
                 <span className="w-full flex items-center rounded-t-[5px] px-2 text-[15px] font-semibold text-white bg-sky-600 h-[40px]">
                     RCM Payment Methods
@@ -117,6 +118,7 @@ const ClientInfoPage = () => {
                     
                 </div>
             </div>
+
             <div className="w-full h-auto flex flex-col justify-start items-center bg-white shadow-xl">
                 <span className="w-full flex items-center rounded-t-[5px] px-2 text-[15px] font-semibold text-white bg-sky-600 h-[40px]">
                     Invoice

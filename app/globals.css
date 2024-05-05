@@ -171,7 +171,7 @@
 }
 
 .cont-9 {
-    height: calc(130vh)
+    max-height: calc(130vh)
 }
 
 .cont-side-bar-right {

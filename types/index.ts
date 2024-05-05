@@ -41,6 +41,15 @@ export interface MessageModalProps {
     setSelectedMessage: (selectedMessage: any) => void
 }
 
+export interface UserModalProps {
+    userModal: boolean;
+    setUserModal: (userModal: boolean) => void;
+    userList: any[];
+    setUserList: (userList: any[]) => void;
+    selectedUser: any;
+    setSelectedUser: (selectedUser: any) => void
+}
+
 export type HandleDropMenuFunction = (dropdown: any) => void;
 
 export type HandleDropDownFunction = (dropdown: string, title:any) => void;
