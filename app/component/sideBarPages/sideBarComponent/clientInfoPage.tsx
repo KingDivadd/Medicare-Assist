@@ -1,19 +1,29 @@
 'use client'
 import React from 'react'
+import { FaUserDoctor } from "react-icons/fa6";
+import { GiHealingShield } from "react-icons/gi";
+
 
 const ClientInfoPage = () => {
     return (
         <div className="w-full flex flex-col justify-start align-center gap-3 ">
             <div className="w full h-auto flex flex-row justify-start align-center gap-4">
                 <span className="h-[100px] w-[400px] flex flex-row items-between justify-between rounded-[3px] border border-sky-700 px-3 py-2 bg-white ">
-                    <span className="w- flex flex-col justify-between items-start">
+                    <span className="w-[50%] flex flex-col justify-between items-start">
                         <p className="text-sm font-semibold text-sky-700">PROVIDERS</p>
                     </span>
+                    <span className="w-[50%] flex flex-col justify-between items-end">
+                        <FaUserDoctor size={40} className='text-sky-600' />
+                    </span>
+
                 </span>
                 <span className="h-[100px] w-[400px] flex flex-row items-between justify-between rounded-[3px] border border-sky-700 px-3 py-2 bg-white ">
-                    <span className="w- flex flex-col justify-between items-start">
+                    <span className="w-[50%] flex flex-col justify-between items-start">
                         <p className="text-sm font-semibold text-sky-700">PRODUCTS</p>
                         <p className="text-xl font-bold text-sky-700">EHR PM</p>
+                    </span>
+                    <span className="w-[50%] flex flex-col justify-between items-end">
+                        <GiHealingShield size={40} className='text-sky-600' />
                     </span>
                 </span>
             </div>
@@ -67,7 +77,9 @@ const ClientInfoPage = () => {
                             <input type="text" name="" id="" placeholder='' className='w-[350px] flex h-full items-center justify-center text-slate-500 text-sm font-semibold border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
                         </span>
                     </span>
-                    <button type="button" className="flex items-center px-3 py-2 rounded-[5px] text-white bg-lime-600 hover:bg-lime-700 mt-3">Update Client Info</button>
+                    <button type="button" className="flex items-center px-3 py-2 rounded-[3px] text-white bg-lime-600 hover:bg-lime-700 mt-3">
+                        Update Client Info
+                    </button>
                 </div>
             </div>
 

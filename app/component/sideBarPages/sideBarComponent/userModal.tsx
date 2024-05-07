@@ -153,7 +153,7 @@ const NewUserModal = ({userModal, setUserModal, userList, setUserList, selectedU
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
                                     <label htmlFor="allowDelete" className="text-sm text-slate-700 text-end w-[230px]">Allow Delete</label>
                                     <span className="h-[28px] w-[400px] flex items-center justify-start">
-                                        <input onChange={handleChange} checked={dropElements.allowDelete} type="checkbox" name="allowDelete" id="allowDelete" className='w-[17px] h-[17px] ' />
+                                        <input onChange={(e:any)=> {setDropElements({...dropElements, allowDelete: e.target.checked})}} checked={dropElements.allowDelete} type="checkbox" name="allowDelete" id="allowDelete" className='w-[17px] h-[17px] ' />
                                     </span>
                                 </span>
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
@@ -168,13 +168,13 @@ const NewUserModal = ({userModal, setUserModal, userList, setUserList, selectedU
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
                                     <label htmlFor="epcsSetting" className="text-sm text-slate-700 text-end w-[230px]">EPCS Setting </label>
                                     <span className="h-[28px] w-[400px] flex items-center justify-start">
-                                        <input onChange={handleChange} checked={dropElements.epcsSetting} type="checkbox" name="epcsSetting" id="epcsSetting" className='w-[17px] h-[17px] ' />
+                                        <input onChange={(e:any)=> {setDropElements({...dropElements, epcsSetting: e.target.checked})}} checked={dropElements.epcsSetting} type="checkbox" name="epcsSetting" id="epcsSetting" className='w-[17px] h-[17px] ' />
                                     </span>
                                 </span>
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
                                     <label htmlFor="activee" className="text-sm text-slate-700 text-end w-[230px]">Active </label>
                                     <span className="h-[28px] w-[400px] flex items-center justify-start">
-                                        <input onChange={handleChange} checked={dropElements.activee} type="checkbox" name="activee" id="activee" className='w-[17px] h-[17px] ' />
+                                        <input onChange={(e:any)=> {setDropElements({...dropElements, activee: e.target.checked})}} checked={dropElements.activee} type="checkbox" name="activee" id="activee" className='w-[17px] h-[17px] ' />
                                     </span>
                                 </span>
                                 
@@ -184,13 +184,13 @@ const NewUserModal = ({userModal, setUserModal, userList, setUserList, selectedU
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
                                     <label htmlFor="allowEpcs" className="text-sm text-slate-700 text-end w-[230px]">Allow EPCS</label>
                                     <span className="h-[28px] w-[400px] flex items-center justify-start">
-                                        <input onChange={handleChange} checked={dropElements.allowEpcs} type="checkbox" name="allowEpcs" id="allowEpcs" className='w-[17px] h-[17px] ' />
+                                        <input onChange={(e:any)=> {setDropElements({...dropElements, allowEpcs: e.target.checked})}} checked={dropElements.allowEpcs} type="checkbox" name="allowEpcs" id="allowEpcs" className='w-[17px] h-[17px] ' />
                                     </span>
                                 </span>
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
                                     <label htmlFor="secondApprover" className="text-sm text-slate-700 text-end w-[230px]">EPCS Second Approver </label>
                                     <span className="h-[28px] w-[400px] flex items-center justify-start">
-                                        <input onChange={handleChange} checked={dropElements.secondApprover} type="checkbox" name="secondApprover" id="secondApprover" className='w-[17px] h-[17px] ' />
+                                        <input onChange={(e:any)=> {setDropElements({...dropElements, secondApprover: e.target.checked})}} checked={dropElements.secondApprover} type="checkbox" name="secondApprover" id="secondApprover" className='w-[17px] h-[17px] ' />
                                     </span>
                                 </span>
                             </span>
@@ -199,13 +199,13 @@ const NewUserModal = ({userModal, setUserModal, userList, setUserList, selectedU
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
                                     <label htmlFor="admin" className="text-sm text-slate-700 text-end w-[230px]">Admin </label>
                                     <span className="h-[28px] w-[400px] flex items-center justify-start">
-                                        <input onChange={handleChange} checked={dropElements.admin} type="checkbox" name="admin" id="admin" className='w-[17px] h-[17px] ' />
+                                        <input onChange={(e:any)=> {setDropElements({...dropElements, admin: e.target.checked})}} checked={dropElements.admin} type="checkbox" name="admin" id="admin" className='w-[17px] h-[17px] ' />
                                     </span>
                                 </span>
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
                                     <label htmlFor="setupProfiles" className="text-sm text-slate-700 text-end w-[230px]">Show Setup Profiles </label>
                                     <span className="h-[28px] w-[400px] flex items-center justify-start">
-                                        <input onChange={handleChange} checked={dropElements.setupProfiles} type="checkbox" name="setupProfiles" id="setupProfiles" className='w-[17px] h-[17px] ' />
+                                        <input onChange={(e:any)=> {setDropElements({...dropElements, setupProfiles: e.target.checked})}} checked={dropElements.setupProfiles} type="checkbox" name="setupProfiles" id="setupProfiles" className='w-[17px] h-[17px] ' />
                                     </span>
                                 </span>
                             </span>
@@ -214,7 +214,7 @@ const NewUserModal = ({userModal, setUserModal, userList, setUserList, selectedU
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
                                     <label htmlFor="pmpNarx" className="text-sm text-slate-700 text-end w-[230px]">PMP Narx </label>
                                     <span className="h-[28px] w-[400px] flex items-center justify-start">
-                                        <input onChange={handleChange} checked={dropElements.pmpNarx} type="checkbox" name="pmpNarx" id="pmpNarx" className='w-[17px] h-[17px] ' />
+                                        <input onChange={(e:any)=> {setDropElements({...dropElements, pmpNarx: e.target.checked})}} checked={dropElements.pmpNarx} type="checkbox" name="pmpNarx" id="pmpNarx" className='w-[17px] h-[17px] ' />
                                     </span>
                                 </span>
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
@@ -227,7 +227,7 @@ const NewUserModal = ({userModal, setUserModal, userList, setUserList, selectedU
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
                                     <label htmlFor="multiSeason" className="text-sm text-slate-700 text-end w-[230px]">Multi Season </label>
                                     <span className="h-[28px] w-[400px] flex items-center justify-start">
-                                        <input onChange={handleChange} checked={dropElements.multiSeason} type="checkbox" name="multiSeason" id="multiSeason" className='w-[17px] h-[17px] ' />
+                                        <input onChange={(e:any)=> {setDropElements({...dropElements, multiSeason: e.target.checked})}} checked={dropElements.multiSeason} type="checkbox" name="multiSeason" id="multiSeason" className='w-[17px] h-[17px] ' />
                                     </span>
                                 </span>
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
@@ -241,7 +241,7 @@ const NewUserModal = ({userModal, setUserModal, userList, setUserList, selectedU
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">
                                     <label htmlFor="twoFactorAuth" className="text-sm text-slate-700 text-end w-[230px]">Two Factor Authentication </label>
                                     <span className="h-[28px] w-[400px] flex items-center justify-start">
-                                        <input onChange={handleChange} checked={dropElements.twoFactorAuth} type="checkbox" name="twoFactorAuth" id="twoFactorAuth" className='w-[17px] h-[17px] ' />
+                                        <input onChange={(e:any)=> {setDropElements({...dropElements, twoFactorAuth: e.target.checked})}} checked={dropElements.twoFactorAuth} type="checkbox" name="twoFactorAuth" id="twoFactorAuth" className='w-[17px] h-[17px] ' />
                                     </span>
                                 </span>
                                 <span className="flex w-[50%] h-[28px] flex-row items-center justify-between gap-5">

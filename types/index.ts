@@ -50,6 +50,15 @@ export interface UserModalProps {
     setSelectedUser: (selectedUser: any) => void
 }
 
+export interface MenuRoleModalProps {
+    menuRoleModal: boolean;
+    setMenuRoleModal: (menuRoleModal: boolean) => void;
+    menuRoleList: any[];
+    setMenuRoleList: (menuRoleList: any[]) => void;
+    selectedMenuRole: any;
+    setSelectedMenuRole: (selectedMenuRole: any) => void
+}
+
 export type HandleDropMenuFunction = (dropdown: any) => void;
 
 export type HandleDropDownFunction = (dropdown: string, title:any) => void;

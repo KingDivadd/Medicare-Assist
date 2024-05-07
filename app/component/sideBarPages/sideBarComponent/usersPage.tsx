@@ -65,7 +65,7 @@ const UsersPage = () => {
             <div className="w-full h-auto flex flex-col justify-start items-center shadow-xl border border-sky-700 rounded-[6px] ">
                 <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2  bg-sky-600 h-[40px] border border-sky-600 border-b-0">
                     <p className="text-[15px] text-white font-semibold">User</p>
-                    <button onClick={handleNewUser} className="px-2 flex items-center text-slate-700 text-sm bg-white hover:bg-slate-100 rounded-[5px] h-[30px] ">Create User</button>
+                    <button onClick={handleNewUser} className="px-2 flex items-center text-slate-700 text-sm bg-white hover:bg-slate-100 rounded-[3px] h-[30px] ">Create User</button>
                 </span>
                 <div className="w-full flex flex-col items-center justify-start ">
                     <span className="w-full flex flex-row items-center justify-between h-[35px] bg-gray-300 ">
