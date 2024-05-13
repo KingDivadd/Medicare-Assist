@@ -1,11 +1,65 @@
 'use client'
 import React, { useState } from 'react'
 import MenuRoleModal from './menuRoleModal'
+import { SmallDropDown } from '../../dropDown'
 
 const PracticePage = () => {
     const [menuRoleModal, setMenuRoleModal] = useState(false)
     const [selecteMenuRole, setSelecteMenuRole] = useState({})
     const [menuRoleList, setMenuRoleList] = useState<any[]>([])
+    const [dropMenus, setDropMenus] = useState<{ [key: string]: boolean }>({
+        eStatementEmail: false,
+        officeVisitReminder: false,
+        teleVisitReminder: false,
+        planEditLink: false,
+        patientMessaging: false
+    });
+
+    const [dropElements, setDropElements] = useState({
+        shortName: '',
+        description: '',
+        email: '',
+        tin: '',
+        address: '',
+        city: '',
+        state: '',
+        zip: '',
+        npi: '',
+        fax: '',
+        ext: '',
+        website: '',
+        telephone: '',
+        taxonomyCode: '',
+        eStatementPaper: false, 
+        eStatementEmail: 'SELECT', 
+        officeVisitReminder: 'SELECT', 
+        teleVisitReminder: 'SELECT', 
+        planEditLink: 'SELECT', 
+        patientMessaging: 'SELECT', 
+        ediReady: false, 
+        claimEditing: false, 
+        paymentGateway: '', 
+        logo: '',
+    })
+
+    const handleDropMenu = (dropdown: any) => {
+        const updatedDropMenus = Object.keys(dropMenus).reduce((acc, key) => {
+            acc[key] = key === dropdown ? !dropMenus[key] : false;
+            return acc;
+        }, {} as { [key: string]: boolean });
+        setDropMenus(updatedDropMenus);
+        setDropElements({...dropElements, [dropdown]: 'SELECT'});
+    };
+
+    const handleSelectDropdown = (dropdown: any, title:any)=>{
+        setDropElements({...dropElements, [title]: dropdown}); setDropMenus({...dropMenus, [title]: false})
+    }
+
+    const handleChange = (e:any)=>{
+        const name = e.target.name
+        const value = e.target.value
+        setDropElements({...dropElements, [name]:value})
+    }
 
     const handleNewMenuRole = ()=>{
         setMenuRoleModal(true)
@@ -13,26 +67,209 @@ const PracticePage = () => {
     }
     return (
         <div className='w-full flex flex-col justify-start align-center gap-3 bg-white px-1 py-1 rounded-[6px] shadow-xl ' >
-            <div className="w-full cont-10 flex flex-col justify-start items-center border border-sky-600 rounded-[6px]">
+            <div className="w-full flex flex-col justify-start items-center border border-sky-600 rounded-[6px]">
                 <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2 bg-sky-600 h-[40px] border border-sky-600 border-b-0">
                     <p className="text-[15px] text-white font-semibold">Practice</p>
-                    <button onClick={handleNewMenuRole} className="px-2 flex items-center text-slate-700 text-sm bg-white hover:bg-slate-100 rounded-[3px] h-[30px] ">Create Menu Role</button>
+                    <button onClick={handleNewMenuRole} className="px-2 flex items-center text-slate-700 text-sm bg-white hover:bg-slate-100 rounded-[3px] h-[30px] ">Practice Extra info</button>
                 </span>
-                <div className="w-full flex flex-col items-center justify-start ">
-                    <span className="w-full flex flex-row items-center justify-start h-[35px] bg-slate-300 ">
-                        <p className="text-sm h-full flex items-center justif-start font-semibold text-sky-700 w-[250px] px-2 ">Menu Role</p>
-                        <p className="text-sm h-full flex items-center justif-start font-semibold text-sky-700 w-[400px] px-2 ">Comment</p>
-                    </span>  
-                    {[1,2,3].map((data, ind)=>{
-                        // const {email, last_name, first_name, activee} = data
-                        return (
-                            <span onClick={()=> {setSelecteMenuRole({ind, data}); setMenuRoleModal(true)}} key={ind} className="w-full flex flex-row items-center justify-start h-[35px] hover:bg-slate-100 cursor-pointer ">
-                                <p className="text-sm h-full flex items-center justif-start  text-blue-500 w-[250px] px-2">{'admin full access'.toUpperCase()}</p>
-                                <p className="text-sm h-full flex items-center justif-start  text-slate-700 w-[400px] px-2">{'Full Access'}</p>
-                            </span>  
-                        )
-                    })}                 
+                <div className="w-full flex items-start justify-center cont-11 overflow-y-auto">
+                    <div className="w-full flex flex-col gap-3 items-center justify-start mt-4 pb-4">
+                        
+                        
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-center gap-[30px] h-auto">
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Short Name</p>
+                                <input onChange={handleChange} value={dropElements.shortName} type="text" name="shortName" id="shortName" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                            </span>
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Description</p>
+                                <input onChange={handleChange} value={dropElements.description}  type="text" name="description" id="description" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                            </span>
+                        </span>
+
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-center gap-[30px] h-auto ">
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Email</p>
+                                <input onChange={handleChange} value={dropElements.email} type="text" name="email" id="email" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                            </span>
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Tin</p>
+                                <input onChange={handleChange} value={dropElements.tin}  type="text" name="tin" id="tin" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                            </span>
+                        </span>
+
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-center gap-[30px] h-auto ">
+                            <span className="flex w-full h-[28px] flex-row items-center justify-between gap-5 ">
+                                <p className="text-sm text-slate-700 text-end w-[14.5%] ">Address</p> 
+                                <input onChange={handleChange} value={dropElements.address} type="text" name="address" id="address" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                            </span>
+                        </span>
+
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-center gap-[30px] h-auto">
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">City</p>
+                                <input onChange={handleChange} value={dropElements.city} type="text" name="city" id="city" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                            </span>
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">State</p>
+                                <input onChange={handleChange} value={dropElements.state} type="text" name="state" id="state" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                            </span>
+                        </span>
+
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-center gap-[30px] h-auto">
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Zip</p>
+                                <span className="flex-1 h-[28px] flex flex-row items-center justify-between">
+                                    <input onChange={handleChange} value={dropElements.zip} type="text" name="zip" id="zip" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                                    <span className="w-[53%] h-full flex flex-row items-center justify-between">
+                                        <p className="text-sm text-slate-700 text-end w-[10%] ">Ext</p>
+                                        <input onChange={handleChange} value={dropElements.ext}  type="text" name="ext" id="ext" placeholder='' className='w-[75%] flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                                    </span>
+                                </span>
+                            </span>
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Website</p>
+                                <input onChange={handleChange} value={dropElements.website}  type="text" name="website" id="website" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                            </span>
+                        </span>
+
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-center gap-[30px] h-auto">
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Telephone</p>
+                                <input onChange={handleChange} value={dropElements.telephone} type="text" name="telephone" id="telephone" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                            </span>
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Fax</p>
+                                <span className="flex-1 h-[28px] flex flex-row items-center justify-between">
+                                    <input onChange={handleChange} value={dropElements.fax} type="text" name="fax" id="fax" placeholder='' className='w-[40%] flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                                    <span className="w-[53%] h-full flex flex-row items-end justify-between">
+                                        <p className="text-sm text-slate-700 text-end w-[10%] ">Ext</p>
+                                        <p className="text-sm text-sky-600 text-end w-[80%] cursor-pointer text-underline ">Initiate Fax Setup</p>
+                                        
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                        
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-center gap-[30px] h-auto">
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">NPI</p>
+                                <input onChange={handleChange} value={dropElements.npi} type="text" name="npi" id="npi" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                            </span>
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Taxonomy Code</p>
+                                <input onChange={handleChange} value={dropElements.taxonomyCode} type="text" name="taxonomyCode" id="taxonomyCode" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                            </span>
+                        </span>
+
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-center gap-[30px] h-auto">
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-start gap-5">
+                                <label htmlFor="eStatementPaper" className='text-sm text-slate-700 text-end w-[30%] ' >e-Statement with paper</label>
+                                <input type="checkbox" onChange={(e:any)=> {setDropElements({...dropElements, eStatementPaper: e.target.checked})}} checked={dropElements.eStatementPaper} name="eStatementPaper" id="eStatementPaper" className='w-[16px] h-[16px] ' />
+                            </span>
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">e-Statement</p>
+                                <span className="flex-1 flex items-center justify-center">
+                                    <SmallDropDown handleSelectDropdown={handleSelectDropdown} title={'eStatementEmail'} dropArray={['statement 1', 'statement 2', 'statement 3']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                </span>
+                            </span>
+                        </span>
+
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-center gap-[30px] h-auto">
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Office Visit Reminder</p>
+                                <span className="flex-1 flex items-center justify-center">
+                                    <SmallDropDown handleSelectDropdown={handleSelectDropdown} title={'officeVisitReminder'} dropArray={['statement 1', 'statement 2', 'statement 3']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                </span>
+                            </span>
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Televisit Reminder</p>
+                                <span className="flex-1 flex items-center justify-center">
+                                    <SmallDropDown handleSelectDropdown={handleSelectDropdown} title={'teleVisitReminder'} dropArray={['statement 1', 'statement 2', 'statement 3']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                </span>
+                            </span>
+                        </span>
+
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-center gap-[30px] h-auto">
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <label htmlFor="ediReady" className='text-sm text-slate-700 text-end w-[30%] ' >EDI Ready</label>
+                                <span className="flex-1 h-[28px] flex items-center justify-between">
+                                    <input type="checkbox" onChange={(e:any)=> {setDropElements({...dropElements, ediReady: e.target.checked})}} checked={dropElements.ediReady} name="ediReady" id="ediReady" className='w-[16px] h-[16px] ' />
+                                    <span className="auto gap-4 h-full flex flex-row items-end justify-between">
+                                        <label htmlFor='claimEditing' className="text-sm text-slate-700 text-end w-[100px] ">Claim Editing</label>                                    
+                                        <input type="checkbox" onChange={(e:any)=> {setDropElements({...dropElements, claimEditing: e.target.checked})}} checked={dropElements.claimEditing} name="claimEditing" id="claimEditing" className='w-[16px] h-[16px] ' />
+                                    </span>
+                                </span>
+                            </span>
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Plan Edit Link</p>
+                                <span className="flex-1 flex items-center justify-center">
+                                    <SmallDropDown handleSelectDropdown={handleSelectDropdown} title={'planEditLink'} dropArray={['statement 1', 'statement 2', 'statement 3']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                </span>
+                            </span>
+                        </span>
+
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-center gap-[30px] h-auto">
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Patient Messaging</p>
+                                <span className="flex-1 flex items-center justify-center">
+                                    <SmallDropDown handleSelectDropdown={handleSelectDropdown} title={'patientMessaging'} dropArray={['statement 1', 'statement 2', 'statement 3']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                </span>
+                            </span>
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Payment Gateway</p>
+                                <input onChange={handleChange} value={dropElements.paymentGateway} type="text" name="paymentGateway" id="paymentGateway" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                            </span>
+                        </span>
+
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-center gap-[30px] h-auto">
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                                <p className="text-sm text-slate-700 text-end w-[30%] ">Upload Logo</p>
+                                <input onChange={handleChange} value={dropElements.logo} type="file" name="" id="logo" placeholder='' className='flex-1 flex h-full items-center justify-center text-slate-700 text-sm bg-white focus:outline-none rounded-[3px]' />
+                            </span>
+                            <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
+                            </span>
+                        </span>
+                        <span className="w-[80%] mx-auto flex flex-row items-center justify-start gap-[30px] h-[28px]">
+                                <p className="text-sm text-slate-700 text-end w-[14.5%] h-[28px] "></p>
+                                <p className="text-sm text-slate-700 text-end h-[28px]  ">(JPG, JPEG, BMP, and PNG File formats are supported)</p>
+                        </span>
+                        <span className="w-[80%] mt-3 mx-auto flex flex-row items-center justify-start gap-[18px] ">
+                                <p className="text-sm text-slate-700 text-end w-[14.5%] h-[28px]  "></p>
+                                <div className="flex-1 flex flex-col justify-start items-center ">
+                                    
+                                    <span className="w-full flex flex-row items-center justify-between bg-sky-600 border border-sky-600 rounded-t-[5px] h-[40px] px-2 ">
+                                        <p className="text-sm text-white">Lab</p>
+                                        <button className="text-sm bg-white rounded-[3px] h-[30px] px-3 ">Add Lab</button>
+                                    </span>
+                                    <div className="w-full flex flex-col justify-start items-center border border-sky-600 rounded-b-[5px] border-t-0">
+                                        <span className="w-full flex flex-row items-center justify-between h-[35px] bg-blue-200">
+                                            <p className="w-1/3 text-sm font-semibold text-sky-700 text-start px-2">Lab Name</p>
+                                            <p className="w-1/3 text-sm font-semibold text-sky-700 text-center px-2">Result</p>
+                                            <p className="w-1/3 text-sm font-semibold text-sky-700 text-center px-2">Order</p>
+                                        </span>
+                                        {false ? <div className="w-full flex flex-col justify-start items-center ">
+                                            {[1,2,3,4,5].map((data, ind)=>{
+                                                return (
+                                                    <span key={ind} className="w-full flex flex-row items-center justify-between h-[30px] ">
+                                                        <p className="w-1/3 text-sm text-start px-2">Lab Name</p>
+                                                        <p className="w-1/3 text-sm text-center px-2">Result</p>
+                                                        <p className="w-1/3 text-sm text-center px-2">Order</p>
+                                                    </span>
+                                                )
+                                            })}
+                                        </div>:
+                                        <div className="w-full flex flex-col justify-center items-center h-[150px]">
+                                            <p className="w-1/3 text-sm text-center px-2">No Data Found</p>
+                                        </div>}
+                                    </div>
+                                </div>
+                        </span>
+
+                    </div>
+
                 </div>
+
                 {/* <span className="w-full h-[30px] border-t border-slate-500 rounded-b-[6px]"></span> */}
             </div>
             {menuRoleModal && <MenuRoleModal menuRoleList={menuRoleList} setMenuRoleList={setMenuRoleList} menuRoleModal={menuRoleModal} setMenuRoleModal={setMenuRoleModal} selectedMenuRole={selecteMenuRole} setSelectedMenuRole={setSelecteMenuRole} />}

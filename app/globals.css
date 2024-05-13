@@ -182,6 +182,15 @@
     height: calc(70vh)
 }
 
+.cont-11 {
+    height: calc(65vh)
+}
+
+.cont-11::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
 .cont-side-bar-right {
     height: calc(100vh - 160px)
 }
