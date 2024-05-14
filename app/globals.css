@@ -191,6 +191,10 @@
     height: 0;
 }
 
+.practice-cont::-webkit-scrollbar-thumb {
+    @apply bg-sky-600;
+}
+
 .cont-side-bar-right {
     height: calc(100vh - 160px)
 }

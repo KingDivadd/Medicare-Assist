@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import MenuRoleModal from './menuRoleModal'
 import { SmallDropDown } from '../../dropDown'
+import PracticeExtraInfo from './practiceExtraInfoModal'
 
 const PracticePage = () => {
     const [menuRoleModal, setMenuRoleModal] = useState(false)
@@ -230,6 +231,7 @@ const PracticePage = () => {
                             <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
                             </span>
                         </span>
+                        
                         <span className="w-[80%] mx-auto flex flex-row items-center justify-start gap-[30px] h-[28px]">
                                 <p className="text-sm text-slate-700 text-end w-[14.5%] h-[28px] "></p>
                                 <p className="text-sm text-slate-700 text-end h-[28px]  ">(JPG, JPEG, BMP, and PNG File formats are supported)</p>
@@ -272,7 +274,7 @@ const PracticePage = () => {
 
                 {/* <span className="w-full h-[30px] border-t border-slate-500 rounded-b-[6px]"></span> */}
             </div>
-            {menuRoleModal && <MenuRoleModal menuRoleList={menuRoleList} setMenuRoleList={setMenuRoleList} menuRoleModal={menuRoleModal} setMenuRoleModal={setMenuRoleModal} selectedMenuRole={selecteMenuRole} setSelectedMenuRole={setSelecteMenuRole} />}
+            {menuRoleModal && <PracticeExtraInfo menuRoleList={menuRoleList} setMenuRoleList={setMenuRoleList} menuRoleModal={menuRoleModal} setMenuRoleModal={setMenuRoleModal} selectedMenuRole={selecteMenuRole} setSelectedMenuRole={setSelecteMenuRole} />}
         </div>
     )
 }
