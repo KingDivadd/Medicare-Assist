@@ -43,7 +43,7 @@ const RouteNav = ({userRole}: RouteNavProps) => {
 
     
     return (
-        <nav className='w-full bg-sky-700 flex flex-col items-center justify-start sticky -top-[100px] '>
+        <nav className='w-full bg-sky-700 flex flex-col items-center justify-start sticky -top-[100px] z-10 '>
             <div className="w-full flex flex-row items-center justify-between h-[100px] bg-slate-100 p-2 gap-2">
                 <div className="w-[20%] h-full flex items-center justify-start">
                     <span className="flex flex-row items-center justify-start w-auto gap-2">

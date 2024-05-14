@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import MenuRoleModal from './menuRoleModal'
 import { SmallDropDown } from '../../dropDown'
 import PracticeExtraInfo from './practiceExtraInfoModal'
@@ -8,6 +8,22 @@ const PracticePage = () => {
     const [menuRoleModal, setMenuRoleModal] = useState(false)
     const [selecteMenuRole, setSelecteMenuRole] = useState({})
     const [menuRoleList, setMenuRoleList] = useState<any[]>([])
+    const [clickedBtn, setClickedBtn] = useState('')
+
+    useEffect(() => {
+    const item = sessionStorage.getItem('practiceTab')
+    if (item === null || item.trim() === ''){
+        setClickedBtn('provider')
+    }else{
+        setClickedBtn(item)
+    }
+    }, [])
+
+    const handleClickedBtn = (item:string)=>{
+        setClickedBtn(item)
+        sessionStorage.setItem('practiveTab',item)
+    }
+
     const [dropMenus, setDropMenus] = useState<{ [key: string]: boolean }>({
         eStatementEmail: false,
         officeVisitReminder: false,
@@ -231,7 +247,7 @@ const PracticePage = () => {
                             <span className="flex w-1/2 h-[28px] flex-row items-center justify-between gap-5">
                             </span>
                         </span>
-                        
+
                         <span className="w-[80%] mx-auto flex flex-row items-center justify-start gap-[30px] h-[28px]">
                                 <p className="text-sm text-slate-700 text-end w-[14.5%] h-[28px] "></p>
                                 <p className="text-sm text-slate-700 text-end h-[28px]  ">(JPG, JPEG, BMP, and PNG File formats are supported)</p>
@@ -267,6 +283,49 @@ const PracticePage = () => {
                                     </div>
                                 </div>
                         </span>
+
+                        <span className="w-[98%] mx-auto flex flex-row items-end justify-start px-5 border-b-[6px] gap-2 border-sky-600 mt-3 ">
+                            <button type="button" onClick={()=>{handleClickedBtn('provider')}} className={clickedBtn === 'provider'? "active-payment-btn " : "payment-btn"}>Provider</button>
+                            <button type="button" onClick={()=>{handleClickedBtn('resource')}} className={clickedBtn === 'resource'? 'active-payment-btn': 'payment-btn'}>Resource</button>
+                            <button type="button" onClick={()=>{handleClickedBtn('location')}} className={clickedBtn === 'location'? 'active-payment-btn': 'payment-btn'}>Location</button>
+                        </span>
+
+                        <div className="w-[98%] mx-auto flex flex-col justify-start items-center ">
+                                    
+                            <span className="w-full flex flex-row items-center justify-start gap-4 bg-sky-600 border border-sky-600 rounded-t-[5px] h-[40px] px-2 ">
+                                <p className="text-sm text-white">Provider(s)</p>
+                                <span className="w-[150px] bg-red-200 border border-white rounded-[3px] ">
+                                    <SmallDropDown handleSelectDropdown={handleSelectDropdown} title={'officeVisitReminder'} dropArray={['Provider 1', 'Provider 2', 'Provider 3', 'All']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
+                                </span>
+                            </span>
+                            <div className="w-full flex flex-col justify-start items-center border border-sky-600 rounded-b-[5px] border-t-0">
+                                <span className="w-full flex flex-row items-center justify-between h-[35px] bg-blue-200">
+                                    <p className="w-1/5 text-sm font-semibold text-sky-700 text-start px-2">Provider</p>
+                                    <p className="w-1/5 text-sm font-semibold text-sky-700 text-center px-2">Last Name</p>
+                                    <p className="w-1/5 text-sm font-semibold text-sky-700 text-center px-2">First Name</p>
+                                    <p className="w-1/5 text-sm font-semibold text-sky-700 text-center px-2">Speciality</p>
+                                    <p className="w-1/5 text-sm font-semibold text-sky-700 text-center px-2">Active</p>
+                                </span>
+                                {false ? <div className="w-full flex flex-col justify-start items-center ">
+                                    {[1,2,3,4,5].map((data, ind)=>{
+                                        return (
+                                            <span key={ind} className="w-full flex flex-row items-center justify-between h-[30px] ">
+                                                <p className="w-1/5 text-sm text-sky-700 text-start px-2">Provider</p>
+                                                <p className="w-1/5 text-sm text-sky-700 text-center px-2">Last Name</p>
+                                                <p className="w-1/5 text-sm text-sky-700 text-center px-2">First Name</p>
+                                                <p className="w-1/5 text-sm text-sky-700 text-center px-2">Speciality</p>
+                                                <p className="w-1/5 text-sm text-sky-700 text-center px-2">Active</p>
+                                            </span>
+                                        )
+                                    })}
+                                </div>:
+                                <div className="w-full flex flex-col justify-center items-center h-[150px]">
+                                    <p className="w-1/3 text-sm text-center px-2">No Data Found</p>
+                                </div>}
+                            </div>
+                        </div>
+
+
 
                     </div>
 
