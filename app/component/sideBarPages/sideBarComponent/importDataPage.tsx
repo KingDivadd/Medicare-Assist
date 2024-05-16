@@ -101,7 +101,7 @@ const ImportDataPage = () => {
                         <span className="w-auto h-[30px] flex flex-row items-start justify-center gap-2 ">
                             <button className="px-2 h-full rounded-[3px] flex justify-center items-center bg-blue-400 hover:bg-blue-500 text-sm text-white">Import File</button>
 
-                            <button className="px-2 h-full rounded-[3px] flex justify-center items-center bg-red-400 hover:bg-red-500 text-sm text-white">Import File</button>
+                            <button className="px-2 h-full rounded-[3px] flex justify-center items-center bg-red-400 hover:bg-red-500 text-sm text-white">Delete</button>
                         </span>
                     </span>
                     <div className="w-full flex flex-col items-center justify-start min-h-[20px] border border-sky-600 border-t-0 ">
