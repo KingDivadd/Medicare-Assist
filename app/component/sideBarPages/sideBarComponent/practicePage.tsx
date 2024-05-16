@@ -3,11 +3,16 @@ import React, { useState, useEffect } from 'react'
 import MenuRoleModal from './menuRoleModal'
 import { SmallDropDown } from '../../dropDown'
 import PracticeExtraInfo from './practiceExtraInfoModal'
+import { FaCaretLeft } from "react-icons/fa";
+import { FaCaretRight } from "react-icons/fa";
+import { MdSkipPrevious } from "react-icons/md";
+import { MdSkipNext } from "react-icons/md";
 
 const PracticePage = () => {
     const [menuRoleModal, setMenuRoleModal] = useState(false)
     const [selecteMenuRole, setSelecteMenuRole] = useState({})
     const [menuRoleList, setMenuRoleList] = useState<any[]>([])
+    const [pageNum, setPageNum] = useState(1)
     const [clickedBtn, setClickedBtn] = useState('')
 
     useEffect(() => {
@@ -82,6 +87,24 @@ const PracticePage = () => {
         setMenuRoleModal(true)
         sessionStorage.setItem('priviledge','menu-priviledge')
     }
+
+    const handlePageNumber = (e:any)=>{
+        const value = e.target.value
+        setPageNum(value)
+    }
+
+    const handlePageIncrease = ()=>{
+        setPageNum(Number(pageNum) + 1)
+    }
+
+    const handlePageDecrease = ()=>{
+        setPageNum(Number(pageNum) - 1)
+        if (Number(pageNum) < 2 ){
+            setPageNum(1)
+        }
+    }
+
+
     return (
         <div className='w-full flex flex-col justify-start align-center gap-3 bg-white px-1 py-1 rounded-[6px] shadow-xl ' >
             <div className="w-full flex flex-col justify-start items-center border border-sky-600 rounded-[6px]">
@@ -294,7 +317,7 @@ const PracticePage = () => {
                                     
                             <span className="w-full flex flex-row items-center justify-start gap-4 bg-sky-600 border border-sky-600 rounded-t-[5px] h-[40px] px-2 ">
                                 <p className="text-sm text-white">Provider(s)</p>
-                                <span className="w-[150px] bg-red-200 border border-white rounded-[3px] ">
+                                <span className="w-[150px] bg-red-200 border border-white rounded-[4px] ">
                                     <SmallDropDown handleSelectDropdown={handleSelectDropdown} title={'officeVisitReminder'} dropArray={['Provider 1', 'Provider 2', 'Provider 3', 'All']} dropElements={dropElements} dropMenus={dropMenus} handleDropMenu={handleDropMenu} setDropElements={setDropElements} setDropMenus={setDropMenus} />
                                 </span>
                             </span>
@@ -306,7 +329,7 @@ const PracticePage = () => {
                                     <p className="w-1/5 text-sm font-semibold text-sky-700 text-center px-2">Speciality</p>
                                     <p className="w-1/5 text-sm font-semibold text-sky-700 text-center px-2">Active</p>
                                 </span>
-                                {false ? <div className="w-full flex flex-col justify-start items-center ">
+                                {true ? <div className="w-full flex flex-col justify-start items-center ">
                                     {[1,2,3,4,5].map((data, ind)=>{
                                         return (
                                             <span key={ind} className="w-full flex flex-row items-center justify-between h-[30px] ">
@@ -322,6 +345,16 @@ const PracticePage = () => {
                                 <div className="w-full flex flex-col justify-center items-center h-[150px]">
                                     <p className="w-1/3 text-sm text-center px-2">No Data Found</p>
                                 </div>}
+                                <div className="w-full flex flex-row justify-start items-center h-[35px] border-t border-gray-200 px-2">
+                                    <span className="h-full flex flex-row items-center justify-start w-auto">
+                                        <span className="h-[25px] w-[35px] rounded-[3px] hover:bg-blue-100 flex items-center justify-center text-sky-600"><MdSkipPrevious size={17} /> </span>
+                                        <span onClick={handlePageDecrease} className="h-[25px] w-[35px] rounded-[3px] hover:bg-blue-100 flex items-center justify-center text-sky-600"><FaCaretLeft size={17} /> </span>
+                                        <p className="w-[50px] text-sm text-slate-700 text-center">Page</p>
+                                        <input onChange={(handlePageNumber)} value={pageNum} type="text" name="page" id="page" placeholder='' className='w-[50px] flex h-[25px] items-center justify-center text-slate-700 text-sm border border-slate-500 px-2 bg-white focus:bg-gray-100 focus:outline-none rounded-[3px]' />
+                                        <span onClick={handlePageIncrease} className="ml-[10px] h-[25px] w-[35px] rounded-[3px] hover:bg-blue-100 flex items-center justify-center text-sky-600"><FaCaretRight size={17} /> </span>
+                                        <span className="h-[25px] w-[35px] rounded-[3px] hover:bg-blue-100 flex items-center justify-center text-sky-600"><MdSkipNext size={17} /> </span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
 
