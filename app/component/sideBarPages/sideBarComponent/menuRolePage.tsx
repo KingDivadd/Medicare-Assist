@@ -13,7 +13,7 @@ const MenuRolePage = () => {
     }
     return (
         <div className='w-full flex flex-col justify-start align-center gap-3 bg-white px-1 py-1 rounded-[6px] shadow-xl ' >
-            <div className="w-full cont-10 flex flex-col justify-start items-center border border-sky-600 rounded-[6px]">
+            <div className="w-full cont-10 flex flex-col justify-start items-center  rounded-[6px]">
                 <span className="w-full flex flex-row items-center justify-between rounded-t-[5px] px-2 bg-sky-600 h-[40px] border border-sky-600 border-b-0">
                     <p className="text-[15px] text-white font-semibold">Menu Role(s)</p>
                     <button onClick={handleNewMenuRole} className="px-2 flex items-center text-slate-700 text-sm bg-white hover:bg-slate-100 rounded-[3px] h-[30px] ">Create Menu Role</button>
