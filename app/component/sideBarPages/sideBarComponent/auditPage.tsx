@@ -98,7 +98,7 @@ const AuditPage = () => {
                 <button type="button" className="w-[100px] mx-auto flex justify-center items-center h-[35px] rounded-[5px] text-white bg-lime-600 hover:bg-lime-700 mt-2">Search</button>
             </div>
 
-            <div className="w-full flex flex-col items-center justify-start border border-sky-600 rounded-[5px] bg-white shadow-xl ">
+            <div className="w-full flex flex-col items-center justify-start border border-sky-600 rounded-[5px] bg-white shadow-lg ">
                 <span className="h-[40px] w-full flex items-center justify-start px-2">
                     <p className="text-sm text-slate-700 text-start font-semibold ">User Audit</p>
                 </span>
