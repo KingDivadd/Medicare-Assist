@@ -105,7 +105,8 @@ const ImportDataPage = () => {
                         </span>
                     </span>
                     <div className="w-full flex flex-col items-center justify-start min-h-[20px] border border-sky-600 border-t-0 ">
-
+                        <span className="w-full h-[40px] flex flex-row items-center justify-between">
+                        </span>
                     </div>
                 </div>
             </div>

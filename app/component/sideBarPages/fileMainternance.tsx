@@ -6,6 +6,7 @@ import MenuRolePage from './sideBarComponent/menuRolePage'
 import AuditPage from './sideBarComponent/auditPage'
 import ImportDataPage from './sideBarComponent/importDataPage'
 import PracticePage from './sideBarComponent/practicePage'
+import ProfilesPage from './sideBarComponent/profilesPage'
 
 
 const FileMaintenance = () => {
@@ -35,6 +36,10 @@ const FileMaintenance = () => {
                     <button type="button" onClick={()=>{handleClickedBtn('practice')}} className={clickedBtn === 'practice'? 'active-payment-btn': 'payment-btn'}>Practice</button>
                     <button type="button" onClick={()=>{handleClickedBtn('audit')}} className={clickedBtn === 'audit'? 'active-payment-btn': 'payment-btn'}>Audit</button>
                     <button type="button" onClick={()=>{handleClickedBtn('import-data')}} className={clickedBtn === 'import-data'? 'active-payment-btn': 'payment-btn'}>Import Data</button>
+                    {/* below import data */}
+                    <button type="button" onClick={()=>{handleClickedBtn('profiles')}} className={clickedBtn === 'profiles'? 'active-payment-btn': 'payment-btn'}>Profiles</button> 
+                    {/* under profile, we have cpt and fees => 14:11 min */}
+
                 </span>
                 <div className="w-full flex overflow-y-auto cont-9 pr-1 bg-slate-100 overflow-y-auto">
                     {clickedBtn === 'client-info' && <ClientInfoPage /> }
@@ -43,6 +48,7 @@ const FileMaintenance = () => {
                     {clickedBtn === 'practice' && <PracticePage /> }
                     {clickedBtn === 'audit' && <AuditPage /> }
                     {clickedBtn === 'import-data' && <ImportDataPage /> }
+                    {clickedBtn === 'profiles' && <ProfilesPage /> }
                 </div>
             </div>
         </div>

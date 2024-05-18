@@ -183,7 +183,15 @@
 }
 
 .cont-11 {
-    height: calc(70vh)
+    height: calc(76vh)
+}
+
+.cont-11a {
+    height: calc(76vh - 285px - 35px);
+}
+
+.cont-11a::-webkit-scrollbar-thumb {
+    @apply bg-sky-600;
 }
 
 .cont-11::-webkit-scrollbar {
