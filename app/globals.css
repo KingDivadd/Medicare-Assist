@@ -187,7 +187,7 @@
 }
 
 .cont-11a {
-    height: calc(76vh - 285px - 35px);
+    height: calc(76vh - 285px);
 }
 
 .cont-11a::-webkit-scrollbar-thumb {
