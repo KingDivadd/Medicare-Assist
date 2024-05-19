@@ -2,8 +2,12 @@
 import React, {useState, useEffect} from 'react'
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa6'
 import { MdSkipPrevious, MdSkipNext } from 'react-icons/md'
+import CreateCptModal from './createCptModal'
 
 const ProfilesPage = () => {
+    const [menuRoleModal, setMenuRoleModal] = useState(false)
+    const [selecteMenuRole, setSelecteMenuRole] = useState({})
+    const [menuRoleList, setMenuRoleList] = useState<any[]>([])
     const [clickedBtn, setClickedBtn] = useState('')
     const [pageNum, setPageNum] = useState(1)
     const [dropElements, setDropElements] = useState({
@@ -45,6 +49,11 @@ const ProfilesPage = () => {
         if (Number(pageNum) < 2 ){
             setPageNum(1)
         }
+    }
+
+    const handleCreateCpt = ()=>{
+        setMenuRoleModal(true)
+        sessionStorage.setItem('profiles','procedure')
     }
 
     return (
@@ -112,7 +121,7 @@ const ProfilesPage = () => {
                                 <p className="text-sm text-white text-start font-semibold ">CPT</p>
 
                                 <span className="w-auto h-[30px] flex flex-row items-start justify-center gap-2 ">
-                                    <button className="px-2 h-full rounded-[3px] flex justify-center items-center bg-white hover:bg-slate-100 text-sm text-slate-700">Create CPT</button>
+                                    <button onClick={handleCreateCpt} className="px-2 h-full rounded-[3px] flex justify-center items-center bg-white hover:bg-slate-100 text-sm text-slate-700">Create CPT</button>
 
                                     {/* <button className="px-2 h-full rounded-[3px] flex justify-center items-center bg-red-400 hover:bg-red-500 text-sm text-white">Delete</button> */}
                                 </span>
@@ -171,6 +180,7 @@ const ProfilesPage = () => {
                     
                 </div>}
             </div>
+            {menuRoleModal && <CreateCptModal menuRoleList={menuRoleList} setMenuRoleList={setMenuRoleList} menuRoleModal={menuRoleModal} setMenuRoleModal={setMenuRoleModal} selectedMenuRole={selecteMenuRole} setSelectedMenuRole={setSelecteMenuRole} />}
         </div>
     )
 }
