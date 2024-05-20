@@ -5,6 +5,7 @@ import { MdSkipPrevious, MdSkipNext } from 'react-icons/md'
 import CreateCptModal from './createCptModal'
 import CptFeesPage from './profilesComponent/cpt&feesPage'
 import PlanPage from './profilesComponent/planPage'
+import CarrierFeePage from './profilesComponent/carrierFeePage'
 
 const ProfilesPage = () => {
     const [clickedBtn, setClickedBtn] = useState('')
@@ -30,6 +31,7 @@ const ProfilesPage = () => {
                 <span className="w-[98%] mx-auto flex flex-row items-end justify-start px-5 border-b-[6px] gap-2 border-sky-600 ">
                     <button type="button" onClick={()=>{handleClickedBtn('cpt&fee')}} className={clickedBtn === 'cpt&fee'? "active-payment-btn " : "payment-btn"}>CPT & FEE</button>
                     <button type="button" onClick={()=>{handleClickedBtn('insuranceCarriers')}} className={clickedBtn === 'insuranceCarriers'? 'active-payment-btn': 'payment-btn'}>Insurance Carriers</button>
+                    <button type="button" onClick={()=>{handleClickedBtn('carrierFee')}} className={clickedBtn === 'carrierFee'? 'active-payment-btn': 'payment-btn'}>Carrier Fee</button>
                     
                     <button type="button" onClick={()=>{handleClickedBtn('fuDenailCodes')}} className={clickedBtn === 'fuDenailCodes'? 'active-payment-btn': 'payment-btn'}>F/U Denial Codes</button>
                     <button type="button" onClick={()=>{handleClickedBtn('labTest')}} className={clickedBtn === 'labTest'? 'active-payment-btn': 'payment-btn'}>Lab Test</button>
@@ -39,6 +41,7 @@ const ProfilesPage = () => {
                 </span>
                 {clickedBtn === 'cpt&fee' &&  <CptFeesPage /> }
                 {clickedBtn === 'insuranceCarriers' &&  <PlanPage /> }
+                {clickedBtn === 'carrierFee' &&  <CarrierFeePage /> }
             </div>
             
         </div>

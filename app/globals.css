@@ -191,7 +191,7 @@
 }
 
 .cont-11a::-webkit-scrollbar-thumb {
-    @apply bg-sky-600;
+    @apply bg-blue-100;
 }
 
 .cont-11::-webkit-scrollbar {
