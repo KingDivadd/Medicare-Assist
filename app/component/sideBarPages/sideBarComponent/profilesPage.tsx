@@ -6,6 +6,8 @@ import CreateCptModal from './createCptModal'
 import CptFeesPage from './profilesComponent/cpt&feesPage'
 import PlanPage from './profilesComponent/planPage'
 import CarrierFeePage from './profilesComponent/carrierFeePage'
+import DenialCodePage from './profilesComponent/denialCodePage'
+import LabTestPage from './profilesComponent/labTestPage'
 
 const ProfilesPage = () => {
     const [clickedBtn, setClickedBtn] = useState('')
@@ -30,11 +32,15 @@ const ProfilesPage = () => {
             <div className="w-full flex flex-col justify-start items-center rounded-[6px]">
                 <span className="w-[98%] mx-auto flex flex-row items-end justify-start px-5 border-b-[6px] gap-2 border-sky-600 ">
                     <button type="button" onClick={()=>{handleClickedBtn('cpt&fee')}} className={clickedBtn === 'cpt&fee'? "active-payment-btn " : "payment-btn"}>CPT & FEE</button>
+
                     <button type="button" onClick={()=>{handleClickedBtn('insuranceCarriers')}} className={clickedBtn === 'insuranceCarriers'? 'active-payment-btn': 'payment-btn'}>Insurance Carriers</button>
+
                     <button type="button" onClick={()=>{handleClickedBtn('carrierFee')}} className={clickedBtn === 'carrierFee'? 'active-payment-btn': 'payment-btn'}>Carrier Fee</button>
                     
                     <button type="button" onClick={()=>{handleClickedBtn('fuDenailCodes')}} className={clickedBtn === 'fuDenailCodes'? 'active-payment-btn': 'payment-btn'}>F/U Denial Codes</button>
+
                     <button type="button" onClick={()=>{handleClickedBtn('labTest')}} className={clickedBtn === 'labTest'? 'active-payment-btn': 'payment-btn'}>Lab Test</button>
+
                     <button type="button" onClick={()=>{handleClickedBtn('scheduleReasons')}} className={clickedBtn === 'scheduleReasons'? 'active-payment-btn': 'payment-btn'}>Schedule Reasons</button>
                     <button type="button" onClick={()=>{handleClickedBtn('referringProvider')}} className={clickedBtn === 'referringProvider'? 'active-payment-btn': 'payment-btn'}>Referring Provider</button>
                     <button type="button" onClick={()=>{handleClickedBtn('inventory')}} className={clickedBtn === 'inventory'? 'active-payment-btn': 'payment-btn'}>Inventory</button>
@@ -42,6 +48,8 @@ const ProfilesPage = () => {
                 {clickedBtn === 'cpt&fee' &&  <CptFeesPage /> }
                 {clickedBtn === 'insuranceCarriers' &&  <PlanPage /> }
                 {clickedBtn === 'carrierFee' &&  <CarrierFeePage /> }
+                {clickedBtn === 'fuDenailCodes' &&  <DenialCodePage /> }
+                {clickedBtn === 'labTest' &&  <LabTestPage /> }
             </div>
             
         </div>
