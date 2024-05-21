@@ -120,31 +120,36 @@ const LabTestPage = () => {
             <div className="w-[110%] flex flex-col items-center justify-start border border-sky-600 rounded-[5px] bg-white mt-[10px]">
                 <span className="h-[40px] w-full flex items-center justify-between px-2 bg-sky-600 rounded-t-[5px] border border-sky-600 ">
                     <p className="text-sm text-white text-start font-semibold ">Search Result</p>
+
+                    <span className="w-auto h-[30px] flex flex-row items-start justify-center gap-2 ">
+                        <button onClick={handleCreateCpt} className="px-2 h-full rounded-[3px] flex justify-center items-center bg-white hover:bg-slate-100 text-sm text-slate-700">Create Lab Test</button>
+
+                    </span>
                 </span>
                 <div className="w-full flex flex-col items-center justify-start min-h-[20px] border border-sky-600 border-t-0 ">
                     <span className="w-full h-[35px] bg-blue-100 flex flex-row items-center justify-between">
-                        <p className="text-sm  text-sky-700 px-2 w-[20%] ">Test</p>
-                        <p className="text-sm  text-slate-700 px-2 w-[10%] ">Test Type</p>
-                        <p className="text-sm  text-slate-700 px-2 w-[7.5%] ">CPT</p>
-                        <p className="text-sm  text-slate-700 px-2 w-[10%] ">Test Category</p>
-                        <p className="text-sm  text-slate-700 px-2 w-[20%] ">Description</p>
-                        <p className="text-sm  text-slate-700 px-2 w-[7.5%] ">LOINC ID</p>
-                        <p className="text-sm  text-slate-700 px-2 w-[10%] ">Entered By</p>
-                        <p className="text-sm  text-slate-700 px-2 w-[15%] ">Entry Date</p>
+                        <p className="text-sm font-semibold text-sky-700 px-2 w-[20%] ">Test</p>
+                        <p className="text-sm font-semibold text-slate-700 px-2 w-[10%] ">Test Type</p>
+                        <p className="text-sm font-semibold text-slate-700 px-2 w-[7.5%] ">CPT</p>
+                        <p className="text-sm font-semibold text-slate-700 px-2 w-[10%] ">Test Category</p>
+                        <p className="text-sm font-semibold text-slate-700 px-2 w-[20%] ">Description</p>
+                        <p className="text-sm font-semibold text-slate-700 px-2 w-[7.5%] ">LOINC ID</p>
+                        <p className="text-sm font-semibold text-slate-700 px-2 w-[10%] ">Entered By</p>
+                        <p className="text-sm font-semibold text-slate-700 px-2 w-[15%] ">Entry Date</p>
                     </span>
                     <span className="w-full flex flex-col items-center justify-start cont-11a overflow-y-auto">
                         <span className='w-full flex flex-col justif-start itmes-center'>
                             {[1,2,3,4,5,6,7,8,9,0,1,2,3,4,5].map((data, ind)=>{
                                 return (
                                     <span key={ind} className="w-full h-[35px] hover:bg-gray-100 flex flex-row items-center justify-between">
-                                        <p className="text-sm font-semibold text-sky-600 px-2 w-[20%] ">Test</p>
-                                        <p className="text-sm font-semibold text-slate-700 pl-3 pr-2 w-[10%] ">Test Type</p>
-                                        <p className="text-sm font-semibold text-slate-700 px-2 w-[7.5%] ">CPT</p>
-                                        <p className="text-sm font-semibold text-slate-700 pl-3 pr-2 w-[10%] ">Test Category</p>
-                                        <p className="text-sm font-semibold text-slate-700 pl-3 pr-2 w-[20%] ">Description</p>
-                                        <p className="text-sm font-semibold text-slate-700 pl-4 pr-2 w-[7.5%] ">LOINC ID</p>
-                                        <p className="text-sm font-semibold text-slate-700 pl-4 pr-2 w-[10%] ">Entered By</p>
-                                        <p className="text-sm font-semibold text-slate-700 pl-4 pr-2 w-[15%] ">Entry Date</p>
+                                        <p className="text-sm  text-sky-600 px-2 w-[20%] ">Test</p>
+                                        <p className="text-sm  text-slate-700 pl-3 pr-2 w-[10%] ">Test Type</p>
+                                        <p className="text-sm  text-slate-700 px-2 w-[7.5%] ">CPT</p>
+                                        <p className="text-sm  text-slate-700 pl-3 pr-2 w-[10%] ">Test Category</p>
+                                        <p className="text-sm  text-slate-700 pl-3 pr-2 w-[20%] ">Description</p>
+                                        <p className="text-sm  text-slate-700 pl-4 pr-2 w-[7.5%] ">LOINC ID</p>
+                                        <p className="text-sm  text-slate-700 pl-4 pr-2 w-[10%] ">Entered B</p>
+                                        <p className="text-sm  text-slate-700 pl-4 pr-2 w-[15%] ">Entry Date</p>
                                     </span> 
                                 )
                             })}
